@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>3D MS</title>
+
+  <!-- חיבור ידני ל-CSS -->
+  <link
+    rel="stylesheet"
+    href="style.css"
+  >
+</head>
+
+<body>
+
+  <div id="app">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+      <div>
+        <div class="brand">
+          3D MS
+        </div>
+
+        <div class="tagline">
+          3D PRODUCTS STORE
+        </div>
+      </div>
+
+
+      <button
+        id="cartButton"
+        class="cart-button"
+        type="button"
+      >
+        🛒 סל
+        <span id="cartCount">
+          0
+        </span>
+      </button>
+
+    </header>
+
+
+    <main>
+
+      <!-- HERO -->
+
+      <section class="hero">
+
+        <div class="hero-badge">
+          3D MS
+        </div>
+
+        <h1>
+          מדפיסים את הרעיונות שלכם
+        </h1>
+
+        <p>
+          מוצרים מיוחדים בהדפסת תלת־ממד
+        </p>
+
+        <div class="shipping-banner">
+          🚚 משלוח ₪19.90 • חינם בקנייה מעל ₪199.90
+        </div>
+
+      </section>
+
+
+      <!-- PRODUCTS -->
+
+      <section class="products-section">
+
+        <div class="section-title">
+
+          <div>
+            <h2>
+              המוצרים שלנו
+            </h2>
+
+            <p>
+              בחרו מוצר וצבע והוסיפו לסל
+            </p>
+          </div>
+
+        </div>
+
+
+        <div
+          id="productsGrid"
+          class="products-grid"
+        ></div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <!-- =========================
+       CART
+  ========================== -->
+
+  <div
+    id="cartOverlay"
+    class="overlay hidden"
+  >
+
+    <div class="cart-panel">
+
+      <div class="cart-top">
+
+        <div>
+          <h2>
+            🛒 הסל שלך
+          </h2>
+
+          <small>
+            3D MS
+          </small>
+        </div>
+
+
+        <button
+          id="closeCart"
+          class="close-button"
+          type="button"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <div
+        id="emptyCart"
+        class="empty-cart"
+      >
+        🛒
+        <strong>
+          הסל עדיין ריק
+        </strong>
+
+        <span>
+          הוסיפו מוצר כדי להתחיל
+        </span>
+      </div>
+
+
+      <div id="cartItems"></div>
+
+
+      <div
+        id="cartSummary"
+        class="cart-summary"
+      >
+
+        <div class="summary-row">
+          <span>
+            מוצרים
+          </span>
+
+          <strong id="subtotal">
+            ₪0.00
+          </strong>
+        </div>
+
+
+        <div class="summary-row">
+          <span>
+            משלוח עד הבית
+          </span>
+
+          <strong id="shipping">
+            ₪0.00
+          </strong>
+        </div>
+
+
+        <div
+          id="freeShippingMessage"
+          class="free-shipping-message"
+        ></div>
+
+
+        <div class="summary-total">
+
+          <span>
+            סה״כ
+          </span>
+
+          <strong id="total">
+            ₪0.00
+          </strong>
+
+        </div>
+
+
+        <button
+          id="checkoutButton"
+          class="checkout-button"
+          type="button"
+        >
+          המשך להזמנה
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       CHECKOUT
+  ========================== -->
+
+  <div
+    id="checkoutOverlay"
+    class="overlay hidden"
+  >
+
+    <div class="checkout-panel">
+
+      <div class="cart-top">
+
+        <div>
+          <h2>
+            📦 פרטי משלוח
+          </h2>
+
+          <small>
+            משלוח עד הבית
+          </small>
+        </div>
+
+
+        <button
+          id="closeCheckout"
+          class="close-button"
+          type="button"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <form id="checkoutForm">
+
+        <label>
+          שם מלא
+
+          <input
+            id="customerName"
+            type="text"
+            placeholder="ישראל ישראלי"
+            required
+          >
+        </label>
+
+
+        <label>
+          טלפון
+
+          <input
+            id="customerPhone"
+            type="tel"
+            placeholder="050-0000000"
+            required
+          >
+        </label>
+
+
+        <label>
+          עיר
+
+          <input
+            id="customerCity"
+            type="text"
+            placeholder="תל אביב"
+            required
+          >
+        </label>
+
+
+        <label>
+          רחוב ומספר בית
+
+          <input
+            id="customerAddress"
+            type="text"
+            placeholder="הרצל 10"
+            required
+          >
+        </label>
+
+
+        <label>
+          הערות למשלוח
+
+          <textarea
+            id="customerNotes"
+            placeholder="קומה, דירה, קוד כניסה..."
+          ></textarea>
+        </label>
+
+
+        <div class="payment-title">
+          איך תרצו לשלם?
+        </div>
+
+
+        <div class="payment-options">
+
+          <button
+            class="payment-button"
+            data-payment="Bit"
+            type="button"
+          >
+            💙 Bit
+          </button>
+
+
+          <button
+            class="payment-button"
+            data-payment="PayBox"
+            type="button"
+          >
+            💜 PayBox
+          </button>
+
+        </div>
+
+
+        <div
+          id="selectedPayment"
+          class="selected-payment"
+        >
+          עדיין לא נבחר אמצעי תשלום
+        </div>
+
+
+        <div class="checkout-total">
+
+          לתשלום:
+
+          <strong id="checkoutTotal">
+            ₪0.00
+          </strong>
+
+        </div>
+
+
+        <button
+          class="place-order-button"
+          type="submit"
+        >
+          ביצוע הזמנה
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       SUCCESS
+  ========================== -->
+
+  <div
+    id="successOverlay"
+    class="overlay hidden"
+  >
+
+    <div class="success-box">
+
+      <div class="success-icon">
+        ✓
+      </div>
+
+      <h2>
+        ההזמנה התקבלה!
+      </h2>
+
+      <p id="successText">
+        תודה שקניתם ב־3D MS
+      </p>
+
+      <button
+        id="finishOrderButton"
+        type="button"
+      >
+        חזרה לחנות
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- חיבור ידני ל-JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/appwrite@17.0.0"></script>
+  <script src="script.js"></script>
+
+</body>
+</html>
