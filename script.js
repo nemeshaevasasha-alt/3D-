@@ -1523,3 +1523,156 @@ loadProducts();
 console.log(
   "🛍️ 3D MS STORE READY"
 );
+/* =========================================================
+   CUSTOM BUILD
+========================================================= */
+
+const customBuildButton =
+  document.getElementById(
+    "customBuildButton"
+  );
+
+const customBuildOverlay =
+  document.getElementById(
+    "customBuildOverlay"
+  );
+
+const closeCustomBuild =
+  document.getElementById(
+    "closeCustomBuild"
+  );
+
+const customBuildForm =
+  document.getElementById(
+    "customBuildForm"
+  );
+
+
+customBuildButton.onclick =
+  function() {
+
+    customBuildOverlay.classList.remove(
+      "hidden"
+    );
+
+  };
+
+
+closeCustomBuild.onclick =
+  function() {
+
+    customBuildOverlay.classList.add(
+      "hidden"
+    );
+
+  };
+
+
+customBuildForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+
+    const name =
+      document
+        .getElementById(
+          "customName"
+        )
+        .value
+        .trim();
+
+
+    const phone =
+      document
+        .getElementById(
+          "customPhone"
+        )
+        .value
+        .trim();
+
+
+    const color =
+      document
+        .getElementById(
+          "customColor"
+        )
+        .value;
+
+
+    const description =
+      document
+        .getElementById(
+          "customDescription"
+        )
+        .value
+        .trim();
+
+
+    if (
+      !name ||
+      !phone ||
+      !color ||
+      !description
+    ) {
+
+      alert(
+        "מלאו את כל הפרטים"
+      );
+
+      return;
+
+    }
+
+
+    let message = "";
+
+    message +=
+      "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
+
+
+    message +=
+      "👤 *שם:* " +
+      name +
+      "\n";
+
+
+    message +=
+      "📱 *טלפון:* " +
+      phone +
+      "\n";
+
+
+    message +=
+      "🎨 *צבע:* " +
+      color +
+      "\n\n";
+
+
+    message +=
+      "✏️ *מה אני רוצה:*\n" +
+      description +
+      "\n\n";
+
+
+    message +=
+      "אשמח לקבל מחיר וזמן הכנה.";
+
+
+    const whatsappURL =
+      "https://wa.me/" +
+      STORE_WHATSAPP +
+      "?text=" +
+      encodeURIComponent(
+        message
+      );
+
+
+    window.open(
+      whatsappURL,
+      "_blank"
+    );
+
+  }
+);
