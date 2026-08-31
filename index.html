@@ -60,7 +60,6 @@
 
   <main>
 
-
     <!-- HERO -->
 
     <section class="hero">
@@ -90,6 +89,33 @@
         </div>
 
       </div>
+
+    </section>
+
+
+    <!-- =========================
+         CUSTOM BUILD
+    ========================== -->
+
+    <section class="custom-build-section">
+
+      <button
+        id="customBuildButton"
+        class="custom-build-main-button"
+        type="button"
+      >
+        🛠 בנייה עצמית
+      </button>
+
+      <p>
+        יש לכם רעיון משלכם?
+        ספרו לנו מה תרצו שנדפיס.
+        <br>
+
+        <strong>
+          💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!
+        </strong>
+      </p>
 
     </section>
 
@@ -129,7 +155,6 @@
       </div>
 
     </section>
-
 
   </main>
 
@@ -340,7 +365,6 @@
 
           <div class="delivery-options">
 
-
             <button
               id="pickupButton"
               class="delivery-button"
@@ -383,7 +407,6 @@
               </small>
 
             </button>
-
 
           </div>
 
@@ -446,16 +469,16 @@
           </label>
 
 
-<label>
+          <label>
 
-  הערות (לא חובה)
+            הערות (לא חובה)
 
-  <textarea
-    id="customerNotes"
-    placeholder="לא חובה"
-  ></textarea>
+            <textarea
+              id="customerNotes"
+              placeholder="לא חובה"
+            ></textarea>
 
-</label>
+          </label>
 
         </div>
 
@@ -520,8 +543,6 @@
         </div>
 
 
-        <!-- WHATSAPP -->
-
         <button
           id="prepareOrderButton"
           class="whatsapp-button"
@@ -529,7 +550,6 @@
         >
           🟢 המשך לשליחת ההזמנה ב־WhatsApp
         </button>
-
 
       </form>
 
@@ -539,7 +559,7 @@
 
 
   <!-- =========================
-       WHATSAPP STEP
+       WHATSAPP ORDER
   ========================== -->
 
   <div
@@ -581,7 +601,7 @@
 
       <p class="important-message">
         חשוב: לאחר שליחת ההודעה
-        חזרו לאתר כדי להמשיך לתשלום.
+        חזרו לאתר.
       </p>
 
 
@@ -600,89 +620,6 @@
         type="button"
       >
         חזרה לעריכת ההזמנה
-      </button>
-
-    </div>
-
-  </div>
-
-
-  <!-- =========================
-       PAYMENT
-  ========================== -->
-
-  <div
-    id="paymentOverlay"
-    class="overlay hidden"
-  >
-
-    <div class="panel small-panel">
-
-      <div class="step-icon">
-        💳
-      </div>
-
-      <h2>
-        תשלום
-      </h2>
-
-
-      <p>
-        ההזמנה מוכנה.
-        עכשיו בחרו אמצעי תשלום.
-      </p>
-
-
-      <div class="payment-total-box">
-
-        לתשלום
-
-        <strong id="paymentTotal">
-          ₪0.00
-        </strong>
-
-      </div>
-
-
-      <div class="payment-options">
-
-        <button
-          id="bitButton"
-          class="payment-button"
-          type="button"
-          data-payment="Bit"
-        >
-          💙 תשלום ב־Bit
-        </button>
-
-
-        <button
-          id="payboxButton"
-          class="payment-button"
-          type="button"
-          data-payment="PayBox"
-        >
-          💜 תשלום ב־PayBox
-        </button>
-
-      </div>
-
-
-      <div
-        id="selectedPayment"
-        class="selected-payment"
-      >
-        עדיין לא נבחר אמצעי תשלום
-      </div>
-
-
-      <button
-        id="finishPaymentButton"
-        class="main-button"
-        type="button"
-        disabled
-      >
-        סיום הזמנה ✓
       </button>
 
     </div>
@@ -736,6 +673,168 @@
 
 
   <!-- =========================
+       CUSTOM BUILD
+  ========================== -->
+
+  <div
+    id="customBuildOverlay"
+    class="overlay hidden"
+  >
+
+    <div class="panel small-panel">
+
+      <div class="panel-header">
+
+        <div>
+
+          <h2>
+            🛠 בנייה עצמית
+          </h2>
+
+          <small>
+            ספרו לנו מה תרצו שנדפיס
+          </small>
+
+        </div>
+
+
+        <button
+          id="closeCustomBuild"
+          class="close-button"
+          type="button"
+        >
+          ✕
+        </button>
+
+      </div>
+
+
+      <div class="custom-build-price-notice">
+
+        <strong>
+          💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!
+        </strong>
+
+      </div>
+
+
+      <form id="customBuildForm">
+
+        <div class="checkout-section">
+
+
+          <label>
+
+            שם מלא
+
+            <input
+              id="customName"
+              type="text"
+              placeholder="ישראל ישראלי"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            טלפון
+
+            <input
+              id="customPhone"
+              type="tel"
+              placeholder="050-0000000"
+              required
+            >
+
+          </label>
+
+
+          <label>
+
+            צבע
+
+            <select
+              id="customColor"
+              required
+            >
+
+              <option value="">
+                בחרו צבע
+              </option>
+
+              <option value="שחור">
+                שחור
+              </option>
+
+              <option value="לבן">
+                לבן
+              </option>
+
+              <option value="אדום">
+                אדום
+              </option>
+
+              <option value="כחול">
+                כחול
+              </option>
+
+              <option value="ירוק">
+                ירוק
+              </option>
+
+              <option value="צהוב">
+                צהוב
+              </option>
+
+              <option value="אפור">
+                אפור
+              </option>
+
+              <option value="חום">
+                חום
+              </option>
+
+              <option value="סגול">
+                סגול
+              </option>
+
+            </select>
+
+          </label>
+
+
+          <label>
+
+            מה תרצו שנבנה?
+
+            <textarea
+              id="customDescription"
+              placeholder="תארו בקצרה מה אתם רוצים שנדפיס..."
+              required
+            ></textarea>
+
+          </label>
+
+        </div>
+
+
+        <button
+          class="whatsapp-button"
+          type="submit"
+        >
+          🟢 שליחת הבקשה ב־WhatsApp
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
        FOOTER
   ========================== -->
 
@@ -752,21 +851,16 @@
   </footer>
 
 
-  <!-- =========================
-       APPWRITE
-  ========================== -->
+  <!-- APPWRITE -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/appwrite@17.0.0"
   ></script>
 
 
-  <!-- =========================
-       OUR JS
-  ========================== -->
+  <!-- MAIN JS -->
 
   <script src="script.js"></script>
-
 
 </body>
 
