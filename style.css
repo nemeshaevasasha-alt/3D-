@@ -953,3 +953,43 @@ footer span {
   }
 
 }
+/* =========================================================
+   CUSTOM BUILD
+========================================================= */
+
+.custom-build-section {
+  width: min(1150px, calc(100% - 28px));
+  margin: 25px auto 0;
+
+  padding: 22px;
+
+  border-radius: 18px;
+
+  background: #111827;
+  color: white;
+
+  text-align: center;
+}
+
+.custom-build-section p {
+  margin: 8px 0 0;
+
+  color: #d1d5db;
+
+  font-size: 12px;
+}
+
+.custom-build-main-button {
+  width: 100%;
+
+  padding: 14px;
+
+  border: 0;
+  border-radius: 12px;
+
+  background: white;
+  color: #111827;
+
+  font-size: 17px;
+  font-weight: 1000;
+}
