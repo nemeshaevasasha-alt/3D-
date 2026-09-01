@@ -9,25 +9,18 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>3D MS | מוצרים בהדפסת תלת־ממד</title>
+  <title>3D MS</title>
 
-  <link
-    rel="stylesheet"
-    href="style.css"
-  >
+  <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-  <!-- =========================
-       HEADER
-  ========================== -->
+  <!-- HEADER -->
 
   <header class="topbar">
 
-    <div class="brand-area">
-
+    <div>
       <div class="brand">
         3D MS
       </div>
@@ -35,7 +28,6 @@
       <div class="tagline">
         3D PRODUCTS STORE
       </div>
-
     </div>
 
 
@@ -54,10 +46,6 @@
   </header>
 
 
-  <!-- =========================
-       MAIN
-  ========================== -->
-
   <main>
 
     <!-- HERO -->
@@ -73,8 +61,7 @@
       </h1>
 
       <p>
-        מוצרים שימושיים ומיוחדים
-        בהדפסת תלת־ממד
+        מוצרים שימושיים ומיוחדים בהדפסת תלת־ממד
       </p>
 
 
@@ -88,14 +75,16 @@
           🚚 משלוחים לפי עיר
         </div>
 
+        <div>
+          ⚡ EXPRESS — תוספת ₪4.90
+        </div>
+
       </div>
 
     </section>
 
 
-    <!-- =========================
-         CUSTOM BUILD
-    ========================== -->
+    <!-- CUSTOM BUILD -->
 
     <section class="custom-build-section">
 
@@ -110,6 +99,7 @@
       <p>
         יש לכם רעיון משלכם?
         ספרו לנו מה תרצו שנדפיס.
+
         <br>
 
         <strong>
@@ -120,25 +110,19 @@
     </section>
 
 
-    <!-- =========================
-         PRODUCTS
-    ========================== -->
+    <!-- PRODUCTS -->
 
     <section class="products-section">
 
       <div class="section-heading">
 
-        <div>
+        <h2>
+          המוצרים שלנו
+        </h2>
 
-          <h2>
-            המוצרים שלנו
-          </h2>
-
-          <p>
-            בחרו מוצר, צבע וכמות
-          </p>
-
-        </div>
+        <p>
+          בחרו מוצר וצבע והוסיפו לסל
+        </p>
 
       </div>
 
@@ -159,31 +143,21 @@
   </main>
 
 
-  <!-- =========================
-       CART
-  ========================== -->
+  <!-- CART -->
 
   <div
     id="cartOverlay"
     class="overlay hidden"
   >
 
-    <div class="panel cart-panel">
+    <div class="panel">
 
       <div class="panel-header">
 
         <div>
-
-          <h2>
-            🛒 הסל שלך
-          </h2>
-
-          <small>
-            3D MS
-          </small>
-
+          <h2>🛒 הסל שלך</h2>
+          <small>3D MS</small>
         </div>
-
 
         <button
           id="closeCart"
@@ -222,41 +196,26 @@
       <div class="cart-summary">
 
         <div class="summary-row">
-
-          <span>
-            מוצרים
-          </span>
-
-          <strong id="subtotal">
-            ₪0.00
-          </strong>
-
+          <span>מוצרים</span>
+          <strong id="subtotal">₪0.00</strong>
         </div>
-
 
         <div class="summary-row">
-
-          <span>
-            משלוח
-          </span>
-
-          <strong id="shipping">
-            טרם נבחר
-          </strong>
-
+          <span>משלוח</span>
+          <strong id="shipping">טרם נבחר</strong>
         </div>
 
+        <div
+          id="expressSummaryRow"
+          class="summary-row hidden"
+        >
+          <span>⚡ EXPRESS</span>
+          <strong>₪4.90</strong>
+        </div>
 
         <div class="summary-total">
-
-          <span>
-            סה״כ
-          </span>
-
-          <strong id="total">
-            ₪0.00
-          </strong>
-
+          <span>סה״כ</span>
+          <strong id="total">₪0.00</strong>
         </div>
 
 
@@ -275,31 +234,21 @@
   </div>
 
 
-  <!-- =========================
-       CHECKOUT
-  ========================== -->
+  <!-- CHECKOUT -->
 
   <div
     id="checkoutOverlay"
     class="overlay hidden"
   >
 
-    <div class="panel checkout-panel">
+    <div class="panel">
 
       <div class="panel-header">
 
         <div>
-
-          <h2>
-            📦 השלמת הזמנה
-          </h2>
-
-          <small>
-            מלאו את הפרטים שלכם
-          </small>
-
+          <h2>📦 השלמת הזמנה</h2>
+          <small>מלאו את הפרטים שלכם</small>
         </div>
-
 
         <button
           id="closeCheckout"
@@ -314,8 +263,7 @@
 
       <form id="checkoutForm">
 
-
-        <!-- CUSTOMER DETAILS -->
+        <!-- PERSONAL -->
 
         <div class="checkout-section">
 
@@ -325,7 +273,6 @@
 
 
           <label>
-
             שם מלא
 
             <input
@@ -334,12 +281,10 @@
               placeholder="ישראל ישראלי"
               required
             >
-
           </label>
 
 
           <label>
-
             מספר טלפון
 
             <input
@@ -348,7 +293,6 @@
               placeholder="050-0000000"
               required
             >
-
           </label>
 
         </div>
@@ -369,7 +313,6 @@
               id="pickupButton"
               class="delivery-button"
               type="button"
-              data-delivery="pickup"
             >
 
               <span class="delivery-icon">
@@ -391,7 +334,6 @@
               id="deliveryButton"
               class="delivery-button"
               type="button"
-              data-delivery="delivery"
             >
 
               <span class="delivery-icon">
@@ -434,7 +376,6 @@
 
 
           <label>
-
             עיר
 
             <select id="customerCity">
@@ -452,12 +393,77 @@
               </option>
 
             </select>
-
           </label>
 
 
-          <label>
+          <!-- SHIPPING SPEED -->
 
+          <div class="shipping-speed-box">
+
+            <h3>
+              ⚡ מהירות משלוח
+            </h3>
+
+
+            <div class="delivery-options">
+
+              <button
+                id="regularShippingButton"
+                class="delivery-button active"
+                type="button"
+              >
+
+                <span class="delivery-icon">
+                  🚚
+                </span>
+
+                <strong>
+                  משלוח רגיל
+                </strong>
+
+                <small>
+                  1–14 ימי עסקים
+                </small>
+
+              </button>
+
+
+              <button
+                id="expressShippingButton"
+                class="delivery-button express-choice"
+                type="button"
+              >
+
+                <span class="delivery-icon">
+                  ⚡
+                </span>
+
+                <strong>
+                  EXPRESS
+                </strong>
+
+                <small>
+                  יום עסקים 1
+                  <br>
+                  +₪4.90
+                </small>
+
+              </button>
+
+            </div>
+
+
+            <div
+              id="shippingSpeedStatus"
+              class="delivery-status"
+            >
+              🚚 נבחר משלוח רגיל — 1–14 ימי עסקים
+            </div>
+
+          </div>
+
+
+          <label>
             רחוב ומספר בית
 
             <input
@@ -465,19 +471,16 @@
               type="text"
               placeholder="לדוגמה: הרצל 10"
             >
-
           </label>
 
 
           <label>
-
             הערות (לא חובה)
 
             <textarea
               id="customerNotes"
               placeholder="לא חובה"
             ></textarea>
-
           </label>
 
         </div>
@@ -488,54 +491,41 @@
         <div class="checkout-section">
 
           <h3>
-            🧾 סיכום
+            🧾 סיכום ההזמנה
           </h3>
 
-
-          <div
-            id="checkoutItems"
-            class="checkout-items"
-          ></div>
+          <div id="checkoutItems"></div>
 
 
           <div class="checkout-summary">
 
             <div>
-
-              <span>
-                מוצרים
-              </span>
-
+              <span>מוצרים</span>
               <strong id="checkoutSubtotal">
                 ₪0.00
               </strong>
-
             </div>
 
-
             <div>
-
-              <span>
-                משלוח / איסוף
-              </span>
-
+              <span>משלוח / איסוף</span>
               <strong id="checkoutShipping">
                 טרם נבחר
               </strong>
-
             </div>
 
+            <div
+              id="checkoutExpressRow"
+              class="hidden"
+            >
+              <span>⚡ EXPRESS</span>
+              <strong>₪4.90</strong>
+            </div>
 
             <div class="checkout-grand-total">
-
-              <span>
-                סה״כ
-              </span>
-
+              <span>סה״כ</span>
               <strong id="checkoutTotal">
                 ₪0.00
               </strong>
-
             </div>
 
           </div>
@@ -544,7 +534,6 @@
 
 
         <button
-          id="prepareOrderButton"
           class="whatsapp-button"
           type="submit"
         >
@@ -558,9 +547,7 @@
   </div>
 
 
-  <!-- =========================
-       WHATSAPP ORDER
-  ========================== -->
+  <!-- WHATSAPP -->
 
   <div
     id="whatsappOverlay"
@@ -577,10 +564,8 @@
         שליחת ההזמנה
       </h2>
 
-
       <p>
-        עכשיו נפתח WhatsApp עם
-        כל פרטי ההזמנה מוכנים.
+        WhatsApp ייפתח עם כל פרטי ההזמנה מוכנים.
       </p>
 
 
@@ -600,7 +585,7 @@
 
 
       <p class="important-message">
-        חשוב: לאחר שליחת ההודעה
+        אחרי ששלחתם את ההודעה,
         חזרו לאתר.
       </p>
 
@@ -627,36 +612,41 @@
   </div>
 
 
-  <!-- =========================
-       SUCCESS
-  ========================== -->
+  <!-- SUCCESS -->
 
   <div
     id="successOverlay"
     class="overlay hidden"
   >
 
-    <div class="panel small-panel success-panel">
+    <div class="panel small-panel">
 
       <div class="success-icon">
         ✓
       </div>
-
 
       <h2>
         תודה על ההזמנה! 🎉
       </h2>
 
 
-      <p>
-        קיבלנו את פרטי ההזמנה שלכם.
-      </p>
-
-
       <div
         id="successOrderSummary"
         class="order-preview"
       ></div>
+
+
+      <div class="delivery-time-box">
+
+        <strong>
+          ⏱️ זמן משוער
+        </strong>
+
+        <p id="finalDeliveryTime">
+          ניצור איתכם קשר בהקדם.
+        </p>
+
+      </div>
 
 
       <button
@@ -672,9 +662,7 @@
   </div>
 
 
-  <!-- =========================
-       CUSTOM BUILD
-  ========================== -->
+  <!-- CUSTOM BUILD -->
 
   <div
     id="customBuildOverlay"
@@ -686,17 +674,9 @@
       <div class="panel-header">
 
         <div>
-
-          <h2>
-            🛠 בנייה עצמית
-          </h2>
-
-          <small>
-            ספרו לנו מה תרצו שנדפיס
-          </small>
-
+          <h2>🛠 בנייה עצמית</h2>
+          <small>ספרו לנו מה תרצו שנדפיס</small>
         </div>
-
 
         <button
           id="closeCustomBuild"
@@ -709,12 +689,8 @@
       </div>
 
 
-      <div class="custom-build-price-notice">
-
-        <strong>
-          💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!
-        </strong>
-
+      <div class="custom-notice">
+        💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!
       </div>
 
 
@@ -722,37 +698,29 @@
 
         <div class="checkout-section">
 
-
           <label>
-
             שם מלא
 
             <input
               id="customName"
               type="text"
-              placeholder="ישראל ישראלי"
               required
             >
-
           </label>
 
 
           <label>
-
             טלפון
 
             <input
               id="customPhone"
               type="tel"
-              placeholder="050-0000000"
               required
             >
-
           </label>
 
 
           <label>
-
             צבע
 
             <select
@@ -764,57 +732,28 @@
                 בחרו צבע
               </option>
 
-              <option value="שחור">
-                שחור
-              </option>
-
-              <option value="לבן">
-                לבן
-              </option>
-
-              <option value="אדום">
-                אדום
-              </option>
-
-              <option value="כחול">
-                כחול
-              </option>
-
-              <option value="ירוק">
-                ירוק
-              </option>
-
-              <option value="צהוב">
-                צהוב
-              </option>
-
-              <option value="אפור">
-                אפור
-              </option>
-
-              <option value="חום">
-                חום
-              </option>
-
-              <option value="סגול">
-                סגול
-              </option>
+              <option>שחור</option>
+              <option>לבן</option>
+              <option>אדום</option>
+              <option>כחול</option>
+              <option>ירוק</option>
+              <option>צהוב</option>
+              <option>אפור</option>
+              <option>חום</option>
+              <option>סגול</option>
 
             </select>
-
           </label>
 
 
           <label>
-
             מה תרצו שנבנה?
 
             <textarea
               id="customDescription"
-              placeholder="תארו בקצרה מה אתם רוצים שנדפיס..."
+              placeholder="תארו בקצרה את הרעיון..."
               required
             ></textarea>
-
           </label>
 
         </div>
@@ -834,31 +773,15 @@
   </div>
 
 
-  <!-- =========================
-       FOOTER
-  ========================== -->
-
   <footer>
-
-    <strong>
-      3D MS
-    </strong>
-
-    <span>
-      מוצרים בהדפסת תלת־ממד
-    </span>
-
+    <strong>3D MS</strong>
+    <span>3D PRODUCTS STORE</span>
   </footer>
 
-
-  <!-- APPWRITE -->
 
   <script
     src="https://cdn.jsdelivr.net/npm/appwrite@17.0.0"
   ></script>
-
-
-  <!-- MAIN JS -->
 
   <script src="script.js"></script>
 
