@@ -1,5 +1,6 @@
 /* =========================================================
    3D MS
+   HEBREW + ENGLISH
 ========================================================= */
 
 
@@ -11,37 +12,12 @@ client
   .setEndpoint("https://cloud.appwrite.io/v1")
   .setProject("6a8441170004dad1c58c");
 
-const databases =
-  new Appwrite.Databases(client);
+const databases = new Appwrite.Databases(client);
 
-const DATABASE_ID =
-  "6a855f8f000abdab1a22";
+const DATABASE_ID = "6a855f8f000abdab1a22";
+const PRODUCTS_COLLECTION_ID = "products";
 
-const PRODUCTS_COLLECTION_ID =
-  "products";
-
-
-/* WHATSAPP */
-
-const STORE_WHATSAPP =
-  "972585621659";
-
-
-/* DELIVERY */
-
-const DELIVERY_CITIES = {
-
-  "haifa": {
-    name: "חיפה",
-    price: 9.90
-  },
-
-  "tel-aviv": {
-    name: "תל אביב",
-    price: 19.90
-  }
-
-};
+const STORE_WHATSAPP = "972585621659";
 
 const EXPRESS_PRICE = 4.90;
 
@@ -49,113 +25,562 @@ const EXPRESS_PRICE = 4.90;
 /* STATE */
 
 let products = [];
-
 let cart = [];
 
 let deliveryMethod = null;
-
 let shippingSpeed = "regular";
-
 let currentOrder = null;
+
+let currentLanguage =
+  localStorage.getItem("3dms-language") || "he";
+
+if (!["he", "en"].includes(currentLanguage)) {
+  currentLanguage = "he";
+}
+
+
+/* TRANSLATIONS */
+
+const translations = {
+
+  he: {
+
+    languageButton: "🇬🇧 English",
+
+    cart: "🛒 סל",
+
+    heroTitle: "מוצרים בהדפסת תלת־ממד",
+    heroText: "מוצרים מיוחדים ושימושיים בהדפסת תלת־ממד בישראל",
+
+    heroPickup: "📦 איסוף עצמי — חינם",
+    heroDelivery: "🚚 משלוחים לפי עיר",
+    heroExpress: "⚡ EXPRESS — תוספת ₪4.90",
+
+    customBuild: "🛠 בנייה עצמית",
+
+    customIntro:
+      "יש לכם רעיון משלכם? ספרו לנו מה תרצו שנדפיס.<br><strong>💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!</strong>",
+
+    productsTitle: "המוצרים שלנו",
+    productsSubtitle: "בחרו מוצר וצבע והוסיפו לסל",
+
+    loadingProducts: "טוען מוצרים...",
+    noProducts: "אין מוצרים כרגע",
+    loadingError: "לא הצלחנו לטעון את המוצרים",
+
+    chooseColor: "בחרו צבע",
+    noColor: "ללא צבע",
+    addToCart: "🛒 הוסף לסל",
+
+    cartTitle: "🛒 הסל שלך",
+    emptyCartTitle: "הסל עדיין ריק",
+    emptyCartText: "הוסיפו מוצר כדי להתחיל",
+
+    products: "מוצרים",
+    shipping: "משלוח",
+    total: "סה״כ",
+    notSelected: "טרם נבחר",
+    free: "חינם",
+
+    continueOrder: "המשך להזמנה",
+
+    checkoutTitle: "📦 השלמת הזמנה",
+    checkoutSubtitle: "מלאו את הפרטים שלכם",
+
+    personalDetails: "👤 פרטים אישיים",
+    fullName: "שם מלא",
+    phone: "מספר טלפון",
+
+    namePlaceholder: "ישראל ישראלי",
+
+    deliveryMethod:
+      "🚚 איך תרצו לקבל את ההזמנה?",
+
+    pickup: "איסוף עצמי",
+    delivery: "משלוח",
+
+    priceByCity: "מחיר לפי עיר",
+
+    noDeliverySelected:
+      "עדיין לא נבחרה אפשרות",
+
+    pickupSelected:
+      "📦 איסוף עצמי — חינם",
+
+    chooseDeliveryCity:
+      "🚚 בחרו עיר למשלוח",
+
+    deliveryDetails:
+      "📍 פרטי משלוח",
+
+    city: "עיר",
+    chooseCity: "בחרו עיר",
+
+    haifa: "חיפה",
+    telAviv: "תל אביב",
+
+    shippingSpeed:
+      "⚡ מהירות משלוח",
+
+    regularShipping:
+      "משלוח רגיל",
+
+    regularTime:
+      "1–14 ימי עסקים",
+
+    expressTime:
+      "יום עסקים 1<br>+₪4.90",
+
+    regularSelected:
+      "🚚 נבחר משלוח רגיל — 1–14 ימי עסקים",
+
+    expressSelected:
+      "⚡ EXPRESS — יום עסקים 1 — תוספת ₪4.90",
+
+    address:
+      "רחוב ומספר בית",
+
+    addressPlaceholder:
+      "לדוגמה: הרצל 10",
+
+    notes:
+      "הערות (לא חובה)",
+
+    optional:
+      "לא חובה",
+
+    orderSummary:
+      "🧾 סיכום ההזמנה",
+
+    shippingPickup:
+      "משלוח / איסוף",
+
+    checkoutWhatsapp:
+      "🟢 המשך לשליחת ההזמנה ב־WhatsApp",
+
+    whatsappTitle:
+      "שליחת ההזמנה",
+
+    whatsappText:
+      "WhatsApp ייפתח עם כל פרטי ההזמנה מוכנים.",
+
+    openWhatsapp:
+      "🟢 פתיחת WhatsApp ושליחת ההזמנה",
+
+    whatsappReminder:
+      "אחרי ששלחתם את ההודעה, חזרו לאתר.",
+
+    sentOrder:
+      "✓ שלחתי את ההזמנה",
+
+    backCheckout:
+      "חזרה לעריכת ההזמנה",
+
+    success:
+      "תודה על ההזמנה! 🎉",
+
+    estimatedTime:
+      "⏱️ זמן משוער",
+
+    backStore:
+      "חזרה לחנות",
+
+    customModalTitle:
+      "🛠 בנייה עצמית",
+
+    customModalSubtitle:
+      "ספרו לנו מה תרצו שנדפיס",
+
+    customNotice:
+      "💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!",
+
+    customPhone:
+      "טלפון",
+
+    color:
+      "צבע",
+
+    chooseCustomColor:
+      "בחרו צבע",
+
+    customDescription:
+      "מה תרצו שנבנה?",
+
+    customDescriptionPlaceholder:
+      "תארו בקצרה את הרעיון...",
+
+    customSubmit:
+      "🟢 שליחת הבקשה ב־WhatsApp",
+
+    quantity: "כמות",
+    units: "יח׳",
+
+    cartColor: "צבע",
+
+    cartEmptyAlert:
+      "הסל ריק",
+
+    chooseMethodAlert:
+      "בחרו משלוח או איסוף עצמי",
+
+    chooseCityAlert:
+      "בחרו עיר למשלוח",
+
+    addressAlert:
+      "הכניסו כתובת",
+
+    pickupSummary:
+      "איסוף עצמי • חינם",
+
+    successPickup:
+      "📦 איסוף עצמי — ניצור איתכם קשר לתיאום האיסוף.",
+
+    successExpress:
+      "⚡ EXPRESS — זמן משלוח משוער: יום עסקים 1.",
+
+    successRegular:
+      "🚚 זמן משלוח משוער: 1–14 ימי עסקים.",
+
+    customColors: [
+      "שחור",
+      "לבן",
+      "אדום",
+      "כחול",
+      "ירוק",
+      "צהוב",
+      "אפור",
+      "חום",
+      "סגול"
+    ]
+  },
+
+
+  en: {
+
+    languageButton: "🇮🇱 עברית",
+
+    cart: "🛒 Cart",
+
+    heroTitle: "3D Printed Products",
+    heroText: "Unique and useful 3D printed products in Israel",
+
+    heroPickup: "📦 Self pickup — Free",
+    heroDelivery: "🚚 Delivery by city",
+    heroExpress: "⚡ EXPRESS — +₪4.90",
+
+    customBuild: "🛠 Custom Build",
+
+    customIntro:
+      "Have your own idea? Tell us what you would like us to print.<br><strong>💰 Custom builds from an additional ₪5!</strong>",
+
+    productsTitle: "Our Products",
+    productsSubtitle: "Choose a product and color and add it to your cart",
+
+    loadingProducts: "Loading products...",
+    noProducts: "No products available right now",
+    loadingError: "We couldn't load the products",
+
+    chooseColor: "Choose a color",
+    noColor: "No color",
+    addToCart: "🛒 Add to Cart",
+
+    cartTitle: "🛒 Your Cart",
+    emptyCartTitle: "Your cart is empty",
+    emptyCartText: "Add a product to get started",
+
+    products: "Products",
+    shipping: "Delivery",
+    total: "Total",
+    notSelected: "Not selected",
+    free: "Free",
+
+    continueOrder: "Continue to Checkout",
+
+    checkoutTitle: "📦 Complete Your Order",
+    checkoutSubtitle: "Enter your details",
+
+    personalDetails: "👤 Personal Details",
+    fullName: "Full Name",
+    phone: "Phone Number",
+
+    namePlaceholder: "Full name",
+
+    deliveryMethod:
+      "🚚 How would you like to receive your order?",
+
+    pickup: "Self Pickup",
+    delivery: "Delivery",
+
+    priceByCity: "Price by city",
+
+    noDeliverySelected:
+      "No option selected yet",
+
+    pickupSelected:
+      "📦 Self pickup — Free",
+
+    chooseDeliveryCity:
+      "🚚 Choose a delivery city",
+
+    deliveryDetails:
+      "📍 Delivery Details",
+
+    city: "City",
+    chooseCity: "Choose a city",
+
+    haifa: "Haifa",
+    telAviv: "Tel Aviv",
+
+    shippingSpeed:
+      "⚡ Delivery Speed",
+
+    regularShipping:
+      "Standard Delivery",
+
+    regularTime:
+      "1–14 business days",
+
+    expressTime:
+      "1 business day<br>+₪4.90",
+
+    regularSelected:
+      "🚚 Standard delivery selected — 1–14 business days",
+
+    expressSelected:
+      "⚡ EXPRESS — 1 business day — +₪4.90",
+
+    address:
+      "Street and House Number",
+
+    addressPlaceholder:
+      "Example: Herzl 10",
+
+    notes:
+      "Notes (optional)",
+
+    optional:
+      "Optional",
+
+    orderSummary:
+      "🧾 Order Summary",
+
+    shippingPickup:
+      "Delivery / Pickup",
+
+    checkoutWhatsapp:
+      "🟢 Continue to WhatsApp",
+
+    whatsappTitle:
+      "Send Your Order",
+
+    whatsappText:
+      "WhatsApp will open with all your order details ready.",
+
+    openWhatsapp:
+      "🟢 Open WhatsApp and Send Order",
+
+    whatsappReminder:
+      "After sending the message, return to the website.",
+
+    sentOrder:
+      "✓ I Sent the Order",
+
+    backCheckout:
+      "Back to Edit Order",
+
+    success:
+      "Thank You for Your Order! 🎉",
+
+    estimatedTime:
+      "⏱️ Estimated Time",
+
+    backStore:
+      "Back to Store",
+
+    customModalTitle:
+      "🛠 Custom Build",
+
+    customModalSubtitle:
+      "Tell us what you would like us to print",
+
+    customNotice:
+      "💰 Custom builds from an additional ₪5!",
+
+    customPhone:
+      "Phone",
+
+    color:
+      "Color",
+
+    chooseCustomColor:
+      "Choose a color",
+
+    customDescription:
+      "What would you like us to build?",
+
+    customDescriptionPlaceholder:
+      "Briefly describe your idea...",
+
+    customSubmit:
+      "🟢 Send Request via WhatsApp",
+
+    quantity: "Quantity",
+    units: "pcs",
+
+    cartColor: "Color",
+
+    cartEmptyAlert:
+      "Your cart is empty",
+
+    chooseMethodAlert:
+      "Choose delivery or self pickup",
+
+    chooseCityAlert:
+      "Choose a delivery city",
+
+    addressAlert:
+      "Enter an address",
+
+    pickupSummary:
+      "Self pickup • Free",
+
+    successPickup:
+      "📦 Self pickup — we will contact you to arrange pickup.",
+
+    successExpress:
+      "⚡ EXPRESS — estimated delivery time: 1 business day.",
+
+    successRegular:
+      "🚚 Estimated delivery time: 1–14 business days.",
+
+    customColors: [
+      "Black",
+      "White",
+      "Red",
+      "Blue",
+      "Green",
+      "Yellow",
+      "Gray",
+      "Brown",
+      "Purple"
+    ]
+  }
+
+};
+
+
+/* DELIVERY */
+
+const DELIVERY_CITIES = {
+
+  "haifa": {
+    he: "חיפה",
+    en: "Haifa",
+    price: 9.90
+  },
+
+  "tel-aviv": {
+    he: "תל אביב",
+    en: "Tel Aviv",
+    price: 19.90
+  }
+
+};
+
+
+/* HELPERS */
+
+function t(key) {
+  return translations[currentLanguage][key];
+}
+
+
+function money(value) {
+  return "₪" + Number(value || 0).toFixed(2);
+}
+
+
+function escapeHTML(value) {
+
+  return String(value ?? "")
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+}
+
+
+function setText(id, value) {
+
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.textContent = value;
+  }
+
+}
+
+
+function setHTML(id, value) {
+
+  const element = document.getElementById(id);
+
+  if (element) {
+    element.innerHTML = value;
+  }
+
+}
 
 
 /* ELEMENTS */
 
-const productsGrid =
-  document.getElementById("productsGrid");
+const productsGrid = document.getElementById("productsGrid");
 
-const cartButton =
-  document.getElementById("cartButton");
+const languageButton = document.getElementById("languageButton");
 
-const cartCount =
-  document.getElementById("cartCount");
+const cartButton = document.getElementById("cartButton");
+const cartCount = document.getElementById("cartCount");
 
-const cartOverlay =
-  document.getElementById("cartOverlay");
+const cartOverlay = document.getElementById("cartOverlay");
+const closeCart = document.getElementById("closeCart");
 
-const closeCart =
-  document.getElementById("closeCart");
+const cartItems = document.getElementById("cartItems");
+const emptyCart = document.getElementById("emptyCart");
 
-const cartItems =
-  document.getElementById("cartItems");
+const subtotalElement = document.getElementById("subtotal");
+const shippingElement = document.getElementById("shipping");
+const expressSummaryRow = document.getElementById("expressSummaryRow");
+const totalElement = document.getElementById("total");
 
-const emptyCart =
-  document.getElementById("emptyCart");
+const checkoutButton = document.getElementById("checkoutButton");
 
-const subtotalElement =
-  document.getElementById("subtotal");
+const checkoutOverlay = document.getElementById("checkoutOverlay");
+const closeCheckout = document.getElementById("closeCheckout");
+const checkoutForm = document.getElementById("checkoutForm");
 
-const shippingElement =
-  document.getElementById("shipping");
+const customerName = document.getElementById("customerName");
+const customerPhone = document.getElementById("customerPhone");
 
-const expressSummaryRow =
-  document.getElementById("expressSummaryRow");
+const pickupButton = document.getElementById("pickupButton");
+const deliveryButton = document.getElementById("deliveryButton");
 
-const totalElement =
-  document.getElementById("total");
+const deliveryStatus = document.getElementById("deliveryStatus");
+const deliveryFields = document.getElementById("deliveryFields");
 
-const checkoutButton =
-  document.getElementById("checkoutButton");
-
-
-/* CHECKOUT */
-
-const checkoutOverlay =
-  document.getElementById("checkoutOverlay");
-
-const closeCheckout =
-  document.getElementById("closeCheckout");
-
-const checkoutForm =
-  document.getElementById("checkoutForm");
-
-const customerName =
-  document.getElementById("customerName");
-
-const customerPhone =
-  document.getElementById("customerPhone");
-
-const pickupButton =
-  document.getElementById("pickupButton");
-
-const deliveryButton =
-  document.getElementById("deliveryButton");
-
-const deliveryStatus =
-  document.getElementById("deliveryStatus");
-
-const deliveryFields =
-  document.getElementById("deliveryFields");
-
-const customerCity =
-  document.getElementById("customerCity");
-
-const customerAddress =
-  document.getElementById("customerAddress");
-
-const customerNotes =
-  document.getElementById("customerNotes");
-
-
-/* SHIPPING SPEED */
+const customerCity = document.getElementById("customerCity");
+const customerAddress = document.getElementById("customerAddress");
+const customerNotes = document.getElementById("customerNotes");
 
 const regularShippingButton =
-  document.getElementById(
-    "regularShippingButton"
-  );
+  document.getElementById("regularShippingButton");
 
 const expressShippingButton =
-  document.getElementById(
-    "expressShippingButton"
-  );
+  document.getElementById("expressShippingButton");
 
 const shippingSpeedStatus =
-  document.getElementById(
-    "shippingSpeedStatus"
-  );
-
-
-/* CHECKOUT SUMMARY */
+  document.getElementById("shippingSpeedStatus");
 
 const checkoutItems =
   document.getElementById("checkoutItems");
@@ -167,15 +592,10 @@ const checkoutShipping =
   document.getElementById("checkoutShipping");
 
 const checkoutExpressRow =
-  document.getElementById(
-    "checkoutExpressRow"
-  );
+  document.getElementById("checkoutExpressRow");
 
 const checkoutTotal =
   document.getElementById("checkoutTotal");
-
-
-/* WHATSAPP */
 
 const whatsappOverlay =
   document.getElementById("whatsappOverlay");
@@ -192,9 +612,6 @@ const sentWhatsappButton =
 const backToCheckoutButton =
   document.getElementById("backToCheckoutButton");
 
-
-/* SUCCESS */
-
 const successOverlay =
   document.getElementById("successOverlay");
 
@@ -206,9 +623,6 @@ const finalDeliveryTime =
 
 const backToStoreButton =
   document.getElementById("backToStoreButton");
-
-
-/* CUSTOM */
 
 const customBuildButton =
   document.getElementById("customBuildButton");
@@ -222,30 +636,35 @@ const closeCustomBuild =
 const customBuildForm =
   document.getElementById("customBuildForm");
 
+const customColor =
+  document.getElementById("customColor");
 
-/* MONEY */
 
-function money(value) {
+/* PRODUCT LANGUAGE */
 
-  return (
-    "₪" +
-    Number(value || 0).toFixed(2)
-  );
+function getProductName(product) {
 
+  if (
+    currentLanguage === "en" &&
+    product.nameEn
+  ) {
+    return product.nameEn;
+  }
+
+  return product.nameHe;
 }
 
 
-/* SAFE HTML */
+function getProductColors(product) {
 
-function escapeHTML(value) {
+  if (
+    currentLanguage === "en" &&
+    product.colorsEn.length
+  ) {
+    return product.colorsEn;
+  }
 
-  return String(value ?? "")
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-
+  return product.colorsHe;
 }
 
 
@@ -255,10 +674,9 @@ async function loadProducts() {
 
   productsGrid.innerHTML = `
     <div class="loading">
-      טוען מוצרים...
+      ${t("loadingProducts")}
     </div>
   `;
-
 
   try {
 
@@ -267,45 +685,44 @@ async function loadProducts() {
         DATABASE_ID,
         PRODUCTS_COLLECTION_ID,
         [
-          Appwrite.Query.equal(
-            "active",
-            true
-          )
+          Appwrite.Query.equal("active", true)
         ]
       );
 
-
     products =
-      (result.documents || [])
-        .map(function(row) {
+      (result.documents || []).map(function(row) {
 
-          return {
+        return {
 
-            id: row.$id,
+          id: row.$id,
 
-            name:
-              row.name || "מוצר",
+          nameHe:
+            row.name || "מוצר",
 
-            price:
-              Number(row.price || 0),
+          nameEn:
+            String(row.name_en || "").trim(),
 
-            image:
-              row.image || "",
+          price:
+            Number(row.price || 0),
 
-            colors:
-              String(row.colors || "")
-                .split(",")
-                .map(function(color) {
+          image:
+            row.image || "",
 
-                  return color.trim();
+          colorsHe:
+            String(row.colors || "")
+              .split(",")
+              .map(color => color.trim())
+              .filter(Boolean),
 
-                })
-                .filter(Boolean)
+          colorsEn:
+            String(row.colors_en || "")
+              .split(",")
+              .map(color => color.trim())
+              .filter(Boolean)
 
-          };
+        };
 
-        });
-
+      });
 
     renderProducts();
 
@@ -315,13 +732,12 @@ async function loadProducts() {
 
     console.error(error);
 
-
     productsGrid.innerHTML = `
       <div
         class="loading"
         style="color:#dc2626;"
       >
-        לא הצלחנו לטעון את המוצרים
+        ${t("loadingError")}
       </div>
     `;
 
@@ -330,66 +746,64 @@ async function loadProducts() {
 }
 
 
-/* RENDER PRODUCTS */
+/* PRODUCTS */
 
 function renderProducts() {
 
   productsGrid.innerHTML = "";
 
-
-  if (products.length === 0) {
+  if (!products.length) {
 
     productsGrid.innerHTML = `
       <div class="loading">
-        אין מוצרים כרגע
+        ${t("noProducts")}
       </div>
     `;
 
     return;
-
   }
-
 
   products.forEach(function(product) {
 
-    const card =
-      document.createElement("article");
+    const card = document.createElement("article");
 
-    card.className =
-      "product-card";
+    card.className = "product-card";
 
+    const productName =
+      getProductName(product);
 
-    const colors =
-      (
-        product.colors.length
-          ? product.colors
-          : ["ללא צבע"]
-      )
-        .map(function(color) {
+    let colors =
+      getProductColors(product);
 
-          return `
-            <option value="${escapeHTML(color)}">
-              ${escapeHTML(color)}
-            </option>
-          `;
+    if (!colors.length) {
+      colors = [t("noColor")];
+    }
 
-        })
-        .join("");
+    const colorOptions =
+      colors.map(function(color, index) {
 
+        return `
+          <option
+            value="${index}"
+          >
+            ${escapeHTML(color)}
+          </option>
+        `;
+
+      }).join("");
 
     card.innerHTML = `
 
       <img
         class="product-image"
         src="${escapeHTML(product.image)}"
-        alt="${escapeHTML(product.name)}"
+        alt="${escapeHTML(productName)}"
       >
-
 
       <div class="product-content">
 
         <div class="product-name">
-          ${escapeHTML(product.name)}
+          ${escapeHTML(productName)}
         </div>
 
         <div class="product-price">
@@ -397,14 +811,14 @@ function renderProducts() {
         </div>
 
         <label class="color-label">
-          בחרו צבע
+          ${t("chooseColor")}
         </label>
 
         <select
           id="color-${product.id}"
           class="product-color"
         >
-          ${colors}
+          ${colorOptions}
         </select>
 
         <button
@@ -412,12 +826,11 @@ function renderProducts() {
           type="button"
           data-product-id="${product.id}"
         >
-          🛒 הוסף לסל
+          ${t("addToCart")}
         </button>
 
       </div>
     `;
-
 
     productsGrid.appendChild(card);
 
@@ -426,45 +839,51 @@ function renderProducts() {
 }
 
 
-/* ADD CART */
+/* CART */
 
 function addToCart(productId) {
 
   const product =
-    products.find(function(item) {
-
-      return item.id === productId;
-
-    });
-
+    products.find(item => item.id === productId);
 
   if (!product) {
     return;
   }
 
-
   const select =
-    document.getElementById(
-      "color-" + productId
-    );
+    document.getElementById("color-" + productId);
 
+  const selectedIndex =
+    select ? Number(select.value) : 0;
 
-  const color =
-    select
-      ? select.value
-      : "ללא צבע";
+  const colorsHe =
+    product.colorsHe.length
+      ? product.colorsHe
+      : [translations.he.noColor];
 
+  const colorsEn =
+    product.colorsEn.length
+      ? product.colorsEn
+      : colorsHe;
+
+  const colorHe =
+    colorsHe[selectedIndex] ||
+    colorsHe[0] ||
+    translations.he.noColor;
+
+  const colorEn =
+    colorsEn[selectedIndex] ||
+    colorHe;
 
   const existing =
     cart.find(function(item) {
 
       return (
         item.id === productId &&
-        item.color === color
+        item.colorHe === colorHe
       );
 
     });
-
 
   if (existing) {
 
@@ -476,62 +895,57 @@ function addToCart(productId) {
 
     cart.push({
 
-      id:
-        product.id,
+      id: product.id,
 
-      name:
-        product.name,
+      nameHe: product.nameHe,
+      nameEn: product.nameEn || product.nameHe,
 
-      price:
-        product.price,
+      price: product.price,
+      image: product.image,
 
-      image:
-        product.image,
+      colorHe: colorHe,
+      colorEn: colorEn,
 
-      color:
-        color,
-
-      quantity:
-        1
+      quantity: 1
 
     });
 
   }
 
-
   renderCart();
 
-  cartOverlay.classList.remove(
-    "hidden"
-  );
+  cartOverlay.classList.remove("hidden");
 
 }
 
 
-/* QUANTITY */
+function cartItemName(item) {
 
-function changeQuantity(
-  index,
-  amount
-) {
+  return currentLanguage === "en"
+    ? item.nameEn
+    : item.nameHe;
+}
+
+
+function cartItemColor(item) {
+
+  return currentLanguage === "en"
+    ? item.colorEn
+    : item.colorHe;
+}
+
+
+function changeQuantity(index, amount) {
 
   if (!cart[index]) {
     return;
   }
 
+  cart[index].quantity += amount;
 
-  cart[index].quantity +=
-    amount;
-
-
-  if (
-    cart[index].quantity <= 0
-  ) {
-
+  if (cart[index].quantity <= 0) {
     cart.splice(index, 1);
-
   }
-
 
   renderCart();
 
@@ -551,64 +965,41 @@ function removeItem(index) {
 
 function getDelivery() {
 
-  if (
-    deliveryMethod === "pickup"
-  ) {
+  if (deliveryMethod === "pickup") {
 
     return {
-
       type: "pickup",
-
-      name: "איסוף עצמי",
-
+      name: t("pickup"),
       price: 0
-
     };
 
   }
 
-
-  if (
-    deliveryMethod === "delivery"
-  ) {
+  if (deliveryMethod === "delivery") {
 
     const city =
-      DELIVERY_CITIES[
-        customerCity.value
-      ];
-
+      DELIVERY_CITIES[customerCity.value];
 
     if (city) {
 
       return {
-
         type: "delivery",
-
-        name: city.name,
-
+        name: city[currentLanguage],
         price: city.price
-
       };
 
     }
 
   }
 
-
   return {
-
     type: null,
-
-    name: "טרם נבחר",
-
+    name: t("notSelected"),
     price: 0
-
   };
 
 }
 
-
-/* EXPRESS */
 
 function getExpressPrice() {
 
@@ -616,128 +1007,88 @@ function getExpressPrice() {
     deliveryMethod === "delivery" &&
     shippingSpeed === "express"
   ) {
-
     return EXPRESS_PRICE;
-
   }
-
 
   return 0;
 
 }
 
 
-/* TOTALS */
-
 function calculateTotals() {
 
   const subtotal =
-    cart.reduce(
-      function(total, item) {
+    cart.reduce(function(total, item) {
 
-        return (
-          total +
-          item.price *
-          item.quantity
-        );
+      return total + item.price * item.quantity;
 
-      },
-      0
-    );
+    }, 0);
 
+  const delivery = getDelivery();
 
-  const delivery =
-    getDelivery();
-
-
-  const express =
-    getExpressPrice();
-
+  const express = getExpressPrice();
 
   return {
-
-    subtotal:
-      subtotal,
-
-    shipping:
-      delivery.price,
-
-    express:
-      express,
-
+    subtotal,
+    shipping: delivery.price,
+    express,
     total:
       subtotal +
       delivery.price +
       express
-
   };
 
 }
 
 
-/* CART */
+/* RENDER CART */
 
 function renderCart() {
 
   const quantity =
     cart.reduce(
-      function(total, item) {
-
-        return total + item.quantity;
-
-      },
+      (total, item) =>
+        total + item.quantity,
       0
     );
 
-
-  cartCount.textContent =
-    quantity;
-
+  cartCount.textContent = quantity;
 
   cartItems.innerHTML = "";
-
 
   emptyCart.classList.toggle(
     "hidden",
     cart.length > 0
   );
 
-
   cart.forEach(function(item, index) {
 
     const row =
       document.createElement("div");
 
-
-    row.className =
-      "cart-item";
-
+    row.className = "cart-item";
 
     row.innerHTML = `
 
       <img
         src="${escapeHTML(item.image)}"
-        alt="${escapeHTML(item.name)}"
+        alt="${escapeHTML(cartItemName(item))}"
       >
 
       <div>
 
         <div class="cart-item-name">
-          ${escapeHTML(item.name)}
+          ${escapeHTML(cartItemName(item))}
         </div>
 
         <div class="cart-item-info">
-          צבע:
-          ${escapeHTML(item.color)}
+          ${t("cartColor")}:
+          ${escapeHTML(cartItemColor(item))}
         </div>
 
         <div class="cart-item-info">
-          ${money(
-            item.price *
-            item.quantity
-          )}
+          ${money(item.price * item.quantity)}
         </div>
-
 
         <div class="quantity-controls">
 
@@ -765,7 +1116,6 @@ function renderCart() {
 
       </div>
 
-
       <button
         class="remove-button"
         type="button"
@@ -776,36 +1126,24 @@ function renderCart() {
       </button>
     `;
 
-
     cartItems.appendChild(row);
 
   });
 
-
-  const totals =
-    calculateTotals();
-
+  const totals = calculateTotals();
+  const delivery = getDelivery();
 
   subtotalElement.textContent =
     money(totals.subtotal);
 
-
-  const delivery =
-    getDelivery();
-
-
-  if (
-    deliveryMethod === "pickup"
-  ) {
+  if (deliveryMethod === "pickup") {
 
     shippingElement.textContent =
-      "חינם";
+      t("free");
 
   }
 
-  else if (
-    delivery.type === "delivery"
-  ) {
+  else if (delivery.type === "delivery") {
 
     shippingElement.textContent =
       money(delivery.price);
@@ -815,20 +1153,17 @@ function renderCart() {
   else {
 
     shippingElement.textContent =
-      "טרם נבחר";
+      t("notSelected");
 
   }
-
 
   expressSummaryRow.classList.toggle(
     "hidden",
     totals.express === 0
   );
 
-
   totalElement.textContent =
     money(totals.total);
-
 
   renderCheckoutSummary();
 
@@ -839,79 +1174,54 @@ function renderCart() {
 
 function renderCheckoutSummary() {
 
-  if (!checkoutItems) {
-    return;
-  }
-
-
   checkoutItems.innerHTML = "";
-
 
   cart.forEach(function(item) {
 
     const row =
       document.createElement("div");
 
-
-    row.className =
-      "checkout-item";
-
+    row.className = "checkout-item";
 
     row.innerHTML = `
 
       <div>
 
         <strong>
-          ${escapeHTML(item.name)}
+          ${escapeHTML(cartItemName(item))}
         </strong>
 
         <br>
 
-        ${escapeHTML(item.color)}
+        ${escapeHTML(cartItemColor(item))}
         •
-        ${item.quantity} יח׳
+        ${item.quantity} ${t("units")}
 
       </div>
 
-
       <strong>
-        ${money(
-          item.price *
-          item.quantity
-        )}
+        ${money(item.price * item.quantity)}
       </strong>
     `;
-
 
     checkoutItems.appendChild(row);
 
   });
 
-
-  const totals =
-    calculateTotals();
-
-
-  const delivery =
-    getDelivery();
-
+  const totals = calculateTotals();
+  const delivery = getDelivery();
 
   checkoutSubtotal.textContent =
     money(totals.subtotal);
 
-
-  if (
-    deliveryMethod === "pickup"
-  ) {
+  if (deliveryMethod === "pickup") {
 
     checkoutShipping.textContent =
-      "איסוף עצמי • חינם";
+      t("pickupSummary");
 
   }
 
-  else if (
-    delivery.type === "delivery"
-  ) {
+  else if (delivery.type === "delivery") {
 
     checkoutShipping.textContent =
       delivery.name +
@@ -923,16 +1233,14 @@ function renderCheckoutSummary() {
   else {
 
     checkoutShipping.textContent =
-      "טרם נבחר";
+      t("notSelected");
 
   }
-
 
   checkoutExpressRow.classList.toggle(
     "hidden",
     totals.express === 0
   );
-
 
   checkoutTotal.textContent =
     money(totals.total);
@@ -944,50 +1252,22 @@ function renderCheckoutSummary() {
 
 function selectPickup() {
 
-  deliveryMethod =
-    "pickup";
+  deliveryMethod = "pickup";
+  shippingSpeed = "regular";
 
+  pickupButton.classList.add("active");
+  deliveryButton.classList.remove("active");
 
-  shippingSpeed =
-    "regular";
+  deliveryFields.classList.add("hidden");
 
+  customerCity.required = false;
+  customerAddress.required = false;
 
-  pickupButton.classList.add(
-    "active"
-  );
-
-
-  deliveryButton.classList.remove(
-    "active"
-  );
-
-
-  deliveryFields.classList.add(
-    "hidden"
-  );
-
-
-  customerCity.required =
-    false;
-
-
-  customerAddress.required =
-    false;
-
-
-  regularShippingButton.classList.add(
-    "active"
-  );
-
-
-  expressShippingButton.classList.remove(
-    "active"
-  );
-
+  regularShippingButton.classList.add("active");
+  expressShippingButton.classList.remove("active");
 
   deliveryStatus.textContent =
-    "📦 איסוף עצמי — חינם";
-
+    t("pickupSelected");
 
   renderCart();
 
@@ -998,63 +1278,34 @@ function selectPickup() {
 
 function selectDelivery() {
 
-  deliveryMethod =
-    "delivery";
+  deliveryMethod = "delivery";
 
+  pickupButton.classList.remove("active");
+  deliveryButton.classList.add("active");
 
-  pickupButton.classList.remove(
-    "active"
-  );
+  deliveryFields.classList.remove("hidden");
 
+  customerCity.required = true;
+  customerAddress.required = true;
 
-  deliveryButton.classList.add(
-    "active"
-  );
-
-
-  deliveryFields.classList.remove(
-    "hidden"
-  );
-
-
-  customerCity.required =
-    true;
-
-
-  customerAddress.required =
-    true;
-
-
-  deliveryStatus.textContent =
-    "🚚 בחרו עיר למשלוח";
-
+  updateDeliveryStatus();
 
   renderCart();
 
 }
 
 
-/* SHIPPING SPEED */
+/* SPEED */
 
 function selectRegularShipping() {
 
-  shippingSpeed =
-    "regular";
+  shippingSpeed = "regular";
 
-
-  regularShippingButton.classList.add(
-    "active"
-  );
-
-
-  expressShippingButton.classList.remove(
-    "active"
-  );
-
+  regularShippingButton.classList.add("active");
+  expressShippingButton.classList.remove("active");
 
   shippingSpeedStatus.textContent =
-    "🚚 נבחר משלוח רגיל — 1–14 ימי עסקים";
-
+    t("regularSelected");
 
   renderCart();
 
@@ -1063,40 +1314,453 @@ function selectRegularShipping() {
 
 function selectExpressShipping() {
 
-  shippingSpeed =
-    "express";
+  shippingSpeed = "express";
 
-
-  expressShippingButton.classList.add(
-    "active"
-  );
-
-
-  regularShippingButton.classList.remove(
-    "active"
-  );
-
+  expressShippingButton.classList.add("active");
+  regularShippingButton.classList.remove("active");
 
   shippingSpeedStatus.textContent =
-    "⚡ EXPRESS — יום עסקים 1 — תוספת ₪4.90";
-
+    t("expressSelected");
 
   renderCart();
 
 }
 
 
+function updateDeliveryStatus() {
+
+  const city =
+    DELIVERY_CITIES[customerCity.value];
+
+  if (
+    deliveryMethod === "delivery" &&
+    city
+  ) {
+
+    deliveryStatus.textContent =
+      "🚚 " +
+      city[currentLanguage] +
+      " — " +
+      money(city.price);
+
+  }
+
+  else if (deliveryMethod === "delivery") {
+
+    deliveryStatus.textContent =
+      t("chooseDeliveryCity");
+
+  }
+
+  else if (deliveryMethod === "pickup") {
+
+    deliveryStatus.textContent =
+      t("pickupSelected");
+
+  }
+
+  else {
+
+    deliveryStatus.textContent =
+      t("noDeliverySelected");
+
+  }
+
+}
+
+
+/* LANGUAGE */
+
+function updateLanguage() {
+
+  const isHebrew =
+    currentLanguage === "he";
+
+  document.documentElement.lang =
+    currentLanguage;
+
+  document.documentElement.dir =
+    isHebrew ? "rtl" : "ltr";
+
+  document.title =
+    isHebrew
+      ? "3D MS | מוצרים בהדפסת תלת־ממד בישראל"
+      : "3D MS | 3D Printed Products in Israel";
+
+
+  setText(
+    "languageButton",
+    t("languageButton")
+  );
+
+  setText(
+    "cartButtonText",
+    t("cart")
+  );
+
+  setText("heroTitle", t("heroTitle"));
+  setText("heroText", t("heroText"));
+
+  setText("heroPickup", t("heroPickup"));
+  setText("heroDelivery", t("heroDelivery"));
+  setText("heroExpress", t("heroExpress"));
+
+  setText(
+    "customBuildButton",
+    t("customBuild")
+  );
+
+  setHTML(
+    "customBuildIntro",
+    t("customIntro")
+  );
+
+  setText(
+    "productsTitle",
+    t("productsTitle")
+  );
+
+  setText(
+    "productsSubtitle",
+    t("productsSubtitle")
+  );
+
+  setText(
+    "cartTitle",
+    t("cartTitle")
+  );
+
+  setText(
+    "emptyCartTitle",
+    t("emptyCartTitle")
+  );
+
+  setText(
+    "emptyCartText",
+    t("emptyCartText")
+  );
+
+  setText(
+    "cartProductsLabel",
+    t("products")
+  );
+
+  setText(
+    "cartShippingLabel",
+    t("shipping")
+  );
+
+  setText(
+    "cartTotalLabel",
+    t("total")
+  );
+
+  setText(
+    "checkoutButton",
+    t("continueOrder")
+  );
+
+  setText(
+    "checkoutTitle",
+    t("checkoutTitle")
+  );
+
+  setText(
+    "checkoutSubtitle",
+    t("checkoutSubtitle")
+  );
+
+  setText(
+    "personalTitle",
+    t("personalDetails")
+  );
+
+  setText(
+    "nameLabel",
+    t("fullName")
+  );
+
+  setText(
+    "phoneLabel",
+    t("phone")
+  );
+
+  customerName.placeholder =
+    t("namePlaceholder");
+
+  setText(
+    "deliveryMethodTitle",
+    t("deliveryMethod")
+  );
+
+  setText(
+    "pickupTitle",
+    t("pickup")
+  );
+
+  setText(
+    "pickupPrice",
+    t("free")
+  );
+
+  setText(
+    "deliveryTitle",
+    t("delivery")
+  );
+
+  setText(
+    "deliveryPriceText",
+    t("priceByCity")
+  );
+
+  setText(
+    "deliveryDetailsTitle",
+    t("deliveryDetails")
+  );
+
+  setText(
+    "cityLabel",
+    t("city")
+  );
+
+  setText(
+    "chooseCityOption",
+    t("chooseCity")
+  );
+
+  customerCity.options[1].text =
+    t("haifa") + " — ₪9.90";
+
+  customerCity.options[2].text =
+    t("telAviv") + " — ₪19.90";
+
+  setText(
+    "shippingSpeedTitle",
+    t("shippingSpeed")
+  );
+
+  setText(
+    "regularShippingTitle",
+    t("regularShipping")
+  );
+
+  setText(
+    "regularShippingTime",
+    t("regularTime")
+  );
+
+  setHTML(
+    "expressShippingTime",
+    t("expressTime")
+  );
+
+  setText(
+    "addressLabel",
+    t("address")
+  );
+
+  customerAddress.placeholder =
+    t("addressPlaceholder");
+
+  setText(
+    "notesLabel",
+    t("notes")
+  );
+
+  customerNotes.placeholder =
+    t("optional");
+
+  setText(
+    "orderSummaryTitle",
+    t("orderSummary")
+  );
+
+  setText(
+    "checkoutProductsLabel",
+    t("products")
+  );
+
+  setText(
+    "checkoutShippingLabel",
+    t("shippingPickup")
+  );
+
+  setText(
+    "checkoutTotalLabel",
+    t("total")
+  );
+
+  setText(
+    "checkoutSubmitButton",
+    t("checkoutWhatsapp")
+  );
+
+  setText(
+    "whatsappTitle",
+    t("whatsappTitle")
+  );
+
+  setText(
+    "whatsappText",
+    t("whatsappText")
+  );
+
+  setText(
+    "openWhatsappButton",
+    t("openWhatsapp")
+  );
+
+  setText(
+    "whatsappReminder",
+    t("whatsappReminder")
+  );
+
+  setText(
+    "sentWhatsappButton",
+    t("sentOrder")
+  );
+
+  setText(
+    "backToCheckoutButton",
+    t("backCheckout")
+  );
+
+  setText(
+    "successTitle",
+    t("success")
+  );
+
+  setText(
+    "estimatedTimeTitle",
+    t("estimatedTime")
+  );
+
+  setText(
+    "backToStoreButton",
+    t("backStore")
+  );
+
+  setText(
+    "customModalTitle",
+    t("customModalTitle")
+  );
+
+  setText(
+    "customModalSubtitle",
+    t("customModalSubtitle")
+  );
+
+  setText(
+    "customNotice",
+    t("customNotice")
+  );
+
+  setText(
+    "customNameLabel",
+    t("fullName")
+  );
+
+  setText(
+    "customPhoneLabel",
+    t("customPhone")
+  );
+
+  setText(
+    "customColorLabel",
+    t("color")
+  );
+
+  setText(
+    "customDescriptionLabel",
+    t("customDescription")
+  );
+
+  document
+    .getElementById("customDescription")
+    .placeholder =
+      t("customDescriptionPlaceholder");
+
+  setText(
+    "customSubmitButton",
+    t("customSubmit")
+  );
+
+
+  /* CUSTOM COLORS */
+
+  customColor.innerHTML =
+    `<option value="">
+      ${t("chooseCustomColor")}
+    </option>`;
+
+  t("customColors").forEach(function(color) {
+
+    const option =
+      document.createElement("option");
+
+    option.value = color;
+    option.textContent = color;
+
+    customColor.appendChild(option);
+
+  });
+
+
+  /* DYNAMIC STATUS */
+
+  updateDeliveryStatus();
+
+  shippingSpeedStatus.textContent =
+    shippingSpeed === "express"
+      ? t("expressSelected")
+      : t("regularSelected");
+
+
+  /* DYNAMIC CONTENT */
+
+  renderProducts();
+  renderCart();
+
+
+  if (currentOrder) {
+
+    finalOrderPreview.innerHTML =
+      buildOrderPreview(currentOrder);
+
+    successOrderSummary.innerHTML =
+      buildOrderPreview(currentOrder);
+
+  }
+
+}
+
+
+languageButton.addEventListener(
+  "click",
+  function() {
+
+    currentLanguage =
+      currentLanguage === "he"
+        ? "en"
+        : "he";
+
+    localStorage.setItem(
+      "3dms-language",
+      currentLanguage
+    );
+
+    updateLanguage();
+
+  }
+);
+
+
 /* BUILD ORDER */
 
 function buildOrder() {
 
-  const totals =
-    calculateTotals();
-
-
-  const delivery =
-    getDelivery();
-
+  const totals = calculateTotals();
+  const delivery = getDelivery();
 
   return {
 
@@ -1106,11 +1770,10 @@ function buildOrder() {
     phone:
       customerPhone.value.trim(),
 
-    deliveryMethod:
-      deliveryMethod,
+    deliveryMethod,
 
-    delivery:
-      delivery,
+    cityKey:
+      customerCity.value,
 
     shippingSpeed:
       deliveryMethod === "delivery"
@@ -1124,11 +1787,7 @@ function buildOrder() {
       customerNotes.value.trim(),
 
     items:
-      cart.map(function(item) {
-
-        return {...item};
-
-      }),
+      cart.map(item => ({...item})),
 
     subtotal:
       totals.subtotal,
@@ -1147,87 +1806,86 @@ function buildOrder() {
 }
 
 
-/* PREVIEW */
+/* ORDER PREVIEW */
 
 function buildOrderPreview(order) {
 
   let html = "";
-
 
   html +=
     "👤 <strong>" +
     escapeHTML(order.name) +
     "</strong><br>";
 
-
   html +=
     "📱 " +
     escapeHTML(order.phone) +
     "<hr>";
 
-
   order.items.forEach(function(item) {
 
     html +=
       "🛒 <strong>" +
-      escapeHTML(item.name) +
+      escapeHTML(cartItemName(item)) +
       "</strong><br>";
-
 
     html +=
       "🎨 " +
-      escapeHTML(item.color) +
+      escapeHTML(cartItemColor(item)) +
       " • " +
       item.quantity +
-      " יח׳<br>";
-
+      " " +
+      t("units") +
+      "<br>";
 
     html +=
       "💰 " +
-      money(
-        item.price *
-        item.quantity
-      ) +
+      money(item.price * item.quantity) +
       "<br><br>";
 
   });
 
-
-  if (
-    order.deliveryMethod === "pickup"
-  ) {
+  if (order.deliveryMethod === "pickup") {
 
     html +=
-      "📦 <strong>איסוף עצמי — חינם</strong>";
+      "📦 <strong>" +
+      t("pickup") +
+      " — " +
+      t("free") +
+      "</strong>";
 
   }
 
   else {
 
+    const city =
+      DELIVERY_CITIES[order.cityKey];
+
     html +=
-      "🚚 משלוח ל" +
-      escapeHTML(
-        order.delivery.name
-      ) +
+      "🚚 " +
+      t("delivery") +
+      ": " +
+      escapeHTML(city[currentLanguage]) +
       " — " +
       money(order.shipping);
-
 
     html +=
       "<br>📍 " +
       escapeHTML(order.address);
 
-
-    if (
-      order.shippingSpeed === "express"
-    ) {
+    if (order.shippingSpeed === "express") {
 
       html +=
-        "<br>⚡ <strong>EXPRESS — יום עסקים 1</strong>";
-
+        "<br>⚡ <strong>EXPRESS — " +
+        (
+          currentLanguage === "he"
+            ? "יום עסקים 1"
+            : "1 business day"
+        ) +
+        "</strong>";
 
       html +=
-        "<br>➕ תוספת " +
+        "<br>➕ " +
         money(order.express);
 
     }
@@ -1235,12 +1893,12 @@ function buildOrderPreview(order) {
     else {
 
       html +=
-        "<br>🚚 משלוח רגיל — 1–14 ימי עסקים";
+        "<br>🚚 " +
+        t("regularTime");
 
     }
 
   }
-
 
   if (order.notes) {
 
@@ -1250,76 +1908,193 @@ function buildOrderPreview(order) {
 
   }
 
-
   html +=
-    "<hr>💰 <strong>סה״כ: " +
+    "<hr>💰 <strong>" +
+    t("total") +
+    ": " +
     money(order.total) +
     "</strong>";
-
 
   return html;
 
 }
 
 
-/* WHATSAPP */
+/* WHATSAPP ORDER */
 
 function buildWhatsappMessage(order) {
 
+  if (currentLanguage === "en") {
+
+    let text =
+      "🛍️ *New Order - 3D MS*\n\n";
+
+    text +=
+      "👤 *Name:* " +
+      order.name +
+      "\n";
+
+    text +=
+      "📱 *Phone:* " +
+      order.phone +
+      "\n\n";
+
+    text +=
+      "📦 *Products:*\n";
+
+    order.items.forEach(function(item) {
+
+      text +=
+        "• " +
+        item.nameEn +
+        "\n";
+
+      text +=
+        "🎨 Color: " +
+        item.colorEn +
+        "\n";
+
+      text +=
+        "🔢 Quantity: " +
+        item.quantity +
+        "\n";
+
+      text +=
+        "💰 " +
+        money(item.price * item.quantity) +
+        "\n\n";
+
+    });
+
+    if (order.deliveryMethod === "pickup") {
+
+      text +=
+        "📦 *Self Pickup — Free*\n";
+
+    }
+
+    else {
+
+      const city =
+        DELIVERY_CITIES[order.cityKey];
+
+      text +=
+        "🚚 *City:* " +
+        city.en +
+        "\n";
+
+      text +=
+        "📍 *Address:* " +
+        order.address +
+        "\n";
+
+      text +=
+        "💵 *Delivery:* " +
+        money(order.shipping) +
+        "\n";
+
+      if (order.shippingSpeed === "express") {
+
+        text +=
+          "⚡ *EXPRESS — 1 business day*\n";
+
+        text +=
+          "➕ *EXPRESS:* " +
+          money(order.express) +
+          "\n";
+
+      }
+
+      else {
+
+        text +=
+          "🚚 *Speed:* Standard delivery — 1–14 business days\n";
+
+      }
+
+    }
+
+    if (order.notes) {
+
+      text +=
+        "📝 *Notes:* " +
+        order.notes +
+        "\n";
+
+    }
+
+    text +=
+      "\n🛍️ Products: " +
+      money(order.subtotal) +
+      "\n";
+
+    text +=
+      "🚚 Delivery: " +
+      money(order.shipping) +
+      "\n";
+
+    if (order.express > 0) {
+
+      text +=
+        "⚡ EXPRESS: " +
+        money(order.express) +
+        "\n";
+
+    }
+
+    text +=
+      "💰 *Total: " +
+      money(order.total) +
+      "*";
+
+    return text;
+
+  }
+
+
+  /* HEBREW */
+
   let text =
     "🛍️ *הזמנה חדשה - 3D MS*\n\n";
-
 
   text +=
     "👤 *שם:* " +
     order.name +
     "\n";
 
-
   text +=
     "📱 *טלפון:* " +
     order.phone +
     "\n\n";
 
-
   text +=
     "📦 *מוצרים:*\n";
-
 
   order.items.forEach(function(item) {
 
     text +=
       "• " +
-      item.name +
+      item.nameHe +
       "\n";
-
 
     text +=
       "🎨 צבע: " +
-      item.color +
+      item.colorHe +
       "\n";
-
 
     text +=
       "🔢 כמות: " +
       item.quantity +
       "\n";
 
-
     text +=
       "💰 " +
-      money(
-        item.price *
-        item.quantity
-      ) +
+      money(item.price * item.quantity) +
       "\n\n";
 
   });
 
-
-  if (
-    order.deliveryMethod === "pickup"
-  ) {
+  if (order.deliveryMethod === "pickup") {
 
     text +=
       "📦 *איסוף עצמי — חינם*\n";
@@ -1328,32 +2103,28 @@ function buildWhatsappMessage(order) {
 
   else {
 
+    const city =
+      DELIVERY_CITIES[order.cityKey];
+
     text +=
       "🚚 *עיר:* " +
-      order.delivery.name +
+      city.he +
       "\n";
-
 
     text +=
       "📍 *כתובת:* " +
       order.address +
       "\n";
 
-
     text +=
       "💵 *מחיר משלוח:* " +
       money(order.shipping) +
       "\n";
 
-
-    if (
-      order.shippingSpeed ===
-      "express"
-    ) {
+    if (order.shippingSpeed === "express") {
 
       text +=
         "⚡ *EXPRESS — יום עסקים 1*\n";
-
 
       text +=
         "➕ *תוספת EXPRESS:* " +
@@ -1371,7 +2142,6 @@ function buildWhatsappMessage(order) {
 
   }
 
-
   if (order.notes) {
 
     text +=
@@ -1381,18 +2151,15 @@ function buildWhatsappMessage(order) {
 
   }
 
-
   text +=
     "\n🛍️ מוצרים: " +
     money(order.subtotal) +
     "\n";
 
-
   text +=
     "🚚 משלוח: " +
     money(order.shipping) +
     "\n";
-
 
   if (order.express > 0) {
 
@@ -1403,12 +2170,10 @@ function buildWhatsappMessage(order) {
 
   }
 
-
   text +=
     "💰 *סה״כ: " +
     money(order.total) +
     "*";
-
 
   return text;
 
@@ -1426,11 +2191,9 @@ productsGrid.addEventListener(
         "[data-product-id]"
       );
 
-
     if (!button) {
       return;
     }
-
 
     addToCart(
       button.dataset.productId
@@ -1451,157 +2214,81 @@ cartItems.addEventListener(
         "[data-action]"
       );
 
-
     if (!button) {
       return;
     }
 
-
     const index =
-      Number(
-        button.dataset.index
-      );
+      Number(button.dataset.index);
 
-
-    if (
-      button.dataset.action === "plus"
-    ) {
-
+    if (button.dataset.action === "plus") {
       changeQuantity(index, 1);
-
     }
 
-
-    if (
-      button.dataset.action === "minus"
-    ) {
-
+    if (button.dataset.action === "minus") {
       changeQuantity(index, -1);
-
     }
 
-
-    if (
-      button.dataset.action === "remove"
-    ) {
-
+    if (button.dataset.action === "remove") {
       removeItem(index);
-
     }
 
   }
 );
 
 
-/* CART */
+/* OPEN / CLOSE CART */
 
-cartButton.onclick =
-  function() {
+cartButton.onclick = function() {
+  cartOverlay.classList.remove("hidden");
+};
 
-    cartOverlay.classList.remove(
-      "hidden"
-    );
-
-  };
-
-
-closeCart.onclick =
-  function() {
-
-    cartOverlay.classList.add(
-      "hidden"
-    );
-
-  };
+closeCart.onclick = function() {
+  cartOverlay.classList.add("hidden");
+};
 
 
 /* CHECKOUT */
 
-checkoutButton.onclick =
-  function() {
+checkoutButton.onclick = function() {
 
-    if (cart.length === 0) {
+  if (!cart.length) {
 
-      alert("הסל ריק");
+    alert(t("cartEmptyAlert"));
+    return;
 
-      return;
+  }
 
-    }
+  cartOverlay.classList.add("hidden");
+  checkoutOverlay.classList.remove("hidden");
 
+  renderCheckoutSummary();
 
-    cartOverlay.classList.add(
-      "hidden"
-    );
-
-
-    checkoutOverlay.classList.remove(
-      "hidden"
-    );
+};
 
 
-    renderCheckoutSummary();
-
-  };
-
-
-closeCheckout.onclick =
-  function() {
-
-    checkoutOverlay.classList.add(
-      "hidden"
-    );
-
-  };
+closeCheckout.onclick = function() {
+  checkoutOverlay.classList.add("hidden");
+};
 
 
-/* DELIVERY EVENTS */
+/* DELIVERY */
 
-pickupButton.onclick =
-  selectPickup;
-
-
-deliveryButton.onclick =
-  selectDelivery;
-
+pickupButton.onclick = selectPickup;
+deliveryButton.onclick = selectDelivery;
 
 regularShippingButton.onclick =
   selectRegularShipping;
 
-
 expressShippingButton.onclick =
   selectExpressShipping;
 
+customerCity.onchange = function() {
 
-customerCity.onchange =
-  function() {
+  updateDeliveryStatus();
+  renderCart();
 
-    const city =
-      DELIVERY_CITIES[
-        customerCity.value
-      ];
-
-
-    if (city) {
-
-      deliveryStatus.textContent =
-        "🚚 " +
-        city.name +
-        " — " +
-        money(city.price);
-
-    }
-
-    else {
-
-      deliveryStatus.textContent =
-        "🚚 בחרו עיר למשלוח";
-
-    }
-
-
-    renderCart();
-
-  };
+};
 
 
 /* CHECKOUT SUBMIT */
@@ -1612,66 +2299,38 @@ checkoutForm.addEventListener(
 
     event.preventDefault();
 
-
     if (!deliveryMethod) {
 
-      alert(
-        "בחרו משלוח או איסוף עצמי"
-      );
-
+      alert(t("chooseMethodAlert"));
       return;
 
     }
 
-
-    if (
-      deliveryMethod === "delivery"
-    ) {
+    if (deliveryMethod === "delivery") {
 
       if (!customerCity.value) {
 
-        alert(
-          "בחרו עיר למשלוח"
-        );
-
+        alert(t("chooseCityAlert"));
         return;
 
       }
 
+      if (!customerAddress.value.trim()) {
 
-      if (
-        !customerAddress.value.trim()
-      ) {
-
-        alert(
-          "הכניסו כתובת"
-        );
-
+        alert(t("addressAlert"));
         return;
 
       }
 
     }
 
-
-    currentOrder =
-      buildOrder();
-
+    currentOrder = buildOrder();
 
     finalOrderPreview.innerHTML =
-      buildOrderPreview(
-        currentOrder
-      );
+      buildOrderPreview(currentOrder);
 
-
-    checkoutOverlay.classList.add(
-      "hidden"
-    );
-
-
-    whatsappOverlay.classList.remove(
-      "hidden"
-    );
+    checkoutOverlay.classList.add("hidden");
+    whatsappOverlay.classList.remove("hidden");
 
   }
 );
@@ -1679,126 +2338,82 @@ checkoutForm.addEventListener(
 
 /* OPEN WHATSAPP */
 
-openWhatsappButton.onclick =
-  function() {
+openWhatsappButton.onclick = function() {
 
-    if (!currentOrder) {
-      return;
-    }
+  if (!currentOrder) {
+    return;
+  }
 
+  const text =
+    buildWhatsappMessage(currentOrder);
 
-    const text =
-      buildWhatsappMessage(
-        currentOrder
-      );
+  const url =
+    "https://wa.me/" +
+    STORE_WHATSAPP +
+    "?text=" +
+    encodeURIComponent(text);
 
+  window.open(url, "_blank");
 
-    const url =
-      "https://wa.me/" +
-      STORE_WHATSAPP +
-      "?text=" +
-      encodeURIComponent(text);
-
-
-    window.open(
-      url,
-      "_blank"
-    );
-
-  };
+};
 
 
-backToCheckoutButton.onclick =
-  function() {
+backToCheckoutButton.onclick = function() {
 
-    whatsappOverlay.classList.add(
-      "hidden"
-    );
+  whatsappOverlay.classList.add("hidden");
+  checkoutOverlay.classList.remove("hidden");
 
-
-    checkoutOverlay.classList.remove(
-      "hidden"
-    );
-
-  };
+};
 
 
 /* SUCCESS */
 
-sentWhatsappButton.onclick =
-  function() {
+sentWhatsappButton.onclick = function() {
 
-    if (!currentOrder) {
-      return;
-    }
+  if (!currentOrder) {
+    return;
+  }
 
+  whatsappOverlay.classList.add("hidden");
 
-    whatsappOverlay.classList.add(
-      "hidden"
-    );
+  successOrderSummary.innerHTML =
+    buildOrderPreview(currentOrder);
 
+  if (currentOrder.deliveryMethod === "pickup") {
 
-    successOrderSummary.innerHTML =
-      buildOrderPreview(
-        currentOrder
-      );
+    finalDeliveryTime.textContent =
+      t("successPickup");
 
+  }
 
-    if (
-      currentOrder.deliveryMethod ===
-      "pickup"
-    ) {
+  else if (currentOrder.shippingSpeed === "express") {
 
-      finalDeliveryTime.textContent =
-        "📦 איסוף עצמי — ניצור איתכם קשר לתיאום האיסוף.";
+    finalDeliveryTime.textContent =
+      t("successExpress");
 
-    }
+  }
 
-    else if (
-      currentOrder.shippingSpeed ===
-      "express"
-    ) {
+  else {
 
-      finalDeliveryTime.textContent =
-        "⚡ EXPRESS — זמן משלוח משוער: יום עסקים 1.";
+    finalDeliveryTime.textContent =
+      t("successRegular");
 
-    }
+  }
 
-    else {
+  successOverlay.classList.remove("hidden");
 
-      finalDeliveryTime.textContent =
-        "🚚 זמן משלוח משוער: 1–14 ימי עסקים.";
-
-    }
-
-
-    successOverlay.classList.remove(
-      "hidden"
-    );
-
-  };
+};
 
 
 /* CUSTOM BUILD */
 
-customBuildButton.onclick =
-  function() {
+customBuildButton.onclick = function() {
+  customBuildOverlay.classList.remove("hidden");
+};
 
-    customBuildOverlay.classList.remove(
-      "hidden"
-    );
-
-  };
-
-
-closeCustomBuild.onclick =
-  function() {
-
-    customBuildOverlay.classList.add(
-      "hidden"
-    );
-
-  };
+closeCustomBuild.onclick = function() {
+  customBuildOverlay.classList.add("hidden");
+};
 
 
 customBuildForm.addEventListener(
@@ -1807,13 +2422,11 @@ customBuildForm.addEventListener(
 
     event.preventDefault();
 
-
     const name =
       document
         .getElementById("customName")
         .value
         .trim();
-
 
     const phone =
       document
@@ -1821,52 +2434,80 @@ customBuildForm.addEventListener(
         .value
         .trim();
 
-
     const color =
       document
         .getElementById("customColor")
         .value;
 
-
     const description =
       document
-        .getElementById(
-          "customDescription"
-        )
+        .getElementById("customDescription")
         .value
         .trim();
 
 
-    let text =
-      "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
+    let text = "";
 
 
-    text +=
-      "👤 *שם:* " +
-      name +
-      "\n";
+    if (currentLanguage === "en") {
 
+      text =
+        "🛠️ *Custom Build Request - 3D MS*\n\n";
 
-    text +=
-      "📱 *טלפון:* " +
-      phone +
-      "\n";
+      text +=
+        "👤 *Name:* " +
+        name +
+        "\n";
 
+      text +=
+        "📱 *Phone:* " +
+        phone +
+        "\n";
 
-    text +=
-      "🎨 *צבע:* " +
-      color +
-      "\n\n";
+      text +=
+        "🎨 *Color:* " +
+        color +
+        "\n\n";
 
+      text +=
+        "✏️ *What I would like:*\n" +
+        description +
+        "\n\n";
 
-    text +=
-      "✏️ *מה אני רוצה:*\n" +
-      description +
-      "\n\n";
+      text +=
+        "💰 I understand that custom builds cost an additional ₪5 or more.";
 
+    }
 
-    text +=
-      "💰 ידוע לי שבנייה עצמית כרוכה בתשלום נוסף החל מ־5 ₪.";
+    else {
+
+      text =
+        "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
+
+      text +=
+        "👤 *שם:* " +
+        name +
+        "\n";
+
+      text +=
+        "📱 *טלפון:* " +
+        phone +
+        "\n";
+
+      text +=
+        "🎨 *צבע:* " +
+        color +
+        "\n\n";
+
+      text +=
+        "✏️ *מה אני רוצה:*\n" +
+        description +
+        "\n\n";
+
+      text +=
+        "💰 ידוע לי שבנייה עצמית כרוכה בתשלום נוסף החל מ־5 ₪.";
+
+    }
 
 
     const url =
@@ -1875,11 +2516,7 @@ customBuildForm.addEventListener(
       "?text=" +
       encodeURIComponent(text);
 
-
-    window.open(
-      url,
-      "_blank"
-    );
+    window.open(url, "_blank");
 
   }
 );
@@ -1887,70 +2524,36 @@ customBuildForm.addEventListener(
 
 /* RESET */
 
-backToStoreButton.onclick =
-  function() {
+backToStoreButton.onclick = function() {
 
-    cart = [];
+  cart = [];
 
-    deliveryMethod = null;
+  deliveryMethod = null;
+  shippingSpeed = "regular";
+  currentOrder = null;
 
-    shippingSpeed = "regular";
+  checkoutForm.reset();
 
-    currentOrder = null;
+  pickupButton.classList.remove("active");
+  deliveryButton.classList.remove("active");
 
+  deliveryFields.classList.add("hidden");
 
-    checkoutForm.reset();
+  regularShippingButton.classList.add("active");
+  expressShippingButton.classList.remove("active");
 
+  successOverlay.classList.add("hidden");
 
-    pickupButton.classList.remove(
-      "active"
-    );
+  updateLanguage();
 
-
-    deliveryButton.classList.remove(
-      "active"
-    );
-
-
-    deliveryFields.classList.add(
-      "hidden"
-    );
-
-
-    regularShippingButton.classList.add(
-      "active"
-    );
-
-
-    expressShippingButton.classList.remove(
-      "active"
-    );
-
-
-    deliveryStatus.textContent =
-      "עדיין לא נבחרה אפשרות";
-
-
-    shippingSpeedStatus.textContent =
-      "🚚 נבחר משלוח רגיל — 1–14 ימי עסקים";
-
-
-    successOverlay.classList.add(
-      "hidden"
-    );
-
-
-    renderCart();
-
-  };
+};
 
 
 /* START */
 
-renderCart();
-
+updateLanguage();
 loadProducts();
 
-console.log(
-  "🛍️ 3D MS READY"
-);
+console.log("🛍️ 3D MS READY");
+    
+
