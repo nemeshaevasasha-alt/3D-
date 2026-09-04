@@ -28,9 +28,280 @@
   <meta property="og:url" content="https://3dms.org/">
 
   <link rel="stylesheet" href="style.css">
+
+
+  <!-- 3D MARKETPLACE BANNER STYLE -->
+
+  <style>
+
+    .marketplace-top-area {
+      width: 100%;
+      padding: 14px;
+      box-sizing: border-box;
+      background: #f5f6fa;
+    }
+
+    .marketplace-banner {
+      position: relative;
+
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      box-sizing: border-box;
+
+      display: flex;
+      align-items: center;
+      gap: 16px;
+
+      padding: 18px 20px;
+
+      border-radius: 20px;
+
+      background:
+        linear-gradient(
+          110deg,
+          #101728 0%,
+          #25266f 50%,
+          #6d32d9 100%
+        );
+
+      color: white;
+      text-decoration: none;
+
+      box-shadow:
+        0 12px 35px rgba(35, 31, 100, 0.25);
+
+      overflow: hidden;
+
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+
+    .marketplace-banner::before {
+      content: "";
+
+      position: absolute;
+
+      width: 180px;
+      height: 180px;
+
+      left: -60px;
+      top: -100px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255, 255, 255, 0.08);
+
+      pointer-events: none;
+    }
+
+
+    .marketplace-banner:hover {
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 18px 45px rgba(35, 31, 100, 0.32);
+    }
+
+
+    .marketplace-banner-logo {
+      position: relative;
+      z-index: 1;
+
+      width: 58px;
+      height: 58px;
+
+      min-width: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 17px;
+
+      background:
+        rgba(255, 255, 255, 0.14);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.18);
+
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+
+    .marketplace-banner-content {
+      position: relative;
+      z-index: 1;
+
+      flex: 1;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 4px;
+    }
+
+
+    .marketplace-banner-new {
+      font-size: 11px;
+      font-weight: 800;
+
+      color: #d9c8ff;
+
+      margin-bottom: 1px;
+    }
+
+
+    .marketplace-banner-content strong {
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+
+    .marketplace-banner-content span {
+      font-size: 13px;
+
+      line-height: 1.5;
+
+      color:
+        rgba(255, 255, 255, 0.78);
+    }
+
+
+    .marketplace-banner-button {
+      position: relative;
+      z-index: 1;
+
+      flex-shrink: 0;
+
+      padding: 11px 16px;
+
+      border-radius: 12px;
+
+      background: white;
+
+      color: #25266f;
+
+      font-size: 13px;
+      font-weight: 900;
+
+      white-space: nowrap;
+    }
+
+
+    @media (max-width: 650px) {
+
+      .marketplace-top-area {
+        padding: 9px;
+      }
+
+      .marketplace-banner {
+        gap: 10px;
+
+        padding: 13px;
+
+        border-radius: 16px;
+      }
+
+      .marketplace-banner-logo {
+        width: 46px;
+        height: 46px;
+
+        min-width: 46px;
+
+        border-radius: 13px;
+
+        font-size: 13px;
+      }
+
+      .marketplace-banner-new {
+        font-size: 9px;
+      }
+
+      .marketplace-banner-content strong {
+        font-size: 14px;
+      }
+
+      .marketplace-banner-content span {
+        font-size: 10px;
+      }
+
+      .marketplace-banner-button {
+        padding: 9px 10px;
+
+        font-size: 10px;
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .marketplace-banner-content span {
+        display: none;
+      }
+
+      .marketplace-banner-button {
+        padding: 9px;
+      }
+
+    }
+
+  </style>
+
 </head>
 
+
 <body>
+
+
+  <!-- ======================================== -->
+  <!-- 3D MARKETPLACE -->
+  <!-- ======================================== -->
+
+  <div class="marketplace-top-area">
+
+    <a
+      href="https://3dmarketplace-ml5r.appwrite.network"
+      class="marketplace-banner"
+    >
+
+      <div class="marketplace-banner-logo">
+        3D
+      </div>
+
+
+      <div class="marketplace-banner-content">
+
+        <div class="marketplace-banner-new">
+          ✨ חדש מבית 3D MS
+        </div>
+
+        <strong>
+          3DMarketplace 🛍️
+        </strong>
+
+        <span>
+          קנו ומכרו מוצרים מודפסים בתלת־ממד מאנשים מכל הארץ
+        </span>
+
+      </div>
+
+
+      <div class="marketplace-banner-button">
+        כניסה ל־Marketplace ←
+      </div>
+
+    </a>
+
+  </div>
+
+
 
   <!-- HEADER -->
 
@@ -121,6 +392,7 @@
         יש לכם רעיון משלכם?
         ספרו לנו מה תרצו שנדפיס.
         <br>
+
         <strong>
           💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!
         </strong>
@@ -262,7 +534,10 @@
 
         <div>
           <h2 id="checkoutTitle">📦 השלמת הזמנה</h2>
-          <small id="checkoutSubtitle">מלאו את הפרטים שלכם</small>
+
+          <small id="checkoutSubtitle">
+            מלאו את הפרטים שלכם
+          </small>
         </div>
 
         <button
@@ -285,7 +560,10 @@
           </h3>
 
           <label>
-            <span id="nameLabel">שם מלא</span>
+
+            <span id="nameLabel">
+              שם מלא
+            </span>
 
             <input
               id="customerName"
@@ -293,10 +571,15 @@
               placeholder="ישראל ישראלי"
               required
             >
+
           </label>
 
+
           <label>
-            <span id="phoneLabel">מספר טלפון</span>
+
+            <span id="phoneLabel">
+              מספר טלפון
+            </span>
 
             <input
               id="customerPhone"
@@ -304,6 +587,7 @@
               placeholder="050-0000000"
               required
             >
+
           </label>
 
         </div>
@@ -324,7 +608,10 @@
               class="delivery-button"
               type="button"
             >
-              <span class="delivery-icon">📦</span>
+
+              <span class="delivery-icon">
+                📦
+              </span>
 
               <strong id="pickupTitle">
                 איסוף עצמי
@@ -333,6 +620,7 @@
               <small id="pickupPrice">
                 חינם
               </small>
+
             </button>
 
 
@@ -341,7 +629,10 @@
               class="delivery-button"
               type="button"
             >
-              <span class="delivery-icon">🚚</span>
+
+              <span class="delivery-icon">
+                🚚
+              </span>
 
               <strong id="deliveryTitle">
                 משלוח
@@ -350,9 +641,11 @@
               <small id="deliveryPriceText">
                 מחיר לפי עיר
               </small>
+
             </button>
 
           </div>
+
 
           <div
             id="deliveryStatus"
@@ -419,7 +712,10 @@
                 class="delivery-button active"
                 type="button"
               >
-                <span class="delivery-icon">🚚</span>
+
+                <span class="delivery-icon">
+                  🚚
+                </span>
 
                 <strong id="regularShippingTitle">
                   משלוח רגיל
@@ -428,6 +724,7 @@
                 <small id="regularShippingTime">
                   1–14 ימי עסקים
                 </small>
+
               </button>
 
 
@@ -436,7 +733,10 @@
                 class="delivery-button express-choice"
                 type="button"
               >
-                <span class="delivery-icon">⚡</span>
+
+                <span class="delivery-icon">
+                  ⚡
+                </span>
 
                 <strong>
                   EXPRESS
@@ -447,9 +747,11 @@
                   <br>
                   +₪4.90
                 </small>
+
               </button>
 
             </div>
+
 
             <div
               id="shippingSpeedStatus"
@@ -502,17 +804,32 @@
 
           <div id="checkoutItems"></div>
 
+
           <div class="checkout-summary">
 
             <div>
-              <span id="checkoutProductsLabel">מוצרים</span>
-              <strong id="checkoutSubtotal">₪0.00</strong>
+              <span id="checkoutProductsLabel">
+                מוצרים
+              </span>
+
+              <strong id="checkoutSubtotal">
+                ₪0.00
+              </strong>
             </div>
 
+
             <div>
-              <span id="checkoutShippingLabel">משלוח / איסוף</span>
-              <strong id="checkoutShipping">טרם נבחר</strong>
+
+              <span id="checkoutShippingLabel">
+                משלוח / איסוף
+              </span>
+
+              <strong id="checkoutShipping">
+                טרם נבחר
+              </strong>
+
             </div>
+
 
             <div
               id="checkoutExpressRow"
@@ -522,9 +839,17 @@
               <strong>₪4.90</strong>
             </div>
 
+
             <div class="checkout-grand-total">
-              <span id="checkoutTotalLabel">סה״כ</span>
-              <strong id="checkoutTotal">₪0.00</strong>
+
+              <span id="checkoutTotalLabel">
+                סה״כ
+              </span>
+
+              <strong id="checkoutTotal">
+                ₪0.00
+              </strong>
+
             </div>
 
           </div>
@@ -556,7 +881,9 @@
 
     <div class="panel small-panel">
 
-      <div class="step-icon">💬</div>
+      <div class="step-icon">
+        💬
+      </div>
 
       <h2 id="whatsappTitle">
         שליחת ההזמנה
@@ -571,6 +898,7 @@
         class="order-preview"
       ></div>
 
+
       <button
         id="openWhatsappButton"
         class="whatsapp-button"
@@ -579,12 +907,14 @@
         🟢 פתיחת WhatsApp ושליחת ההזמנה
       </button>
 
+
       <p
         id="whatsappReminder"
         class="important-message"
       >
         אחרי ששלחתם את ההודעה, חזרו לאתר.
       </p>
+
 
       <button
         id="sentWhatsappButton"
@@ -593,6 +923,7 @@
       >
         ✓ שלחתי את ההזמנה
       </button>
+
 
       <button
         id="backToCheckoutButton"
@@ -616,7 +947,9 @@
 
     <div class="panel small-panel">
 
-      <div class="success-icon">✓</div>
+      <div class="success-icon">
+        ✓
+      </div>
 
       <h2 id="successTitle">
         תודה על ההזמנה! 🎉
@@ -626,6 +959,7 @@
         id="successOrderSummary"
         class="order-preview"
       ></div>
+
 
       <div class="delivery-time-box">
 
@@ -638,6 +972,7 @@
         </p>
 
       </div>
+
 
       <button
         id="backToStoreButton"
@@ -664,6 +999,7 @@
       <div class="panel-header">
 
         <div>
+
           <h2 id="customModalTitle">
             🛠 בנייה עצמית
           </h2>
@@ -671,7 +1007,9 @@
           <small id="customModalSubtitle">
             ספרו לנו מה תרצו שנדפיס
           </small>
+
         </div>
+
 
         <button
           id="closeCustomBuild"
@@ -697,30 +1035,40 @@
         <div class="checkout-section">
 
           <label>
-            <span id="customNameLabel">שם מלא</span>
+
+            <span id="customNameLabel">
+              שם מלא
+            </span>
 
             <input
               id="customName"
               type="text"
               required
             >
+
           </label>
 
 
           <label>
-            <span id="customPhoneLabel">טלפון</span>
+
+            <span id="customPhoneLabel">
+              טלפון
+            </span>
 
             <input
               id="customPhone"
               type="tel"
               required
             >
+
           </label>
 
 
           <label>
 
-            <span id="customColorLabel">צבע</span>
+            <span id="customColorLabel">
+              צבע
+            </span>
 
             <select
               id="customColor"
@@ -763,17 +1111,22 @@
   </div>
 
 
+  <!-- FOOTER -->
+
   <footer>
     <strong>3D MS</strong>
     <span>3D PRODUCTS STORE</span>
   </footer>
 
 
+  <!-- APPWRITE -->
+
   <script
     src="https://cdn.jsdelivr.net/npm/appwrite@17.0.0"
   ></script>
 
   <script src="script.js"></script>
+
 
 </body>
 </html>
