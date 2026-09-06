@@ -20,6 +20,7 @@ const PRODUCTS_COLLECTION_ID = "products";
 const STORE_WHATSAPP = "972585621659";
 
 const EXPRESS_PRICE = 4.90;
+const FREE_SHIPPING_THRESHOLD = 150;
 
 
 /* STATE */
@@ -53,13 +54,13 @@ const translations = {
     heroText: "מוצרים מיוחדים ושימושיים בהדפסת תלת־ממד בישראל",
 
     heroPickup: "📦 איסוף עצמי — חינם",
-    heroDelivery: "🚚 משלוחים לפי עיר",
+    heroDelivery: "🚚 משלוחים לפי עיר • חינם בקנייה מעל ₪150",
     heroExpress: "⚡ EXPRESS — תוספת ₪4.90",
 
     customBuild: "🛠 בנייה עצמית",
 
     customIntro:
-      "יש לכם רעיון משלכם? ספרו לנו מה תרצו שנדפיס.<br><strong>💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!</strong>",
+      "יש לכם רעיון משלכם? ספרו לנו מה תרצו שנדפיס.<br><strong>🎁 בנייה עצמית — חינם!</strong>",
 
     productsTitle: "המוצרים שלנו",
     productsSubtitle: "בחרו מוצר וצבע והוסיפו לסל",
@@ -99,7 +100,7 @@ const translations = {
     pickup: "איסוף עצמי",
     delivery: "משלוח",
 
-    priceByCity: "מחיר לפי עיר",
+    priceByCity: "מחיר לפי עיר • חינם מעל ₪150",
 
     noDeliverySelected:
       "עדיין לא נבחרה אפשרות",
@@ -192,7 +193,7 @@ const translations = {
       "ספרו לנו מה תרצו שנדפיס",
 
     customNotice:
-      "💰 בנייה עצמית בתשלום נוסף החל מ־5 ₪!",
+      "🎁 בנייה עצמית — חינם!",
 
     customPhone:
       "טלפון",
@@ -265,13 +266,13 @@ const translations = {
     heroText: "Unique and useful 3D printed products in Israel",
 
     heroPickup: "📦 Self pickup — Free",
-    heroDelivery: "🚚 Delivery by city",
+    heroDelivery: "🚚 Delivery by city • Free over ₪150",
     heroExpress: "⚡ EXPRESS — +₪4.90",
 
     customBuild: "🛠 Custom Build",
 
     customIntro:
-      "Have your own idea? Tell us what you would like us to print.<br><strong>💰 Custom builds from an additional ₪5!</strong>",
+      "Have your own idea? Tell us what you would like us to print.<br><strong>🎁 Custom builds — Free!</strong>",
 
     productsTitle: "Our Products",
     productsSubtitle: "Choose a product and color and add it to your cart",
@@ -311,7 +312,7 @@ const translations = {
     pickup: "Self Pickup",
     delivery: "Delivery",
 
-    priceByCity: "Price by city",
+    priceByCity: "Price by city • Free over ₪150",
 
     noDeliverySelected:
       "No option selected yet",
@@ -404,7 +405,7 @@ const translations = {
       "Tell us what you would like us to print",
 
     customNotice:
-      "💰 Custom builds from an additional ₪5!",
+      "🎁 Custom builds — Free!",
 
     customPhone:
       "Phone",
@@ -497,6 +498,22 @@ function t(key) {
 
 function money(value) {
   return "₪" + Number(value || 0).toFixed(2);
+}
+
+function getCartSubtotal() {
+  return cart.reduce(function(total, item) {
+    return total + item.price * item.quantity;
+  }, 0);
+}
+
+function hasFreeShipping(subtotal = getCartSubtotal()) {
+  return subtotal >= FREE_SHIPPING_THRESHOLD;
+}
+
+function freeShippingLabel() {
+  return currentLanguage === "he"
+    ? "חינם מעל ₪150"
+    : "Free over ₪150";
 }
 
 
@@ -631,7 +648,7 @@ const customBuildOverlay =
   document.getElementById("customBuildOverlay");
 
 const closeCustomBuild =
-  document.getElementById("closeCustomBuild");
+    document.getElementById("closeCustomBuild");
 
 const customBuildForm =
   document.getElementById("customBuildForm");
@@ -1017,24 +1034,25 @@ function getExpressPrice() {
 
 function calculateTotals() {
 
-  const subtotal =
-    cart.reduce(function(total, item) {
-
-      return total + item.price * item.quantity;
-
-    }, 0);
+  const subtotal = getCartSubtotal();
 
   const delivery = getDelivery();
+
+  const shipping =
+    delivery.type === "delivery" &&
+    hasFreeShipping(subtotal)
+      ? 0
+      : delivery.price;
 
   const express = getExpressPrice();
 
   return {
     subtotal,
-    shipping: delivery.price,
+    shipping,
     express,
     total:
       subtotal +
-      delivery.price +
+      shipping +
       express
   };
 
@@ -1146,7 +1164,9 @@ function renderCart() {
   else if (delivery.type === "delivery") {
 
     shippingElement.textContent =
-      money(delivery.price);
+      totals.shipping === 0 && hasFreeShipping(totals.subtotal)
+        ? freeShippingLabel()
+        : money(totals.shipping);
 
   }
 
@@ -1226,7 +1246,11 @@ function renderCheckoutSummary() {
     checkoutShipping.textContent =
       delivery.name +
       " • " +
-      money(delivery.price);
+      (
+        totals.shipping === 0 && hasFreeShipping(totals.subtotal)
+          ? freeShippingLabel()
+          : money(totals.shipping)
+      );
 
   }
 
@@ -1341,7 +1365,11 @@ function updateDeliveryStatus() {
       "🚚 " +
       city[currentLanguage] +
       " — " +
-      money(city.price);
+      (
+        hasFreeShipping()
+          ? freeShippingLabel()
+          : money(city.price)
+      );
 
   }
 
@@ -1733,8 +1761,6 @@ function updateLanguage() {
   }
 
 }
-
-
 languageButton.addEventListener(
   "click",
   function() {
@@ -1867,7 +1893,12 @@ function buildOrderPreview(order) {
       ": " +
       escapeHTML(city[currentLanguage]) +
       " — " +
-      money(order.shipping);
+      (
+        order.shipping === 0 &&
+        order.subtotal >= FREE_SHIPPING_THRESHOLD
+          ? freeShippingLabel()
+          : money(order.shipping)
+      );
 
     html +=
       "<br>📍 " +
@@ -1990,7 +2021,12 @@ function buildWhatsappMessage(order) {
 
       text +=
         "💵 *Delivery:* " +
-        money(order.shipping) +
+        (
+          order.shipping === 0 &&
+          order.subtotal >= FREE_SHIPPING_THRESHOLD
+            ? "Free (order over ₪150)"
+            : money(order.shipping)
+        ) +
         "\n";
 
       if (order.shippingSpeed === "express") {
@@ -2030,7 +2066,12 @@ function buildWhatsappMessage(order) {
 
     text +=
       "🚚 Delivery: " +
-      money(order.shipping) +
+      (
+        order.shipping === 0 &&
+        order.subtotal >= FREE_SHIPPING_THRESHOLD
+          ? "Free (order over ₪150)"
+          : money(order.shipping)
+      ) +
       "\n";
 
     if (order.express > 0) {
@@ -2118,7 +2159,12 @@ function buildWhatsappMessage(order) {
 
     text +=
       "💵 *מחיר משלוח:* " +
-      money(order.shipping) +
+      (
+        order.shipping === 0 &&
+        order.subtotal >= FREE_SHIPPING_THRESHOLD
+          ? "חינם (קנייה מעל ₪150)"
+          : money(order.shipping)
+      ) +
       "\n";
 
     if (order.shippingSpeed === "express") {
@@ -2158,7 +2204,12 @@ function buildWhatsappMessage(order) {
 
   text +=
     "🚚 משלוח: " +
-    money(order.shipping) +
+    (
+      order.shipping === 0 &&
+      order.subtotal >= FREE_SHIPPING_THRESHOLD
+        ? "חינם (קנייה מעל ₪150)"
+        : money(order.shipping)
+    ) +
     "\n";
 
   if (order.express > 0) {
@@ -2364,8 +2415,6 @@ backToCheckoutButton.onclick = function() {
   checkoutOverlay.classList.remove("hidden");
 
 };
-
-
 /* SUCCESS */
 
 sentWhatsappButton.onclick = function() {
@@ -2475,7 +2524,7 @@ customBuildForm.addEventListener(
         "\n\n";
 
       text +=
-        "💰 I understand that custom builds cost an additional ₪5 or more.";
+        "🎁 Custom build is free.";
 
     }
 
@@ -2505,7 +2554,7 @@ customBuildForm.addEventListener(
         "\n\n";
 
       text +=
-        "💰 ידוע לי שבנייה עצמית כרוכה בתשלום נוסף החל מ־5 ₪.";
+        "🎁 בנייה עצמית — חינם.";
 
     }
 
@@ -2555,5 +2604,3 @@ updateLanguage();
 loadProducts();
 
 console.log("🛍️ 3D MS READY");
-    
-
