@@ -54,7 +54,9 @@ const translations = {
     heroText: "מוצרים מיוחדים ושימושיים בהדפסת תלת־ממד בישראל",
 
     heroPickup: "📦 איסוף עצמי — חינם",
-    heroDelivery: "🚚 משלוחים לפי עיר • חינם בקנייה מעל ₪150",
+    heroDelivery:
+      "🚚 חיפה ₪9.90 • שאר הארץ ₪24.90 עד הדואר • חינם מעל ₪150",
+
     heroExpress: "⚡ EXPRESS — תוספת ₪4.90",
 
     customBuild: "🛠 בנייה עצמית",
@@ -100,7 +102,8 @@ const translations = {
     pickup: "איסוף עצמי",
     delivery: "משלוח",
 
-    priceByCity: "מחיר לפי עיר • חינם מעל ₪150",
+    priceByCity:
+      "חיפה ₪9.90 • שאר הארץ ₪24.90 עד הדואר",
 
     noDeliverySelected:
       "עדיין לא נבחרה אפשרות",
@@ -127,13 +130,13 @@ const translations = {
       "משלוח רגיל",
 
     regularTime:
-      "1–14 ימי עסקים",
+      "1–10 ימי עסקים",
 
     expressTime:
       "יום עסקים 1<br>+₪4.90",
 
     regularSelected:
-      "🚚 נבחר משלוח רגיל — 1–14 ימי עסקים",
+      "🚚 נבחר משלוח רגיל",
 
     expressSelected:
       "⚡ EXPRESS — יום עסקים 1 — תוספת ₪4.90",
@@ -240,7 +243,7 @@ const translations = {
       "⚡ EXPRESS — זמן משלוח משוער: יום עסקים 1.",
 
     successRegular:
-      "🚚 זמן משלוח משוער: 1–14 ימי עסקים.",
+      "🚚 זמן משלוח משוער: 1–10 ימי עסקים (חיפה: יום עסקים 1).",
 
     customColors: [
       "שחור",
@@ -263,31 +266,56 @@ const translations = {
     cart: "🛒 Cart",
 
     heroTitle: "3D Printed Products",
-    heroText: "Unique and useful 3D printed products in Israel",
+    heroText:
+      "Unique and useful 3D printed products in Israel",
 
-    heroPickup: "📦 Self pickup — Free",
-    heroDelivery: "🚚 Delivery by city • Free over ₪150",
-    heroExpress: "⚡ EXPRESS — +₪4.90",
+    heroPickup:
+      "📦 Self pickup — Free",
 
-    customBuild: "🛠 Custom Build",
+    heroDelivery:
+      "🚚 Haifa ₪9.90 • Rest of Israel ₪24.90 to post office • Free over ₪150",
+
+    heroExpress:
+      "⚡ EXPRESS — +₪4.90",
+
+    customBuild:
+      "🛠 Custom Build",
 
     customIntro:
       "Have your own idea? Tell us what you would like us to print.<br><strong>🎁 Custom builds — Free!</strong>",
 
-    productsTitle: "Our Products",
-    productsSubtitle: "Choose a product and color and add it to your cart",
+    productsTitle:
+      "Our Products",
 
-    loadingProducts: "Loading products...",
-    noProducts: "No products available right now",
-    loadingError: "We couldn't load the products",
+    productsSubtitle:
+      "Choose a product and color and add it to your cart",
 
-    chooseColor: "Choose a color",
-    noColor: "No color",
-    addToCart: "🛒 Add to Cart",
+    loadingProducts:
+      "Loading products...",
 
-    cartTitle: "🛒 Your Cart",
-    emptyCartTitle: "Your cart is empty",
-    emptyCartText: "Add a product to get started",
+    noProducts:
+      "No products available right now",
+
+    loadingError:
+      "We couldn't load the products",
+
+    chooseColor:
+      "Choose a color",
+
+    noColor:
+      "No color",
+
+    addToCart:
+      "🛒 Add to Cart",
+
+    cartTitle:
+      "🛒 Your Cart",
+
+    emptyCartTitle:
+      "Your cart is empty",
+
+    emptyCartText:
+      "Add a product to get started",
 
     products: "Products",
     shipping: "Delivery",
@@ -295,24 +323,38 @@ const translations = {
     notSelected: "Not selected",
     free: "Free",
 
-    continueOrder: "Continue to Checkout",
+    continueOrder:
+      "Continue to Checkout",
 
-    checkoutTitle: "📦 Complete Your Order",
-    checkoutSubtitle: "Enter your details",
+    checkoutTitle:
+      "📦 Complete Your Order",
 
-    personalDetails: "👤 Personal Details",
-    fullName: "Full Name",
-    phone: "Phone Number",
+    checkoutSubtitle:
+      "Enter your details",
 
-    namePlaceholder: "Full name",
+    personalDetails:
+      "👤 Personal Details",
+
+    fullName:
+      "Full Name",
+
+    phone:
+      "Phone Number",
+
+    namePlaceholder:
+      "Full name",
 
     deliveryMethod:
       "🚚 How would you like to receive your order?",
 
-    pickup: "Self Pickup",
-    delivery: "Delivery",
+    pickup:
+      "Self Pickup",
 
-    priceByCity: "Price by city • Free over ₪150",
+    delivery:
+      "Delivery",
+
+    priceByCity:
+      "Haifa ₪9.90 • Rest of Israel ₪24.90 to post office",
 
     noDeliverySelected:
       "No option selected yet",
@@ -339,13 +381,13 @@ const translations = {
       "Standard Delivery",
 
     regularTime:
-      "1–14 business days",
+      "1–10 business days",
 
     expressTime:
       "1 business day<br>+₪4.90",
 
     regularSelected:
-      "🚚 Standard delivery selected — 1–14 business days",
+      "🚚 Standard delivery selected",
 
     expressSelected:
       "⚡ EXPRESS — 1 business day — +₪4.90",
@@ -428,7 +470,8 @@ const translations = {
     quantity: "Quantity",
     units: "pcs",
 
-    cartColor: "Color",
+    cartColor:
+      "Color",
 
     cartEmptyAlert:
       "Your cart is empty",
@@ -452,7 +495,7 @@ const translations = {
       "⚡ EXPRESS — estimated delivery time: 1 business day.",
 
     successRegular:
-      "🚚 Estimated delivery time: 1–14 business days.",
+      "🚚 Estimated delivery time: 1–10 business days (Haifa: 1 business day).",
 
     customColors: [
       "Black",
@@ -472,21 +515,53 @@ const translations = {
 
 /* DELIVERY */
 
-const DELIVERY_CITIES = {
+function normalizeCity(city) {
+  return String(city || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[-_]/g, " ")
+    .replace(/\s+/g, " ");
+}
 
-  "haifa": {
-    he: "חיפה",
-    en: "Haifa",
-    price: 9.90
-  },
+function isHaifa(city) {
 
-  "tel-aviv": {
-    he: "תל אביב",
-    en: "Tel Aviv",
-    price: 19.90
+  const value =
+    normalizeCity(city);
+
+  return (
+    value === "חיפה" ||
+    value === "haifa"
+  );
+}
+
+function getCityShippingPrice(city) {
+
+  return isHaifa(city)
+    ? 9.90
+    : 24.90;
+}
+
+function getCityDeliveryTime(city) {
+
+  if (isHaifa(city)) {
+
+    return currentLanguage === "he"
+      ? "יום עסקים 1"
+      : "1 business day";
+
   }
 
-};
+  return currentLanguage === "he"
+    ? "1–10 ימי עסקים"
+    : "1–10 business days";
+}
+
+function postOfficeLabel() {
+
+  return currentLanguage === "he"
+    ? "משלוח עד הדואר"
+    : "Delivery to post office";
+}
 
 
 /* HELPERS */
@@ -500,20 +575,36 @@ function money(value) {
   return "₪" + Number(value || 0).toFixed(2);
 }
 
+
 function getCartSubtotal() {
-  return cart.reduce(function(total, item) {
-    return total + item.price * item.quantity;
-  }, 0);
+
+  return cart.reduce(
+    function(total, item) {
+
+      return total +
+        item.price *
+        item.quantity;
+
+    },
+    0
+  );
 }
 
-function hasFreeShipping(subtotal = getCartSubtotal()) {
-  return subtotal >= FREE_SHIPPING_THRESHOLD;
+
+function hasFreeShipping(
+  subtotal = getCartSubtotal()
+) {
+
+  return subtotal >=
+    FREE_SHIPPING_THRESHOLD;
 }
+
 
 function freeShippingLabel() {
+
   return currentLanguage === "he"
-    ? "חינם מעל ₪150"
-    : "Free over ₪150";
+    ? "חינם בקנייה מעל ₪150"
+    : "Free on orders over ₪150";
 }
 
 
@@ -525,143 +616,306 @@ function escapeHTML(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
-
 }
 
 
 function setText(id, value) {
 
-  const element = document.getElementById(id);
+  const element =
+    document.getElementById(id);
 
   if (element) {
     element.textContent = value;
   }
-
 }
 
 
 function setHTML(id, value) {
 
-  const element = document.getElementById(id);
+  const element =
+    document.getElementById(id);
 
   if (element) {
     element.innerHTML = value;
   }
-
 }
 
 
 /* ELEMENTS */
 
-const productsGrid = document.getElementById("productsGrid");
+const productsGrid =
+  document.getElementById(
+    "productsGrid"
+  );
 
-const languageButton = document.getElementById("languageButton");
+const languageButton =
+  document.getElementById(
+    "languageButton"
+  );
 
-const cartButton = document.getElementById("cartButton");
-const cartCount = document.getElementById("cartCount");
+const cartButton =
+  document.getElementById(
+    "cartButton"
+  );
 
-const cartOverlay = document.getElementById("cartOverlay");
-const closeCart = document.getElementById("closeCart");
+const cartCount =
+  document.getElementById(
+    "cartCount"
+  );
 
-const cartItems = document.getElementById("cartItems");
-const emptyCart = document.getElementById("emptyCart");
+const cartOverlay =
+  document.getElementById(
+    "cartOverlay"
+  );
 
-const subtotalElement = document.getElementById("subtotal");
-const shippingElement = document.getElementById("shipping");
-const expressSummaryRow = document.getElementById("expressSummaryRow");
-const totalElement = document.getElementById("total");
+const closeCart =
+  document.getElementById(
+    "closeCart"
+  );
 
-const checkoutButton = document.getElementById("checkoutButton");
+const cartItems =
+  document.getElementById(
+    "cartItems"
+  );
 
-const checkoutOverlay = document.getElementById("checkoutOverlay");
-const closeCheckout = document.getElementById("closeCheckout");
-const checkoutForm = document.getElementById("checkoutForm");
+const emptyCart =
+  document.getElementById(
+    "emptyCart"
+  );
 
-const customerName = document.getElementById("customerName");
-const customerPhone = document.getElementById("customerPhone");
+const subtotalElement =
+  document.getElementById(
+    "subtotal"
+  );
 
-const pickupButton = document.getElementById("pickupButton");
-const deliveryButton = document.getElementById("deliveryButton");
+const shippingElement =
+  document.getElementById(
+    "shipping"
+  );
 
-const deliveryStatus = document.getElementById("deliveryStatus");
-const deliveryFields = document.getElementById("deliveryFields");
+const expressSummaryRow =
+  document.getElementById(
+    "expressSummaryRow"
+  );
 
-const customerCity = document.getElementById("customerCity");
-const customerAddress = document.getElementById("customerAddress");
-const customerNotes = document.getElementById("customerNotes");
+const totalElement =
+  document.getElementById(
+    "total"
+  );
+
+const checkoutButton =
+  document.getElementById(
+    "checkoutButton"
+  );
+
+const checkoutOverlay =
+  document.getElementById(
+    "checkoutOverlay"
+  );
+
+const closeCheckout =
+  document.getElementById(
+    "closeCheckout"
+  );
+
+const checkoutForm =
+  document.getElementById(
+    "checkoutForm"
+  );
+
+const customerName =
+  document.getElementById(
+    "customerName"
+  );
+
+const customerPhone =
+  document.getElementById(
+    "customerPhone"
+  );
+
+const pickupButton =
+  document.getElementById(
+    "pickupButton"
+  );
+
+const deliveryButton =
+  document.getElementById(
+    "deliveryButton"
+  );
+
+const deliveryStatus =
+  document.getElementById(
+    "deliveryStatus"
+  );
+
+const deliveryFields =
+  document.getElementById(
+    "deliveryFields"
+  );
+
+let customerCity =
+  document.getElementById(
+    "customerCity"
+  );
+
+if (
+  customerCity &&
+  customerCity.tagName === "SELECT"
+) {
+
+  const cityInput =
+    document.createElement(
+      "input"
+    );
+
+  cityInput.id =
+    "customerCity";
+
+  cityInput.type =
+    "text";
+
+  cityInput.autocomplete =
+    "address-level2";
+
+  cityInput.placeholder =
+    currentLanguage === "he"
+      ? "לדוגמה: חיפה, תל אביב, ירושלים..."
+      : "Example: Haifa, Tel Aviv, Jerusalem...";
+
+  customerCity.replaceWith(
+    cityInput
+  );
+
+  customerCity =
+    cityInput;
+}
+
+
+const customerAddress =
+  document.getElementById(
+    "customerAddress"
+  );
+
+const customerNotes =
+  document.getElementById(
+    "customerNotes"
+  );
 
 const regularShippingButton =
-  document.getElementById("regularShippingButton");
+  document.getElementById(
+    "regularShippingButton"
+  );
 
 const expressShippingButton =
-  document.getElementById("expressShippingButton");
+  document.getElementById(
+    "expressShippingButton"
+  );
 
 const shippingSpeedStatus =
-  document.getElementById("shippingSpeedStatus");
+  document.getElementById(
+    "shippingSpeedStatus"
+  );
 
 const checkoutItems =
-  document.getElementById("checkoutItems");
+  document.getElementById(
+    "checkoutItems"
+  );
 
 const checkoutSubtotal =
-  document.getElementById("checkoutSubtotal");
+  document.getElementById(
+    "checkoutSubtotal"
+  );
 
 const checkoutShipping =
-  document.getElementById("checkoutShipping");
+  document.getElementById(
+    "checkoutShipping"
+  );
 
 const checkoutExpressRow =
-  document.getElementById("checkoutExpressRow");
+  document.getElementById(
+    "checkoutExpressRow"
+  );
 
 const checkoutTotal =
-  document.getElementById("checkoutTotal");
+  document.getElementById(
+    "checkoutTotal"
+  );
 
 const whatsappOverlay =
-  document.getElementById("whatsappOverlay");
+  document.getElementById(
+    "whatsappOverlay"
+  );
 
 const finalOrderPreview =
-  document.getElementById("finalOrderPreview");
+  document.getElementById(
+    "finalOrderPreview"
+  );
 
 const openWhatsappButton =
-  document.getElementById("openWhatsappButton");
+  document.getElementById(
+    "openWhatsappButton"
+  );
 
 const sentWhatsappButton =
-  document.getElementById("sentWhatsappButton");
+  document.getElementById(
+    "sentWhatsappButton"
+  );
 
 const backToCheckoutButton =
-  document.getElementById("backToCheckoutButton");
+  document.getElementById(
+    "backToCheckoutButton"
+  );
 
 const successOverlay =
-  document.getElementById("successOverlay");
+  document.getElementById(
+    "successOverlay"
+  );
 
 const successOrderSummary =
-  document.getElementById("successOrderSummary");
+  document.getElementById(
+    "successOrderSummary"
+  );
 
 const finalDeliveryTime =
-  document.getElementById("finalDeliveryTime");
+  document.getElementById(
+    "finalDeliveryTime"
+  );
 
 const backToStoreButton =
-  document.getElementById("backToStoreButton");
+  document.getElementById(
+    "backToStoreButton"
+  );
 
 const customBuildButton =
-  document.getElementById("customBuildButton");
+  document.getElementById(
+    "customBuildButton"
+  );
 
 const customBuildOverlay =
-  document.getElementById("customBuildOverlay");
+  document.getElementById(
+    "customBuildOverlay"
+  );
 
 const closeCustomBuild =
-    document.getElementById("closeCustomBuild");
+  document.getElementById(
+    "closeCustomBuild"
+  );
 
 const customBuildForm =
-  document.getElementById("customBuildForm");
+  document.getElementById(
+    "customBuildForm"
+  );
 
 const customColor =
-  document.getElementById("customColor");
+  document.getElementById(
+    "customColor"
+  );
 
 
 /* PRODUCT LANGUAGE */
 
 function getProductName(product) {
-
-  if (
+    if (
     currentLanguage === "en" &&
     product.nameEn
   ) {
@@ -702,44 +956,62 @@ async function loadProducts() {
         DATABASE_ID,
         PRODUCTS_COLLECTION_ID,
         [
-          Appwrite.Query.equal("active", true)
+          Appwrite.Query.equal(
+            "active",
+            true
+          )
         ]
       );
 
     products =
-      (result.documents || []).map(function(row) {
+      (result.documents || [])
+        .map(function(row) {
 
-        return {
+          return {
 
-          id: row.$id,
+            id: row.$id,
 
-          nameHe:
-            row.name || "מוצר",
+            nameHe:
+              row.name || "מוצר",
 
-          nameEn:
-            String(row.name_en || "").trim(),
+            nameEn:
+              String(
+                row.name_en || ""
+              ).trim(),
 
-          price:
-            Number(row.price || 0),
+            price:
+              Number(
+                row.price || 0
+              ),
 
-          image:
-            row.image || "",
+            image:
+              row.image || "",
 
-          colorsHe:
-            String(row.colors || "")
-              .split(",")
-              .map(color => color.trim())
-              .filter(Boolean),
+            colorsHe:
+              String(
+                row.colors || ""
+              )
+                .split(",")
+                .map(
+                  color =>
+                    color.trim()
+                )
+                .filter(Boolean),
 
-          colorsEn:
-            String(row.colors_en || "")
-              .split(",")
-              .map(color => color.trim())
-              .filter(Boolean)
+            colorsEn:
+              String(
+                row.colors_en || ""
+              )
+                .split(",")
+                .map(
+                  color =>
+                    color.trim()
+                )
+                .filter(Boolean)
 
-        };
+          };
 
-      });
+        });
 
     renderProducts();
 
@@ -780,78 +1052,97 @@ function renderProducts() {
     return;
   }
 
-  products.forEach(function(product) {
 
-    const card = document.createElement("article");
+  products.forEach(
+    function(product) {
 
-    card.className = "product-card";
+      const card =
+        document.createElement(
+          "article"
+        );
 
-    const productName =
-      getProductName(product);
+      card.className =
+        "product-card";
 
-    let colors =
-      getProductColors(product);
+      const productName =
+        getProductName(product);
 
-    if (!colors.length) {
-      colors = [t("noColor")];
-    }
+      let colors =
+        getProductColors(
+          product
+        );
 
-    const colorOptions =
-      colors.map(function(color, index) {
+      if (!colors.length) {
+        colors = [
+          t("noColor")
+        ];
+      }
 
-        return `
-          <option
-            value="${index}"
+
+      const colorOptions =
+        colors.map(
+          function(
+            color,
+            index
+          ) {
+
+            return `
+              <option
+                value="${index}"
+              >
+                ${escapeHTML(color)}
+              </option>
+            `;
+
+          }
+        ).join("");
+
+
+      card.innerHTML = `
+
+        <img
+          class="product-image"
+          src="${escapeHTML(product.image)}"
+          alt="${escapeHTML(productName)}"
+        >
+
+        <div class="product-content">
+
+          <div class="product-name">
+            ${escapeHTML(productName)}
+          </div>
+
+          <div class="product-price">
+            ${money(product.price)}
+          </div>
+
+          <label class="color-label">
+            ${t("chooseColor")}
+          </label>
+
+          <select
+            id="color-${product.id}"
+            class="product-color"
           >
-            ${escapeHTML(color)}
-          </option>
-        `;
+            ${colorOptions}
+          </select>
 
-      }).join("");
+          <button
+            class="add-button"
+            type="button"
+            data-product-id="${product.id}"
+          >
+            ${t("addToCart")}
+          </button>
 
-    card.innerHTML = `
-
-      <img
-        class="product-image"
-        src="${escapeHTML(product.image)}"
-        alt="${escapeHTML(productName)}"
-      >
-
-      <div class="product-content">
-
-        <div class="product-name">
-          ${escapeHTML(productName)}
         </div>
+      `;
 
-        <div class="product-price">
-          ${money(product.price)}
-        </div>
+      productsGrid
+        .appendChild(card);
 
-        <label class="color-label">
-          ${t("chooseColor")}
-        </label>
-
-        <select
-          id="color-${product.id}"
-          class="product-color"
-        >
-          ${colorOptions}
-        </select>
-
-        <button
-          class="add-button"
-          type="button"
-          data-product-id="${product.id}"
-        >
-          ${t("addToCart")}
-        </button>
-
-      </div>
-    `;
-
-    productsGrid.appendChild(card);
-
-  });
+    }
+  );
 
 }
 
@@ -861,46 +1152,68 @@ function renderProducts() {
 function addToCart(productId) {
 
   const product =
-    products.find(item => item.id === productId);
+    products.find(
+      item =>
+        item.id === productId
+    );
 
   if (!product) {
     return;
   }
 
+
   const select =
-    document.getElementById("color-" + productId);
+    document.getElementById(
+      "color-" + productId
+    );
 
   const selectedIndex =
-    select ? Number(select.value) : 0;
+    select
+      ? Number(select.value)
+      : 0;
+
 
   const colorsHe =
     product.colorsHe.length
       ? product.colorsHe
-      : [translations.he.noColor];
+      : [
+          translations
+            .he
+            .noColor
+        ];
+
 
   const colorsEn =
     product.colorsEn.length
       ? product.colorsEn
       : colorsHe;
 
+
   const colorHe =
     colorsHe[selectedIndex] ||
     colorsHe[0] ||
     translations.he.noColor;
 
+
   const colorEn =
     colorsEn[selectedIndex] ||
     colorHe;
 
+
   const existing =
-    cart.find(function(item) {
+    cart.find(
+      function(item) {
 
-      return (
-        item.id === productId &&
-        item.colorHe === colorHe
-      );
+        return (
+          item.id ===
+            productId &&
+          item.colorHe ===
+            colorHe
+        );
 
-    });
+      }
+    );
+
 
   if (existing) {
 
@@ -912,26 +1225,40 @@ function addToCart(productId) {
 
     cart.push({
 
-      id: product.id,
+      id:
+        product.id,
 
-      nameHe: product.nameHe,
-      nameEn: product.nameEn || product.nameHe,
+      nameHe:
+        product.nameHe,
 
-      price: product.price,
-      image: product.image,
+      nameEn:
+        product.nameEn ||
+        product.nameHe,
 
-      colorHe: colorHe,
-      colorEn: colorEn,
+      price:
+        product.price,
 
-      quantity: 1
+      image:
+        product.image,
+
+      colorHe:
+        colorHe,
+
+      colorEn:
+        colorEn,
+
+      quantity:
+        1
 
     });
 
   }
 
+
   renderCart();
 
-  cartOverlay.classList.remove("hidden");
+  cartOverlay.classList
+    .remove("hidden");
 
 }
 
@@ -952,20 +1279,25 @@ function cartItemColor(item) {
 }
 
 
-function changeQuantity(index, amount) {
+function changeQuantity(
+  index,
+  amount
+) {
 
   if (!cart[index]) {
     return;
   }
 
-  cart[index].quantity += amount;
+  cart[index].quantity +=
+    amount;
 
-  if (cart[index].quantity <= 0) {
+  if (
+    cart[index].quantity <= 0
+  ) {
     cart.splice(index, 1);
   }
 
   renderCart();
-
 }
 
 
@@ -974,7 +1306,6 @@ function removeItem(index) {
   cart.splice(index, 1);
 
   renderCart();
-
 }
 
 
@@ -982,37 +1313,57 @@ function removeItem(index) {
 
 function getDelivery() {
 
-  if (deliveryMethod === "pickup") {
+  if (
+    deliveryMethod ===
+    "pickup"
+  ) {
 
     return {
       type: "pickup",
       name: t("pickup"),
-      price: 0
+      price: 0,
+      time: ""
     };
 
   }
 
-  if (deliveryMethod === "delivery") {
+
+  if (
+    deliveryMethod ===
+    "delivery"
+  ) {
 
     const city =
-      DELIVERY_CITIES[customerCity.value];
+      customerCity
+        .value
+        .trim();
 
     if (city) {
 
       return {
         type: "delivery",
-        name: city[currentLanguage],
-        price: city.price
+        name: city,
+        price:
+          getCityShippingPrice(
+            city
+          ),
+        time:
+          getCityDeliveryTime(
+            city
+          )
       };
 
     }
 
   }
 
+
   return {
     type: null,
-    name: t("notSelected"),
-    price: 0
+    name:
+      t("notSelected"),
+    price: 0,
+    time: ""
   };
 
 }
@@ -1021,35 +1372,45 @@ function getDelivery() {
 function getExpressPrice() {
 
   if (
-    deliveryMethod === "delivery" &&
-    shippingSpeed === "express"
+    deliveryMethod ===
+      "delivery" &&
+    shippingSpeed ===
+      "express"
   ) {
+
     return EXPRESS_PRICE;
+
   }
 
   return 0;
-
 }
 
 
 function calculateTotals() {
 
-  const subtotal = getCartSubtotal();
+  const subtotal =
+    getCartSubtotal();
 
-  const delivery = getDelivery();
+  const delivery =
+    getDelivery();
 
   const shipping =
-    delivery.type === "delivery" &&
-    hasFreeShipping(subtotal)
+    delivery.type ===
+      "delivery" &&
+    hasFreeShipping(
+      subtotal
+    )
       ? 0
       : delivery.price;
 
-  const express = getExpressPrice();
+  const express =
+    getExpressPrice();
 
   return {
     subtotal,
     shipping,
     express,
+
     total:
       subtotal +
       shipping +
@@ -1065,108 +1426,153 @@ function renderCart() {
 
   const quantity =
     cart.reduce(
-      (total, item) =>
-        total + item.quantity,
+      (
+        total,
+        item
+      ) =>
+        total +
+        item.quantity,
       0
     );
 
-  cartCount.textContent = quantity;
 
-  cartItems.innerHTML = "";
+  cartCount.textContent =
+    quantity;
 
-  emptyCart.classList.toggle(
-    "hidden",
-    cart.length > 0
+
+  cartItems.innerHTML =
+    "";
+
+
+  emptyCart.classList
+    .toggle(
+      "hidden",
+      cart.length > 0
+    );
+
+
+  cart.forEach(
+    function(
+      item,
+      index
+    ) {
+
+      const row =
+        document.createElement(
+          "div"
+        );
+
+      row.className =
+        "cart-item";
+
+
+      row.innerHTML = `
+
+        <img
+          src="${escapeHTML(item.image)}"
+          alt="${escapeHTML(cartItemName(item))}"
+        >
+
+        <div>
+
+          <div class="cart-item-name">
+            ${escapeHTML(cartItemName(item))}
+          </div>
+
+          <div class="cart-item-info">
+            ${t("cartColor")}:
+            ${escapeHTML(cartItemColor(item))}
+          </div>
+
+          <div class="cart-item-info">
+            ${money(
+              item.price *
+              item.quantity
+            )}
+          </div>
+
+          <div class="quantity-controls">
+
+            <button
+              type="button"
+              data-action="minus"
+              data-index="${index}"
+            >
+              −
+            </button>
+
+            <strong>
+              ${item.quantity}
+            </strong>
+
+            <button
+              type="button"
+              data-action="plus"
+              data-index="${index}"
+            >
+              +
+            </button>
+
+          </div>
+
+        </div>
+
+        <button
+          class="remove-button"
+          type="button"
+          data-action="remove"
+          data-index="${index}"
+        >
+          🗑
+        </button>
+      `;
+
+
+      cartItems.appendChild(
+        row
+      );
+
+    }
   );
 
-  cart.forEach(function(item, index) {
 
-    const row =
-      document.createElement("div");
+  const totals =
+    calculateTotals();
 
-    row.className = "cart-item";
+  const delivery =
+    getDelivery();
 
-    row.innerHTML = `
-
-      <img
-        src="${escapeHTML(item.image)}"
-        alt="${escapeHTML(cartItemName(item))}"
-      >
-
-      <div>
-
-        <div class="cart-item-name">
-          ${escapeHTML(cartItemName(item))}
-        </div>
-
-        <div class="cart-item-info">
-          ${t("cartColor")}:
-          ${escapeHTML(cartItemColor(item))}
-        </div>
-
-        <div class="cart-item-info">
-          ${money(item.price * item.quantity)}
-        </div>
-
-        <div class="quantity-controls">
-
-          <button
-            type="button"
-            data-action="minus"
-            data-index="${index}"
-          >
-            −
-          </button>
-
-          <strong>
-            ${item.quantity}
-          </strong>
-
-          <button
-            type="button"
-            data-action="plus"
-            data-index="${index}"
-          >
-            +
-          </button>
-
-        </div>
-
-      </div>
-
-      <button
-        class="remove-button"
-        type="button"
-        data-action="remove"
-        data-index="${index}"
-      >
-        🗑
-      </button>
-    `;
-
-    cartItems.appendChild(row);
-
-  });
-
-  const totals = calculateTotals();
-  const delivery = getDelivery();
 
   subtotalElement.textContent =
-    money(totals.subtotal);
+    money(
+      totals.subtotal
+    );
 
-  if (deliveryMethod === "pickup") {
+
+  if (
+    deliveryMethod ===
+    "pickup"
+  ) {
 
     shippingElement.textContent =
       t("free");
 
   }
 
-  else if (delivery.type === "delivery") {
+  else if (
+    delivery.type ===
+    "delivery"
+  ) {
 
     shippingElement.textContent =
-      totals.shipping === 0 && hasFreeShipping(totals.subtotal)
+      totals.shipping === 0 &&
+      hasFreeShipping(
+        totals.subtotal
+      )
         ? freeShippingLabel()
-        : money(totals.shipping);
+        : money(
+            totals.shipping
+          );
 
   }
 
@@ -1177,13 +1583,20 @@ function renderCart() {
 
   }
 
-  expressSummaryRow.classList.toggle(
-    "hidden",
-    totals.express === 0
-  );
+
+  expressSummaryRow
+    .classList
+    .toggle(
+      "hidden",
+      totals.express === 0
+    );
+
 
   totalElement.textContent =
-    money(totals.total);
+    money(
+      totals.total
+    );
+
 
   renderCheckoutSummary();
 
@@ -1194,62 +1607,105 @@ function renderCart() {
 
 function renderCheckoutSummary() {
 
-  checkoutItems.innerHTML = "";
+  checkoutItems.innerHTML =
+    "";
 
-  cart.forEach(function(item) {
 
-    const row =
-      document.createElement("div");
+  cart.forEach(
+    function(item) {
 
-    row.className = "checkout-item";
+      const row =
+        document.createElement(
+          "div"
+        );
 
-    row.innerHTML = `
+      row.className =
+        "checkout-item";
 
-      <div>
+
+      row.innerHTML = `
+
+        <div>
+
+          <strong>
+            ${escapeHTML(cartItemName(item))}
+          </strong>
+
+          <br>
+
+          ${escapeHTML(cartItemColor(item))}
+          •
+          ${item.quantity}
+          ${t("units")}
+
+        </div>
 
         <strong>
-          ${escapeHTML(cartItemName(item))}
+          ${money(
+            item.price *
+            item.quantity
+          )}
         </strong>
+      `;
 
-        <br>
 
-        ${escapeHTML(cartItemColor(item))}
-        •
-        ${item.quantity} ${t("units")}
+      checkoutItems
+        .appendChild(row);
 
-      </div>
+    }
+  );
 
-      <strong>
-        ${money(item.price * item.quantity)}
-      </strong>
-    `;
 
-    checkoutItems.appendChild(row);
+  const totals =
+    calculateTotals();
 
-  });
+  const delivery =
+    getDelivery();
 
-  const totals = calculateTotals();
-  const delivery = getDelivery();
 
   checkoutSubtotal.textContent =
-    money(totals.subtotal);
+    money(
+      totals.subtotal
+    );
 
-  if (deliveryMethod === "pickup") {
+
+  if (
+    deliveryMethod ===
+    "pickup"
+  ) {
 
     checkoutShipping.textContent =
       t("pickupSummary");
 
   }
 
-  else if (delivery.type === "delivery") {
+  else if (
+    delivery.type ===
+    "delivery"
+  ) {
 
     checkoutShipping.textContent =
       delivery.name +
       " • " +
       (
-        totals.shipping === 0 && hasFreeShipping(totals.subtotal)
+        totals.shipping === 0 &&
+        hasFreeShipping(
+          totals.subtotal
+        )
           ? freeShippingLabel()
-          : money(totals.shipping)
+          : money(
+              totals.shipping
+            )
+      ) +
+      " • " +
+      delivery.time +
+      (
+        isHaifa(
+          delivery.name
+        )
+          ? ""
+          : " • " +
+            postOfficeLabel()
       );
 
   }
@@ -1261,13 +1717,19 @@ function renderCheckoutSummary() {
 
   }
 
-  checkoutExpressRow.classList.toggle(
-    "hidden",
-    totals.express === 0
-  );
+
+  checkoutExpressRow
+    .classList
+    .toggle(
+      "hidden",
+      totals.express === 0
+    );
+
 
   checkoutTotal.textContent =
-    money(totals.total);
+    money(
+      totals.total
+    );
 
 }
 
@@ -1276,22 +1738,46 @@ function renderCheckoutSummary() {
 
 function selectPickup() {
 
-  deliveryMethod = "pickup";
-  shippingSpeed = "regular";
+  deliveryMethod =
+    "pickup";
 
-  pickupButton.classList.add("active");
-  deliveryButton.classList.remove("active");
+  shippingSpeed =
+    "regular";
 
-  deliveryFields.classList.add("hidden");
 
-  customerCity.required = false;
-  customerAddress.required = false;
+  pickupButton
+    .classList
+    .add("active");
 
-  regularShippingButton.classList.add("active");
-  expressShippingButton.classList.remove("active");
+  deliveryButton
+    .classList
+    .remove("active");
+
+
+  deliveryFields
+    .classList
+    .add("hidden");
+
+
+  customerCity.required =
+    false;
+
+  customerAddress.required =
+    false;
+
+
+  regularShippingButton
+    .classList
+    .add("active");
+
+  expressShippingButton
+    .classList
+    .remove("active");
+
 
   deliveryStatus.textContent =
     t("pickupSelected");
+
 
   renderCart();
 
@@ -1302,15 +1788,30 @@ function selectPickup() {
 
 function selectDelivery() {
 
-  deliveryMethod = "delivery";
+  deliveryMethod =
+    "delivery";
 
-  pickupButton.classList.remove("active");
-  deliveryButton.classList.add("active");
 
-  deliveryFields.classList.remove("hidden");
+  pickupButton
+    .classList
+    .remove("active");
 
-  customerCity.required = true;
-  customerAddress.required = true;
+  deliveryButton
+    .classList
+    .add("active");
+
+
+  deliveryFields
+    .classList
+    .remove("hidden");
+
+
+  customerCity.required =
+    true;
+
+  customerAddress.required =
+    true;
+
 
   updateDeliveryStatus();
 
@@ -1323,13 +1824,23 @@ function selectDelivery() {
 
 function selectRegularShipping() {
 
-  shippingSpeed = "regular";
+  shippingSpeed =
+    "regular";
 
-  regularShippingButton.classList.add("active");
-  expressShippingButton.classList.remove("active");
 
-  shippingSpeedStatus.textContent =
-    t("regularSelected");
+  regularShippingButton
+    .classList
+    .add("active");
+
+  expressShippingButton
+    .classList
+    .remove("active");
+
+
+  shippingSpeedStatus
+    .textContent =
+      t("regularSelected");
+
 
   renderCart();
 
@@ -1338,13 +1849,23 @@ function selectRegularShipping() {
 
 function selectExpressShipping() {
 
-  shippingSpeed = "express";
+  shippingSpeed =
+    "express";
 
-  expressShippingButton.classList.add("active");
-  regularShippingButton.classList.remove("active");
 
-  shippingSpeedStatus.textContent =
-    t("expressSelected");
+  expressShippingButton
+    .classList
+    .add("active");
+
+  regularShippingButton
+    .classList
+    .remove("active");
+
+
+  shippingSpeedStatus
+    .textContent =
+      t("expressSelected");
+
 
   renderCart();
 
@@ -1352,35 +1873,62 @@ function selectExpressShipping() {
 
 
 function updateDeliveryStatus() {
+    const city =
+    customerCity
+      .value
+      .trim();
 
-  const city =
-    DELIVERY_CITIES[customerCity.value];
 
   if (
-    deliveryMethod === "delivery" &&
+    deliveryMethod ===
+      "delivery" &&
     city
   ) {
 
+    const price =
+      hasFreeShipping()
+        ? freeShippingLabel()
+        : money(
+            getCityShippingPrice(
+              city
+            )
+          );
+
+
     deliveryStatus.textContent =
       "🚚 " +
-      city[currentLanguage] +
+      city +
       " — " +
+      price +
+      " • " +
+      getCityDeliveryTime(
+        city
+      ) +
       (
-        hasFreeShipping()
-          ? freeShippingLabel()
-          : money(city.price)
+        isHaifa(city)
+          ? ""
+          : " • " +
+            postOfficeLabel()
       );
 
   }
 
-  else if (deliveryMethod === "delivery") {
+  else if (
+    deliveryMethod ===
+    "delivery"
+  ) {
 
     deliveryStatus.textContent =
-      t("chooseDeliveryCity");
+      currentLanguage === "he"
+        ? "🚚 הכניסו עיר למשלוח"
+        : "🚚 Enter a delivery city";
 
   }
 
-  else if (deliveryMethod === "pickup") {
+  else if (
+    deliveryMethod ===
+    "pickup"
+  ) {
 
     deliveryStatus.textContent =
       t("pickupSelected");
@@ -1404,11 +1952,16 @@ function updateLanguage() {
   const isHebrew =
     currentLanguage === "he";
 
+
   document.documentElement.lang =
     currentLanguage;
 
+
   document.documentElement.dir =
-    isHebrew ? "rtl" : "ltr";
+    isHebrew
+      ? "rtl"
+      : "ltr";
+
 
   document.title =
     isHebrew
@@ -1426,22 +1979,44 @@ function updateLanguage() {
     t("cart")
   );
 
-  setText("heroTitle", t("heroTitle"));
-  setText("heroText", t("heroText"));
 
-  setText("heroPickup", t("heroPickup"));
-  setText("heroDelivery", t("heroDelivery"));
-  setText("heroExpress", t("heroExpress"));
+  setText(
+    "heroTitle",
+    t("heroTitle")
+  );
+
+  setText(
+    "heroText",
+    t("heroText")
+  );
+
+  setText(
+    "heroPickup",
+    t("heroPickup")
+  );
+
+  setText(
+    "heroDelivery",
+    t("heroDelivery")
+  );
+
+  setText(
+    "heroExpress",
+    t("heroExpress")
+  );
+
 
   setText(
     "customBuildButton",
     t("customBuild")
   );
 
+
   setHTML(
     "customBuildIntro",
     t("customIntro")
   );
+
 
   setText(
     "productsTitle",
@@ -1452,6 +2027,7 @@ function updateLanguage() {
     "productsSubtitle",
     t("productsSubtitle")
   );
+
 
   setText(
     "cartTitle",
@@ -1468,6 +2044,7 @@ function updateLanguage() {
     t("emptyCartText")
   );
 
+
   setText(
     "cartProductsLabel",
     t("products")
@@ -1483,10 +2060,12 @@ function updateLanguage() {
     t("total")
   );
 
+
   setText(
     "checkoutButton",
     t("continueOrder")
   );
+
 
   setText(
     "checkoutTitle",
@@ -1497,6 +2076,7 @@ function updateLanguage() {
     "checkoutSubtitle",
     t("checkoutSubtitle")
   );
+
 
   setText(
     "personalTitle",
@@ -1513,8 +2093,10 @@ function updateLanguage() {
     t("phone")
   );
 
+
   customerName.placeholder =
     t("namePlaceholder");
+
 
   setText(
     "deliveryMethodTitle",
@@ -1541,6 +2123,7 @@ function updateLanguage() {
     t("priceByCity")
   );
 
+
   setText(
     "deliveryDetailsTitle",
     t("deliveryDetails")
@@ -1551,16 +2134,12 @@ function updateLanguage() {
     t("city")
   );
 
-  setText(
-    "chooseCityOption",
-    t("chooseCity")
-  );
 
-  customerCity.options[1].text =
-    t("haifa") + " — ₪9.90";
+  customerCity.placeholder =
+    currentLanguage === "he"
+      ? "לדוגמה: חיפה, תל אביב, ירושלים..."
+      : "Example: Haifa, Tel Aviv, Jerusalem...";
 
-  customerCity.options[2].text =
-    t("telAviv") + " — ₪19.90";
 
   setText(
     "shippingSpeedTitle",
@@ -1577,31 +2156,38 @@ function updateLanguage() {
     t("regularTime")
   );
 
+
   setHTML(
     "expressShippingTime",
     t("expressTime")
   );
+
 
   setText(
     "addressLabel",
     t("address")
   );
 
+
   customerAddress.placeholder =
     t("addressPlaceholder");
+
 
   setText(
     "notesLabel",
     t("notes")
   );
 
+
   customerNotes.placeholder =
     t("optional");
+
 
   setText(
     "orderSummaryTitle",
     t("orderSummary")
   );
+
 
   setText(
     "checkoutProductsLabel",
@@ -1618,10 +2204,12 @@ function updateLanguage() {
     t("total")
   );
 
+
   setText(
     "checkoutSubmitButton",
     t("checkoutWhatsapp")
   );
+
 
   setText(
     "whatsappTitle",
@@ -1653,6 +2241,7 @@ function updateLanguage() {
     t("backCheckout")
   );
 
+
   setText(
     "successTitle",
     t("success")
@@ -1667,6 +2256,7 @@ function updateLanguage() {
     "backToStoreButton",
     t("backStore")
   );
+
 
   setText(
     "customModalTitle",
@@ -1703,10 +2293,16 @@ function updateLanguage() {
     t("customDescription")
   );
 
+
   document
-    .getElementById("customDescription")
+    .getElementById(
+      "customDescription"
+    )
     .placeholder =
-      t("customDescriptionPlaceholder");
+      t(
+        "customDescriptionPlaceholder"
+      );
+
 
   setText(
     "customSubmitButton",
@@ -1721,27 +2317,46 @@ function updateLanguage() {
       ${t("chooseCustomColor")}
     </option>`;
 
-  t("customColors").forEach(function(color) {
 
-    const option =
-      document.createElement("option");
+  t("customColors")
+    .forEach(
+      function(color) {
 
-    option.value = color;
-    option.textContent = color;
+        const option =
+          document.createElement(
+            "option"
+          );
 
-    customColor.appendChild(option);
+        option.value =
+          color;
 
-  });
+        option.textContent =
+          color;
+
+        customColor
+          .appendChild(
+            option
+          );
+
+      }
+    );
 
 
   /* DYNAMIC STATUS */
 
   updateDeliveryStatus();
 
-  shippingSpeedStatus.textContent =
-    shippingSpeed === "express"
-      ? t("expressSelected")
-      : t("regularSelected");
+
+  shippingSpeedStatus
+    .textContent =
+      shippingSpeed ===
+        "express"
+        ? t(
+            "expressSelected"
+          )
+        : t(
+            "regularSelected"
+          );
 
 
   /* DYNAMIC CONTENT */
@@ -1752,68 +2367,99 @@ function updateLanguage() {
 
   if (currentOrder) {
 
-    finalOrderPreview.innerHTML =
-      buildOrderPreview(currentOrder);
+    finalOrderPreview
+      .innerHTML =
+        buildOrderPreview(
+          currentOrder
+        );
 
-    successOrderSummary.innerHTML =
-      buildOrderPreview(currentOrder);
+    successOrderSummary
+      .innerHTML =
+        buildOrderPreview(
+          currentOrder
+        );
 
   }
 
 }
-languageButton.addEventListener(
-  "click",
-  function() {
 
-    currentLanguage =
-      currentLanguage === "he"
-        ? "en"
-        : "he";
 
-    localStorage.setItem(
-      "3dms-language",
-      currentLanguage
-    );
+languageButton
+  .addEventListener(
+    "click",
+    function() {
 
-    updateLanguage();
+      currentLanguage =
+        currentLanguage ===
+          "he"
+          ? "en"
+          : "he";
 
-  }
-);
+
+      localStorage.setItem(
+        "3dms-language",
+        currentLanguage
+      );
+
+
+      updateLanguage();
+
+    }
+  );
 
 
 /* BUILD ORDER */
 
 function buildOrder() {
 
-  const totals = calculateTotals();
-  const delivery = getDelivery();
+  const totals =
+    calculateTotals();
+
+  const delivery =
+    getDelivery();
+
 
   return {
 
     name:
-      customerName.value.trim(),
+      customerName
+        .value
+        .trim(),
 
     phone:
-      customerPhone.value.trim(),
+      customerPhone
+        .value
+        .trim(),
 
     deliveryMethod,
 
-    cityKey:
-      customerCity.value,
+    city:
+      customerCity
+        .value
+        .trim(),
 
     shippingSpeed:
-      deliveryMethod === "delivery"
+      deliveryMethod ===
+        "delivery"
         ? shippingSpeed
         : null,
 
     address:
-      customerAddress.value.trim(),
+      customerAddress
+        .value
+        .trim(),
 
     notes:
-      customerNotes.value.trim(),
+      customerNotes
+        .value
+        .trim(),
 
     items:
-      cart.map(item => ({...item})),
+      cart.map(
+        item => ({
+          ...item
+        })
+      ),
 
     subtotal:
       totals.subtotal,
@@ -1834,44 +2480,69 @@ function buildOrder() {
 
 /* ORDER PREVIEW */
 
-function buildOrderPreview(order) {
+function buildOrderPreview(
+  order
+) {
 
   let html = "";
 
+
   html +=
     "👤 <strong>" +
-    escapeHTML(order.name) +
+    escapeHTML(
+      order.name
+    ) +
     "</strong><br>";
+
 
   html +=
     "📱 " +
-    escapeHTML(order.phone) +
+    escapeHTML(
+      order.phone
+    ) +
     "<hr>";
 
-  order.items.forEach(function(item) {
 
-    html +=
-      "🛒 <strong>" +
-      escapeHTML(cartItemName(item)) +
-      "</strong><br>";
+  order.items
+    .forEach(
+      function(item) {
 
-    html +=
-      "🎨 " +
-      escapeHTML(cartItemColor(item)) +
-      " • " +
-      item.quantity +
-      " " +
-      t("units") +
-      "<br>";
+        html +=
+          "🛒 <strong>" +
+          escapeHTML(
+            cartItemName(item)
+          ) +
+          "</strong><br>";
 
-    html +=
-      "💰 " +
-      money(item.price * item.quantity) +
-      "<br><br>";
 
-  });
+        html +=
+          "🎨 " +
+          escapeHTML(
+            cartItemColor(item)
+          ) +
+          " • " +
+          item.quantity +
+          " " +
+          t("units") +
+          "<br>";
 
-  if (order.deliveryMethod === "pickup") {
+
+        html +=
+          "💰 " +
+          money(
+            item.price *
+            item.quantity
+          ) +
+          "<br><br>";
+
+      }
+    );
+
+
+  if (
+    order.deliveryMethod ===
+    "pickup"
+  ) {
 
     html +=
       "📦 <strong>" +
@@ -1884,60 +2555,89 @@ function buildOrderPreview(order) {
 
   else {
 
-    const city =
-      DELIVERY_CITIES[order.cityKey];
-
     html +=
       "🚚 " +
       t("delivery") +
       ": " +
-      escapeHTML(city[currentLanguage]) +
+      escapeHTML(
+        order.city
+      ) +
       " — " +
       (
         order.shipping === 0 &&
-        order.subtotal >= FREE_SHIPPING_THRESHOLD
+        order.subtotal >=
+          FREE_SHIPPING_THRESHOLD
           ? freeShippingLabel()
-          : money(order.shipping)
+          : money(
+              order.shipping
+            )
       );
+
+
+    if (
+      !isHaifa(
+        order.city
+      )
+    ) {
+
+      html +=
+        "<br>📮 " +
+        postOfficeLabel();
+
+    }
+
+
+    html +=
+      "<br>⏱️ " +
+      getCityDeliveryTime(
+        order.city
+      );
+
 
     html +=
       "<br>📍 " +
-      escapeHTML(order.address);
+      escapeHTML(
+        order.address
+      );
 
-    if (order.shippingSpeed === "express") {
+
+    if (
+      order.shippingSpeed ===
+      "express"
+    ) {
 
       html +=
         "<br>⚡ <strong>EXPRESS — " +
         (
-          currentLanguage === "he"
+          currentLanguage ===
+            "he"
             ? "יום עסקים 1"
             : "1 business day"
         ) +
         "</strong>";
 
+
       html +=
         "<br>➕ " +
-        money(order.express);
-
-    }
-
-    else {
-
-      html +=
-        "<br>🚚 " +
-        t("regularTime");
+        money(
+          order.express
+        );
 
     }
 
   }
+
 
   if (order.notes) {
 
     html +=
       "<br>📝 " +
-      escapeHTML(order.notes);
+      escapeHTML(
+        order.notes
+      );
 
   }
+
 
   html +=
     "<hr>💰 <strong>" +
@@ -1946,6 +2646,7 @@ function buildOrderPreview(order) {
     money(order.total) +
     "</strong>";
 
+
   return html;
 
 }
@@ -1953,51 +2654,73 @@ function buildOrderPreview(order) {
 
 /* WHATSAPP ORDER */
 
-function buildWhatsappMessage(order) {
+function buildWhatsappMessage(
+  order
+) {
 
-  if (currentLanguage === "en") {
+  if (
+    currentLanguage ===
+    "en"
+  ) {
 
     let text =
       "🛍️ *New Order - 3D MS*\n\n";
+
 
     text +=
       "👤 *Name:* " +
       order.name +
       "\n";
 
+
     text +=
       "📱 *Phone:* " +
       order.phone +
       "\n\n";
 
+
     text +=
       "📦 *Products:*\n";
 
-    order.items.forEach(function(item) {
 
-      text +=
-        "• " +
-        item.nameEn +
-        "\n";
+    order.items
+      .forEach(
+        function(item) {
 
-      text +=
-        "🎨 Color: " +
-        item.colorEn +
-        "\n";
+          text +=
+            "• " +
+            item.nameEn +
+            "\n";
 
-      text +=
-        "🔢 Quantity: " +
-        item.quantity +
-        "\n";
 
-      text +=
-        "💰 " +
-        money(item.price * item.quantity) +
-        "\n\n";
+          text +=
+            "🎨 Color: " +
+            item.colorEn +
+            "\n";
 
-    });
 
-    if (order.deliveryMethod === "pickup") {
+          text +=
+            "🔢 Quantity: " +
+            item.quantity +
+            "\n";
+
+
+          text +=
+            "💰 " +
+            money(
+              item.price *
+              item.quantity
+            ) +
+            "\n\n";
+
+        }
+      );
+
+
+    if (
+      order.deliveryMethod ===
+      "pickup"
+    ) {
 
       text +=
         "📦 *Self Pickup — Free*\n";
@@ -2006,49 +2729,71 @@ function buildWhatsappMessage(order) {
 
     else {
 
-      const city =
-        DELIVERY_CITIES[order.cityKey];
-
       text +=
         "🚚 *City:* " +
-        city.en +
+        order.city +
         "\n";
+
+
+      if (
+        !isHaifa(
+          order.city
+        )
+      ) {
+
+        text +=
+          "📮 *Delivery:* To post office\n";
+
+      }
+
+
+      text +=
+        "⏱️ *Delivery time:* " +
+        getCityDeliveryTime(
+          order.city
+        ) +
+        "\n";
+
 
       text +=
         "📍 *Address:* " +
         order.address +
         "\n";
 
+
       text +=
-        "💵 *Delivery:* " +
+        "💵 *Delivery price:* " +
         (
           order.shipping === 0 &&
-          order.subtotal >= FREE_SHIPPING_THRESHOLD
+          order.subtotal >=
+            FREE_SHIPPING_THRESHOLD
             ? "Free (order over ₪150)"
-            : money(order.shipping)
+            : money(
+                order.shipping
+              )
         ) +
         "\n";
 
-      if (order.shippingSpeed === "express") {
+
+      if (
+        order.shippingSpeed ===
+        "express"
+      ) {
 
         text +=
           "⚡ *EXPRESS — 1 business day*\n";
 
         text +=
           "➕ *EXPRESS:* " +
-          money(order.express) +
+          money(
+            order.express
+          ) +
           "\n";
 
       }
 
-      else {
-
-        text +=
-          "🚚 *Speed:* Standard delivery — 1–14 business days\n";
-
-      }
-
     }
+
 
     if (order.notes) {
 
@@ -2059,34 +2804,50 @@ function buildWhatsappMessage(order) {
 
     }
 
+
     text +=
       "\n🛍️ Products: " +
-      money(order.subtotal) +
+      money(
+        order.subtotal
+      ) +
       "\n";
+
 
     text +=
       "🚚 Delivery: " +
       (
         order.shipping === 0 &&
-        order.subtotal >= FREE_SHIPPING_THRESHOLD
+        order.subtotal >=
+          FREE_SHIPPING_THRESHOLD
           ? "Free (order over ₪150)"
-          : money(order.shipping)
+          : money(
+              order.shipping
+            )
       ) +
       "\n";
 
-    if (order.express > 0) {
+
+    if (
+      order.express > 0
+    ) {
 
       text +=
         "⚡ EXPRESS: " +
-        money(order.express) +
+        money(
+          order.express
+        ) +
         "\n";
 
     }
 
+
     text +=
       "💰 *Total: " +
-      money(order.total) +
+      money(
+        order.total
+      ) +
       "*";
+
 
     return text;
 
@@ -2098,44 +2859,61 @@ function buildWhatsappMessage(order) {
   let text =
     "🛍️ *הזמנה חדשה - 3D MS*\n\n";
 
+
   text +=
     "👤 *שם:* " +
     order.name +
     "\n";
+
 
   text +=
     "📱 *טלפון:* " +
     order.phone +
     "\n\n";
 
+
   text +=
     "📦 *מוצרים:*\n";
 
-  order.items.forEach(function(item) {
 
-    text +=
-      "• " +
-      item.nameHe +
-      "\n";
+  order.items
+    .forEach(
+      function(item) {
 
-    text +=
-      "🎨 צבע: " +
-      item.colorHe +
-      "\n";
+        text +=
+          "• " +
+          item.nameHe +
+          "\n";
 
-    text +=
-      "🔢 כמות: " +
-      item.quantity +
-      "\n";
 
-    text +=
-      "💰 " +
-      money(item.price * item.quantity) +
-      "\n\n";
+        text +=
+          "🎨 צבע: " +
+          item.colorHe +
+          "\n";
 
-  });
 
-  if (order.deliveryMethod === "pickup") {
+        text +=
+          "🔢 כמות: " +
+          item.quantity +
+          "\n";
+
+
+        text +=
+          "💰 " +
+          money(
+            item.price *
+            item.quantity
+          ) +
+          "\n\n";
+
+      }
+    );
+
+
+  if (
+    order.deliveryMethod ===
+    "pickup"
+  ) {
 
     text +=
       "📦 *איסוף עצמי — חינם*\n";
@@ -2144,49 +2922,71 @@ function buildWhatsappMessage(order) {
 
   else {
 
-    const city =
-      DELIVERY_CITIES[order.cityKey];
-
     text +=
       "🚚 *עיר:* " +
-      city.he +
+      order.city +
       "\n";
+
+
+    if (
+      !isHaifa(
+        order.city
+      )
+    ) {
+
+      text +=
+        "📮 *משלוח:* עד הדואר\n";
+
+    }
+
+
+    text +=
+      "⏱️ *זמן משלוח:* " +
+      getCityDeliveryTime(
+        order.city
+      ) +
+      "\n";
+
 
     text +=
       "📍 *כתובת:* " +
       order.address +
       "\n";
 
+
     text +=
       "💵 *מחיר משלוח:* " +
       (
         order.shipping === 0 &&
-        order.subtotal >= FREE_SHIPPING_THRESHOLD
+        order.subtotal >=
+          FREE_SHIPPING_THRESHOLD
           ? "חינם (קנייה מעל ₪150)"
-          : money(order.shipping)
+          : money(
+              order.shipping
+            )
       ) +
       "\n";
 
-    if (order.shippingSpeed === "express") {
+
+    if (
+      order.shippingSpeed ===
+      "express"
+    ) {
 
       text +=
         "⚡ *EXPRESS — יום עסקים 1*\n";
 
       text +=
         "➕ *תוספת EXPRESS:* " +
-        money(order.express) +
+        money(
+          order.express
+        ) +
         "\n";
 
     }
 
-    else {
-
-      text +=
-        "🚚 *מהירות:* משלוח רגיל — 1–14 ימי עסקים\n";
-
-    }
-
   }
+
 
   if (order.notes) {
 
@@ -2197,40 +2997,54 @@ function buildWhatsappMessage(order) {
 
   }
 
+
   text +=
     "\n🛍️ מוצרים: " +
-    money(order.subtotal) +
+    money(
+      order.subtotal
+    ) +
     "\n";
+
 
   text +=
     "🚚 משלוח: " +
     (
       order.shipping === 0 &&
-      order.subtotal >= FREE_SHIPPING_THRESHOLD
+      order.subtotal >=
+        FREE_SHIPPING_THRESHOLD
         ? "חינם (קנייה מעל ₪150)"
-        : money(order.shipping)
+        : money(
+            order.shipping
+          )
     ) +
     "\n";
 
-  if (order.express > 0) {
+
+  if (
+    order.express > 0
+  ) {
 
     text +=
       "⚡ EXPRESS: " +
-      money(order.express) +
+      money(
+        order.express
+      ) +
       "\n";
 
   }
 
+
   text +=
     "💰 *סה״כ: " +
-    money(order.total) +
+    money(
+      order.total
+    ) +
     "*";
+
 
   return text;
 
 }
-
-
 /* PRODUCT EVENTS */
 
 productsGrid.addEventListener(
@@ -2247,7 +3061,8 @@ productsGrid.addEventListener(
     }
 
     addToCart(
-      button.dataset.productId
+      button.dataset
+        .productId
     );
 
   }
@@ -2269,19 +3084,46 @@ cartItems.addEventListener(
       return;
     }
 
+
     const index =
-      Number(button.dataset.index);
+      Number(
+        button.dataset.index
+      );
 
-    if (button.dataset.action === "plus") {
-      changeQuantity(index, 1);
+
+    if (
+      button.dataset.action ===
+      "plus"
+    ) {
+
+      changeQuantity(
+        index,
+        1
+      );
+
     }
 
-    if (button.dataset.action === "minus") {
-      changeQuantity(index, -1);
+
+    if (
+      button.dataset.action ===
+      "minus"
+    ) {
+
+      changeQuantity(
+        index,
+        -1
+      );
+
     }
 
-    if (button.dataset.action === "remove") {
+
+    if (
+      button.dataset.action ===
+      "remove"
+    ) {
+
       removeItem(index);
+
     }
 
   }
@@ -2290,56 +3132,93 @@ cartItems.addEventListener(
 
 /* OPEN / CLOSE CART */
 
-cartButton.onclick = function() {
-  cartOverlay.classList.remove("hidden");
-};
+cartButton.onclick =
+  function() {
 
-closeCart.onclick = function() {
-  cartOverlay.classList.add("hidden");
-};
+    cartOverlay
+      .classList
+      .remove("hidden");
+
+  };
+
+
+closeCart.onclick =
+  function() {
+
+    cartOverlay
+      .classList
+      .add("hidden");
+
+  };
 
 
 /* CHECKOUT */
 
-checkoutButton.onclick = function() {
+checkoutButton.onclick =
+  function() {
 
-  if (!cart.length) {
+    if (!cart.length) {
 
-    alert(t("cartEmptyAlert"));
-    return;
+      alert(
+        t("cartEmptyAlert")
+      );
 
-  }
+      return;
 
-  cartOverlay.classList.add("hidden");
-  checkoutOverlay.classList.remove("hidden");
-
-  renderCheckoutSummary();
-
-};
+    }
 
 
-closeCheckout.onclick = function() {
-  checkoutOverlay.classList.add("hidden");
-};
+    cartOverlay
+      .classList
+      .add("hidden");
+
+
+    checkoutOverlay
+      .classList
+      .remove("hidden");
+
+
+    renderCheckoutSummary();
+
+  };
+
+
+closeCheckout.onclick =
+  function() {
+
+    checkoutOverlay
+      .classList
+      .add("hidden");
+
+  };
 
 
 /* DELIVERY */
 
-pickupButton.onclick = selectPickup;
-deliveryButton.onclick = selectDelivery;
+pickupButton.onclick =
+  selectPickup;
+
+
+deliveryButton.onclick =
+  selectDelivery;
+
 
 regularShippingButton.onclick =
   selectRegularShipping;
 
+
 expressShippingButton.onclick =
   selectExpressShipping;
 
-customerCity.onchange = function() {
 
-  updateDeliveryStatus();
-  renderCart();
+customerCity.oninput =
+  function() {
 
-};
+    updateDeliveryStatus();
+
+    renderCart();
+
+  };
 
 
 /* CHECKOUT SUBMIT */
@@ -2350,38 +3229,80 @@ checkoutForm.addEventListener(
 
     event.preventDefault();
 
+
     if (!deliveryMethod) {
 
-      alert(t("chooseMethodAlert"));
+      alert(
+        t(
+          "chooseMethodAlert"
+        )
+      );
+
       return;
 
     }
 
-    if (deliveryMethod === "delivery") {
 
-      if (!customerCity.value) {
+    if (
+      deliveryMethod ===
+      "delivery"
+    ) {
 
-        alert(t("chooseCityAlert"));
+      if (
+        !customerCity
+          .value
+          .trim()
+      ) {
+
+        alert(
+          t(
+            "chooseCityAlert"
+          )
+        );
+
         return;
 
       }
 
-      if (!customerAddress.value.trim()) {
 
-        alert(t("addressAlert"));
+      if (
+        !customerAddress
+          .value
+          .trim()
+      ) {
+
+        alert(
+          t(
+            "addressAlert"
+          )
+        );
+
         return;
 
       }
 
     }
 
-    currentOrder = buildOrder();
 
-    finalOrderPreview.innerHTML =
-      buildOrderPreview(currentOrder);
+    currentOrder =
+      buildOrder();
 
-    checkoutOverlay.classList.add("hidden");
-    whatsappOverlay.classList.remove("hidden");
+
+    finalOrderPreview
+      .innerHTML =
+        buildOrderPreview(
+          currentOrder
+        );
+
+
+    checkoutOverlay
+      .classList
+      .add("hidden");
+
+
+    whatsappOverlay
+      .classList
+      .remove("hidden");
 
   }
 );
@@ -2389,218 +3310,350 @@ checkoutForm.addEventListener(
 
 /* OPEN WHATSAPP */
 
-openWhatsappButton.onclick = function() {
+openWhatsappButton.onclick =
+  function() {
 
-  if (!currentOrder) {
-    return;
-  }
-
-  const text =
-    buildWhatsappMessage(currentOrder);
-
-  const url =
-    "https://wa.me/" +
-    STORE_WHATSAPP +
-    "?text=" +
-    encodeURIComponent(text);
-
-  window.open(url, "_blank");
-
-};
-
-
-backToCheckoutButton.onclick = function() {
-
-  whatsappOverlay.classList.add("hidden");
-  checkoutOverlay.classList.remove("hidden");
-
-};
-/* SUCCESS */
-
-sentWhatsappButton.onclick = function() {
-
-  if (!currentOrder) {
-    return;
-  }
-
-  whatsappOverlay.classList.add("hidden");
-
-  successOrderSummary.innerHTML =
-    buildOrderPreview(currentOrder);
-
-  if (currentOrder.deliveryMethod === "pickup") {
-
-    finalDeliveryTime.textContent =
-      t("successPickup");
-
-  }
-
-  else if (currentOrder.shippingSpeed === "express") {
-
-    finalDeliveryTime.textContent =
-      t("successExpress");
-
-  }
-
-  else {
-
-    finalDeliveryTime.textContent =
-      t("successRegular");
-
-  }
-
-  successOverlay.classList.remove("hidden");
-
-};
-
-
-/* CUSTOM BUILD */
-
-customBuildButton.onclick = function() {
-  customBuildOverlay.classList.remove("hidden");
-};
-
-closeCustomBuild.onclick = function() {
-  customBuildOverlay.classList.add("hidden");
-};
-
-
-customBuildForm.addEventListener(
-  "submit",
-  function(event) {
-
-    event.preventDefault();
-
-    const name =
-      document
-        .getElementById("customName")
-        .value
-        .trim();
-
-    const phone =
-      document
-        .getElementById("customPhone")
-        .value
-        .trim();
-
-    const color =
-      document
-        .getElementById("customColor")
-        .value;
-
-    const description =
-      document
-        .getElementById("customDescription")
-        .value
-        .trim();
-
-
-    let text = "";
-
-
-    if (currentLanguage === "en") {
-
-      text =
-        "🛠️ *Custom Build Request - 3D MS*\n\n";
-
-      text +=
-        "👤 *Name:* " +
-        name +
-        "\n";
-
-      text +=
-        "📱 *Phone:* " +
-        phone +
-        "\n";
-
-      text +=
-        "🎨 *Color:* " +
-        color +
-        "\n\n";
-
-      text +=
-        "✏️ *What I would like:*\n" +
-        description +
-        "\n\n";
-
-      text +=
-        "🎁 Custom build is free.";
-
+    if (!currentOrder) {
+      return;
     }
 
-    else {
 
-      text =
-        "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
-
-      text +=
-        "👤 *שם:* " +
-        name +
-        "\n";
-
-      text +=
-        "📱 *טלפון:* " +
-        phone +
-        "\n";
-
-      text +=
-        "🎨 *צבע:* " +
-        color +
-        "\n\n";
-
-      text +=
-        "✏️ *מה אני רוצה:*\n" +
-        description +
-        "\n\n";
-
-      text +=
-        "🎁 בנייה עצמית — חינם.";
-
-    }
+    const text =
+      buildWhatsappMessage(
+        currentOrder
+      );
 
 
     const url =
       "https://wa.me/" +
       STORE_WHATSAPP +
       "?text=" +
-      encodeURIComponent(text);
+      encodeURIComponent(
+        text
+      );
 
-    window.open(url, "_blank");
 
-  }
-);
+    window.open(
+      url,
+      "_blank"
+    );
+
+  };
+
+
+backToCheckoutButton.onclick =
+  function() {
+
+    whatsappOverlay
+      .classList
+      .add("hidden");
+
+
+    checkoutOverlay
+      .classList
+      .remove("hidden");
+
+  };
+
+
+/* SUCCESS */
+
+sentWhatsappButton.onclick =
+  function() {
+
+    if (!currentOrder) {
+      return;
+    }
+
+
+    whatsappOverlay
+      .classList
+      .add("hidden");
+
+
+    successOrderSummary
+      .innerHTML =
+        buildOrderPreview(
+          currentOrder
+        );
+
+
+    if (
+      currentOrder
+        .deliveryMethod ===
+      "pickup"
+    ) {
+
+      finalDeliveryTime
+        .textContent =
+          t(
+            "successPickup"
+          );
+
+    }
+
+    else if (
+      currentOrder
+        .shippingSpeed ===
+      "express"
+    ) {
+
+      finalDeliveryTime
+        .textContent =
+          t(
+            "successExpress"
+          );
+
+    }
+
+    else {
+
+      finalDeliveryTime
+        .textContent =
+          "🚚 " +
+          getCityDeliveryTime(
+            currentOrder.city
+          ) +
+          (
+            isHaifa(
+              currentOrder.city
+            )
+              ? ""
+              : " • " +
+                postOfficeLabel()
+          );
+
+    }
+
+
+    successOverlay
+      .classList
+      .remove("hidden");
+
+  };
+
+
+/* CUSTOM BUILD */
+
+customBuildButton.onclick =
+  function() {
+
+    customBuildOverlay
+      .classList
+      .remove("hidden");
+
+  };
+
+
+closeCustomBuild.onclick =
+  function() {
+
+    customBuildOverlay
+      .classList
+      .add("hidden");
+
+  };
+
+
+customBuildForm
+  .addEventListener(
+    "submit",
+    function(event) {
+
+      event.preventDefault();
+
+
+      const name =
+        document
+          .getElementById(
+            "customName"
+          )
+          .value
+          .trim();
+
+
+      const phone =
+        document
+          .getElementById(
+            "customPhone"
+          )
+          .value
+          .trim();
+
+
+      const color =
+        document
+          .getElementById(
+            "customColor"
+          )
+          .value;
+
+
+      const description =
+        document
+          .getElementById(
+            "customDescription"
+          )
+          .value
+          .trim();
+
+
+      let text = "";
+
+
+      if (
+        currentLanguage ===
+        "en"
+      ) {
+
+        text =
+          "🛠️ *Custom Build Request - 3D MS*\n\n";
+
+
+        text +=
+          "👤 *Name:* " +
+          name +
+          "\n";
+
+
+        text +=
+          "📱 *Phone:* " +
+          phone +
+          "\n";
+
+
+        text +=
+          "🎨 *Color:* " +
+          color +
+          "\n\n";
+
+
+        text +=
+          "✏️ *What I would like:*\n" +
+          description +
+          "\n\n";
+
+
+        text +=
+          "🎁 Custom build is free.";
+
+      }
+
+      else {
+
+        text =
+          "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
+
+
+        text +=
+          "👤 *שם:* " +
+          name +
+          "\n";
+
+
+        text +=
+          "📱 *טלפון:* " +
+          phone +
+          "\n";
+
+
+        text +=
+          "🎨 *צבע:* " +
+          color +
+          "\n\n";
+
+
+        text +=
+          "✏️ *מה אני רוצה:*\n" +
+          description +
+          "\n\n";
+
+
+        text +=
+          "🎁 בנייה עצמית — חינם.";
+
+      }
+
+
+      const url =
+        "https://wa.me/" +
+        STORE_WHATSAPP +
+        "?text=" +
+        encodeURIComponent(
+          text
+        );
+
+
+      window.open(
+        url,
+        "_blank"
+      );
+
+    }
+  );
 
 
 /* RESET */
 
-backToStoreButton.onclick = function() {
+backToStoreButton.onclick =
+  function() {
 
-  cart = [];
+    cart = [];
 
-  deliveryMethod = null;
-  shippingSpeed = "regular";
-  currentOrder = null;
+    deliveryMethod =
+      null;
 
-  checkoutForm.reset();
+    shippingSpeed =
+      "regular";
 
-  pickupButton.classList.remove("active");
-  deliveryButton.classList.remove("active");
+    currentOrder =
+      null;
 
-  deliveryFields.classList.add("hidden");
 
-  regularShippingButton.classList.add("active");
-  expressShippingButton.classList.remove("active");
+    checkoutForm.reset();
 
-  successOverlay.classList.add("hidden");
 
-  updateLanguage();
+    pickupButton
+      .classList
+      .remove("active");
 
-};
+
+    deliveryButton
+      .classList
+      .remove("active");
+
+
+    deliveryFields
+      .classList
+      .add("hidden");
+
+
+    regularShippingButton
+      .classList
+      .add("active");
+
+
+    expressShippingButton
+      .classList
+      .remove("active");
+
+
+    successOverlay
+      .classList
+      .add("hidden");
+
+
+    updateLanguage();
+
+  };
 
 
 /* START */
 
 updateLanguage();
+
 loadProducts();
 
-console.log("🛍️ 3D MS READY");
+console.log(
+  "🛍️ 3D MS READY"
+);
