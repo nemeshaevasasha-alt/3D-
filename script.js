@@ -54,15 +54,13 @@ const translations = {
     heroText: "מוצרים מיוחדים ושימושיים בהדפסת תלת־ממד בישראל",
 
     heroPickup: "📦 איסוף עצמי — חינם",
-    heroDelivery:
-      "🚚 חיפה ₪9.90 • שאר הארץ ₪24.90 עד הדואר • חינם מעל ₪150",
-
+    heroDelivery: "🚚 חיפה ₪9.90 • שאר הארץ ₪24.90 עד הדואר • חינם מעל ₪150",
     heroExpress: "⚡ EXPRESS — תוספת ₪4.90",
 
     customBuild: "🛠 בנייה עצמית",
 
     customIntro:
-      "יש לכם רעיון משלכם? ספרו לנו מה תרצו שנדפיס.<br><strong>🎁 בנייה עצמית — חינם!</strong>",
+      "יש לכם רעיון משלכם? ספרו לנו מה תרצו שנדפיס.<br><strong>🎁 בנייה עצמית ללא תוספת תשלום!</strong>",
 
     productsTitle: "המוצרים שלנו",
     productsSubtitle: "בחרו מוצר וצבע והוסיפו לסל",
@@ -102,8 +100,7 @@ const translations = {
     pickup: "איסוף עצמי",
     delivery: "משלוח",
 
-    priceByCity:
-      "חיפה ₪9.90 • שאר הארץ ₪24.90 עד הדואר",
+    priceByCity: "חיפה ₪9.90 • שאר הארץ ₪24.90 עד הדואר",
 
     noDeliverySelected:
       "עדיין לא נבחרה אפשרות",
@@ -196,7 +193,7 @@ const translations = {
       "ספרו לנו מה תרצו שנדפיס",
 
     customNotice:
-      "🎁 בנייה עצמית — חינם!",
+      "🎁 בנייה עצמית ללא תוספת תשלום!",
 
     customPhone:
       "טלפון",
@@ -266,56 +263,31 @@ const translations = {
     cart: "🛒 Cart",
 
     heroTitle: "3D Printed Products",
-    heroText:
-      "Unique and useful 3D printed products in Israel",
+    heroText: "Unique and useful 3D printed products in Israel",
 
-    heroPickup:
-      "📦 Self pickup — Free",
+    heroPickup: "📦 Self pickup — Free",
+    heroDelivery: "🚚 Haifa ₪9.90 • Rest of Israel ₪24.90 to post office • Free over ₪150",
+    heroExpress: "⚡ EXPRESS — +₪4.90",
 
-    heroDelivery:
-      "🚚 Haifa ₪9.90 • Rest of Israel ₪24.90 to post office • Free over ₪150",
-
-    heroExpress:
-      "⚡ EXPRESS — +₪4.90",
-
-    customBuild:
-      "🛠 Custom Build",
+    customBuild: "🛠 Custom Build",
 
     customIntro:
-      "Have your own idea? Tell us what you would like us to print.<br><strong>🎁 Custom builds — Free!</strong>",
+      "Have your own idea? Tell us what you would like us to print.<br><strong>🎁 Custom builds — no additional charge!</strong>",
 
-    productsTitle:
-      "Our Products",
+    productsTitle: "Our Products",
+    productsSubtitle: "Choose a product and color and add it to your cart",
 
-    productsSubtitle:
-      "Choose a product and color and add it to your cart",
+    loadingProducts: "Loading products...",
+    noProducts: "No products available right now",
+    loadingError: "We couldn't load the products",
 
-    loadingProducts:
-      "Loading products...",
+    chooseColor: "Choose a color",
+    noColor: "No color",
+    addToCart: "🛒 Add to Cart",
 
-    noProducts:
-      "No products available right now",
-
-    loadingError:
-      "We couldn't load the products",
-
-    chooseColor:
-      "Choose a color",
-
-    noColor:
-      "No color",
-
-    addToCart:
-      "🛒 Add to Cart",
-
-    cartTitle:
-      "🛒 Your Cart",
-
-    emptyCartTitle:
-      "Your cart is empty",
-
-    emptyCartText:
-      "Add a product to get started",
+    cartTitle: "🛒 Your Cart",
+    emptyCartTitle: "Your cart is empty",
+    emptyCartText: "Add a product to get started",
 
     products: "Products",
     shipping: "Delivery",
@@ -323,38 +295,24 @@ const translations = {
     notSelected: "Not selected",
     free: "Free",
 
-    continueOrder:
-      "Continue to Checkout",
+    continueOrder: "Continue to Checkout",
 
-    checkoutTitle:
-      "📦 Complete Your Order",
+    checkoutTitle: "📦 Complete Your Order",
+    checkoutSubtitle: "Enter your details",
 
-    checkoutSubtitle:
-      "Enter your details",
+    personalDetails: "👤 Personal Details",
+    fullName: "Full Name",
+    phone: "Phone Number",
 
-    personalDetails:
-      "👤 Personal Details",
-
-    fullName:
-      "Full Name",
-
-    phone:
-      "Phone Number",
-
-    namePlaceholder:
-      "Full name",
+    namePlaceholder: "Full name",
 
     deliveryMethod:
       "🚚 How would you like to receive your order?",
 
-    pickup:
-      "Self Pickup",
+    pickup: "Self Pickup",
+    delivery: "Delivery",
 
-    delivery:
-      "Delivery",
-
-    priceByCity:
-      "Haifa ₪9.90 • Rest of Israel ₪24.90 to post office",
+    priceByCity: "Haifa ₪9.90 • Rest of Israel ₪24.90 to post office",
 
     noDeliverySelected:
       "No option selected yet",
@@ -447,7 +405,7 @@ const translations = {
       "Tell us what you would like us to print",
 
     customNotice:
-      "🎁 Custom builds — Free!",
+      "🎁 Custom builds — no additional charge!",
 
     customPhone:
       "Phone",
@@ -470,8 +428,7 @@ const translations = {
     quantity: "Quantity",
     units: "pcs",
 
-    cartColor:
-      "Color",
+    cartColor: "Color",
 
     cartEmptyAlert:
       "Your cart is empty",
@@ -524,44 +481,25 @@ function normalizeCity(city) {
 }
 
 function isHaifa(city) {
-
-  const value =
-    normalizeCity(city);
-
-  return (
-    value === "חיפה" ||
-    value === "haifa"
-  );
+  const value = normalizeCity(city);
+  return value === "חיפה" || value === "haifa";
 }
 
 function getCityShippingPrice(city) {
-
-  return isHaifa(city)
-    ? 9.90
-    : 24.90;
+  return isHaifa(city) ? 9.90 : 24.90;
 }
 
 function getCityDeliveryTime(city) {
-
   if (isHaifa(city)) {
-
-    return currentLanguage === "he"
-      ? "יום עסקים 1"
-      : "1 business day";
-
+    return currentLanguage === "he" ? "יום עסקים 1" : "1 business day";
   }
-
-  return currentLanguage === "he"
-    ? "1–10 ימי עסקים"
-    : "1–10 business days";
+  return currentLanguage === "he" ? "1–10 ימי עסקים" : "1–10 business days";
 }
 
 function postOfficeLabel() {
-
-  return currentLanguage === "he"
-    ? "משלוח עד הדואר"
-    : "Delivery to post office";
+  return currentLanguage === "he" ? "משלוח עד הדואר" : "Delivery to post office";
 }
+
 
 
 /* HELPERS */
@@ -575,36 +513,18 @@ function money(value) {
   return "₪" + Number(value || 0).toFixed(2);
 }
 
-
 function getCartSubtotal() {
-
-  return cart.reduce(
-    function(total, item) {
-
-      return total +
-        item.price *
-        item.quantity;
-
-    },
-    0
-  );
+  return cart.reduce(function(total, item) {
+    return total + item.price * item.quantity;
+  }, 0);
 }
 
-
-function hasFreeShipping(
-  subtotal = getCartSubtotal()
-) {
-
-  return subtotal >=
-    FREE_SHIPPING_THRESHOLD;
+function hasFreeShipping(subtotal = getCartSubtotal()) {
+  return subtotal >= FREE_SHIPPING_THRESHOLD;
 }
-
 
 function freeShippingLabel() {
-
-  return currentLanguage === "he"
-    ? "חינם בקנייה מעל ₪150"
-    : "Free on orders over ₪150";
+  return currentLanguage === "he" ? "חינם בקנייה מעל ₪150" : "Free on orders over ₪150";
 }
 
 
@@ -616,306 +536,155 @@ function escapeHTML(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+
 }
 
 
 function setText(id, value) {
 
-  const element =
-    document.getElementById(id);
+  const element = document.getElementById(id);
 
   if (element) {
     element.textContent = value;
   }
+
 }
 
 
 function setHTML(id, value) {
 
-  const element =
-    document.getElementById(id);
+  const element = document.getElementById(id);
 
   if (element) {
     element.innerHTML = value;
   }
+
 }
 
 
 /* ELEMENTS */
 
-const productsGrid =
-  document.getElementById(
-    "productsGrid"
-  );
+const productsGrid = document.getElementById("productsGrid");
 
-const languageButton =
-  document.getElementById(
-    "languageButton"
-  );
+const languageButton = document.getElementById("languageButton");
 
-const cartButton =
-  document.getElementById(
-    "cartButton"
-  );
+const cartButton = document.getElementById("cartButton");
+const cartCount = document.getElementById("cartCount");
 
-const cartCount =
-  document.getElementById(
-    "cartCount"
-  );
+const cartOverlay = document.getElementById("cartOverlay");
+const closeCart = document.getElementById("closeCart");
 
-const cartOverlay =
-  document.getElementById(
-    "cartOverlay"
-  );
+const cartItems = document.getElementById("cartItems");
+const emptyCart = document.getElementById("emptyCart");
 
-const closeCart =
-  document.getElementById(
-    "closeCart"
-  );
+const subtotalElement = document.getElementById("subtotal");
+const shippingElement = document.getElementById("shipping");
+const expressSummaryRow = document.getElementById("expressSummaryRow");
+const totalElement = document.getElementById("total");
 
-const cartItems =
-  document.getElementById(
-    "cartItems"
-  );
+const checkoutButton = document.getElementById("checkoutButton");
 
-const emptyCart =
-  document.getElementById(
-    "emptyCart"
-  );
+const checkoutOverlay = document.getElementById("checkoutOverlay");
+const closeCheckout = document.getElementById("closeCheckout");
+const checkoutForm = document.getElementById("checkoutForm");
 
-const subtotalElement =
-  document.getElementById(
-    "subtotal"
-  );
+const customerName = document.getElementById("customerName");
+const customerPhone = document.getElementById("customerPhone");
 
-const shippingElement =
-  document.getElementById(
-    "shipping"
-  );
+const pickupButton = document.getElementById("pickupButton");
+const deliveryButton = document.getElementById("deliveryButton");
 
-const expressSummaryRow =
-  document.getElementById(
-    "expressSummaryRow"
-  );
+const deliveryStatus = document.getElementById("deliveryStatus");
+const deliveryFields = document.getElementById("deliveryFields");
 
-const totalElement =
-  document.getElementById(
-    "total"
-  );
+let customerCity = document.getElementById("customerCity");
 
-const checkoutButton =
-  document.getElementById(
-    "checkoutButton"
-  );
-
-const checkoutOverlay =
-  document.getElementById(
-    "checkoutOverlay"
-  );
-
-const closeCheckout =
-  document.getElementById(
-    "closeCheckout"
-  );
-
-const checkoutForm =
-  document.getElementById(
-    "checkoutForm"
-  );
-
-const customerName =
-  document.getElementById(
-    "customerName"
-  );
-
-const customerPhone =
-  document.getElementById(
-    "customerPhone"
-  );
-
-const pickupButton =
-  document.getElementById(
-    "pickupButton"
-  );
-
-const deliveryButton =
-  document.getElementById(
-    "deliveryButton"
-  );
-
-const deliveryStatus =
-  document.getElementById(
-    "deliveryStatus"
-  );
-
-const deliveryFields =
-  document.getElementById(
-    "deliveryFields"
-  );
-
-let customerCity =
-  document.getElementById(
-    "customerCity"
-  );
-
-if (
-  customerCity &&
-  customerCity.tagName === "SELECT"
-) {
-
-  const cityInput =
-    document.createElement(
-      "input"
-    );
-
-  cityInput.id =
-    "customerCity";
-
-  cityInput.type =
-    "text";
-
-  cityInput.autocomplete =
-    "address-level2";
-
-  cityInput.placeholder =
-    currentLanguage === "he"
-      ? "לדוגמה: חיפה, תל אביב, ירושלים..."
-      : "Example: Haifa, Tel Aviv, Jerusalem...";
-
-  customerCity.replaceWith(
-    cityInput
-  );
-
-  customerCity =
-    cityInput;
+if (customerCity && customerCity.tagName === "SELECT") {
+  const cityInput = document.createElement("input");
+  cityInput.id = "customerCity";
+  cityInput.type = "text";
+  cityInput.autocomplete = "address-level2";
+  cityInput.placeholder = currentLanguage === "he"
+    ? "לדוגמה: חיפה, תל אביב, ירושלים..."
+    : "Example: Haifa, Tel Aviv, Jerusalem...";
+  customerCity.replaceWith(cityInput);
+  customerCity = cityInput;
 }
-
-
-const customerAddress =
-  document.getElementById(
-    "customerAddress"
-  );
-
-const customerNotes =
-  document.getElementById(
-    "customerNotes"
-  );
+const customerAddress = document.getElementById("customerAddress");
+const customerNotes = document.getElementById("customerNotes");
 
 const regularShippingButton =
-  document.getElementById(
-    "regularShippingButton"
-  );
+  document.getElementById("regularShippingButton");
 
 const expressShippingButton =
-  document.getElementById(
-    "expressShippingButton"
-  );
+  document.getElementById("expressShippingButton");
 
 const shippingSpeedStatus =
-  document.getElementById(
-    "shippingSpeedStatus"
-  );
+  document.getElementById("shippingSpeedStatus");
 
 const checkoutItems =
-  document.getElementById(
-    "checkoutItems"
-  );
+  document.getElementById("checkoutItems");
 
 const checkoutSubtotal =
-  document.getElementById(
-    "checkoutSubtotal"
-  );
+  document.getElementById("checkoutSubtotal");
 
 const checkoutShipping =
-  document.getElementById(
-    "checkoutShipping"
-  );
+  document.getElementById("checkoutShipping");
 
 const checkoutExpressRow =
-  document.getElementById(
-    "checkoutExpressRow"
-  );
+  document.getElementById("checkoutExpressRow");
 
 const checkoutTotal =
-  document.getElementById(
-    "checkoutTotal"
-  );
+  document.getElementById("checkoutTotal");
 
 const whatsappOverlay =
-  document.getElementById(
-    "whatsappOverlay"
-  );
+  document.getElementById("whatsappOverlay");
 
 const finalOrderPreview =
-  document.getElementById(
-    "finalOrderPreview"
-  );
+  document.getElementById("finalOrderPreview");
 
 const openWhatsappButton =
-  document.getElementById(
-    "openWhatsappButton"
-  );
+  document.getElementById("openWhatsappButton");
 
 const sentWhatsappButton =
-  document.getElementById(
-    "sentWhatsappButton"
-  );
+  document.getElementById("sentWhatsappButton");
 
 const backToCheckoutButton =
-  document.getElementById(
-    "backToCheckoutButton"
-  );
+  document.getElementById("backToCheckoutButton");
 
 const successOverlay =
-  document.getElementById(
-    "successOverlay"
-  );
+  document.getElementById("successOverlay");
 
 const successOrderSummary =
-  document.getElementById(
-    "successOrderSummary"
-  );
+  document.getElementById("successOrderSummary");
 
 const finalDeliveryTime =
-  document.getElementById(
-    "finalDeliveryTime"
-  );
+  document.getElementById("finalDeliveryTime");
 
 const backToStoreButton =
-  document.getElementById(
-    "backToStoreButton"
-  );
+  document.getElementById("backToStoreButton");
 
 const customBuildButton =
-  document.getElementById(
-    "customBuildButton"
-  );
+  document.getElementById("customBuildButton");
 
 const customBuildOverlay =
-  document.getElementById(
-    "customBuildOverlay"
-  );
+  document.getElementById("customBuildOverlay");
 
 const closeCustomBuild =
-  document.getElementById(
-    "closeCustomBuild"
-  );
+  document.getElementById("closeCustomBuild");
 
 const customBuildForm =
-  document.getElementById(
-    "customBuildForm"
-  );
+  document.getElementById("customBuildForm");
 
 const customColor =
-  document.getElementById(
-    "customColor"
-  );
+  document.getElementById("customColor");
 
 
 /* PRODUCT LANGUAGE */
 
 function getProductName(product) {
-    if (
+
+  if (
     currentLanguage === "en" &&
     product.nameEn
   ) {
@@ -956,62 +725,44 @@ async function loadProducts() {
         DATABASE_ID,
         PRODUCTS_COLLECTION_ID,
         [
-          Appwrite.Query.equal(
-            "active",
-            true
-          )
+          Appwrite.Query.equal("active", true)
         ]
       );
 
     products =
-      (result.documents || [])
-        .map(function(row) {
+      (result.documents || []).map(function(row) {
 
-          return {
+        return {
 
-            id: row.$id,
+          id: row.$id,
 
-            nameHe:
-              row.name || "מוצר",
+          nameHe:
+            row.name || "מוצר",
 
-            nameEn:
-              String(
-                row.name_en || ""
-              ).trim(),
+          nameEn:
+            String(row.name_en || "").trim(),
 
-            price:
-              Number(
-                row.price || 0
-              ),
+          price:
+            Number(row.price || 0),
 
-            image:
-              row.image || "",
+          image:
+            row.image || "",
 
-            colorsHe:
-              String(
-                row.colors || ""
-              )
-                .split(",")
-                .map(
-                  color =>
-                    color.trim()
-                )
-                .filter(Boolean),
+          colorsHe:
+            String(row.colors || "")
+              .split(",")
+              .map(color => color.trim())
+              .filter(Boolean),
 
-            colorsEn:
-              String(
-                row.colors_en || ""
-              )
-                .split(",")
-                .map(
-                  color =>
-                    color.trim()
-                )
-                .filter(Boolean)
+          colorsEn:
+            String(row.colors_en || "")
+              .split(",")
+              .map(color => color.trim())
+              .filter(Boolean)
 
-          };
+        };
 
-        });
+      });
 
     renderProducts();
 
@@ -1052,97 +803,78 @@ function renderProducts() {
     return;
   }
 
+  products.forEach(function(product) {
 
-  products.forEach(
-    function(product) {
+    const card = document.createElement("article");
 
-      const card =
-        document.createElement(
-          "article"
-        );
+    card.className = "product-card";
 
-      card.className =
-        "product-card";
+    const productName =
+      getProductName(product);
 
-      const productName =
-        getProductName(product);
+    let colors =
+      getProductColors(product);
 
-      let colors =
-        getProductColors(
-          product
-        );
-
-      if (!colors.length) {
-        colors = [
-          t("noColor")
-        ];
-      }
-
-
-      const colorOptions =
-        colors.map(
-          function(
-            color,
-            index
-          ) {
-
-            return `
-              <option
-                value="${index}"
-              >
-                ${escapeHTML(color)}
-              </option>
-            `;
-
-          }
-        ).join("");
-
-
-      card.innerHTML = `
-
-        <img
-          class="product-image"
-          src="${escapeHTML(product.image)}"
-          alt="${escapeHTML(productName)}"
-        >
-
-        <div class="product-content">
-
-          <div class="product-name">
-            ${escapeHTML(productName)}
-          </div>
-
-          <div class="product-price">
-            ${money(product.price)}
-          </div>
-
-          <label class="color-label">
-            ${t("chooseColor")}
-          </label>
-
-          <select
-            id="color-${product.id}"
-            class="product-color"
-          >
-            ${colorOptions}
-          </select>
-
-          <button
-            class="add-button"
-            type="button"
-            data-product-id="${product.id}"
-          >
-            ${t("addToCart")}
-          </button>
-
-        </div>
-      `;
-
-      productsGrid
-        .appendChild(card);
-
+    if (!colors.length) {
+      colors = [t("noColor")];
     }
-  );
+
+    const colorOptions =
+      colors.map(function(color, index) {
+
+        return `
+          <option
+            value="${index}"
+          >
+            ${escapeHTML(color)}
+          </option>
+        `;
+
+      }).join("");
+
+    card.innerHTML = `
+
+      <img
+        class="product-image"
+        src="${escapeHTML(product.image)}"
+        alt="${escapeHTML(productName)}"
+      >
+
+      <div class="product-content">
+
+        <div class="product-name">
+          ${escapeHTML(productName)}
+        </div>
+
+        <div class="product-price">
+          ${money(product.price)}
+        </div>
+
+        <label class="color-label">
+          ${t("chooseColor")}
+        </label>
+
+        <select
+          id="color-${product.id}"
+          class="product-color"
+        >
+          ${colorOptions}
+        </select>
+
+        <button
+          class="add-button"
+          type="button"
+          data-product-id="${product.id}"
+        >
+          ${t("addToCart")}
+        </button>
+
+      </div>
+    `;
+
+    productsGrid.appendChild(card);
+
+  });
 
 }
 
@@ -1152,68 +884,46 @@ function renderProducts() {
 function addToCart(productId) {
 
   const product =
-    products.find(
-      item =>
-        item.id === productId
-    );
+    products.find(item => item.id === productId);
 
   if (!product) {
     return;
   }
 
-
   const select =
-    document.getElementById(
-      "color-" + productId
-    );
+    document.getElementById("color-" + productId);
 
   const selectedIndex =
-    select
-      ? Number(select.value)
-      : 0;
-
+    select ? Number(select.value) : 0;
 
   const colorsHe =
     product.colorsHe.length
       ? product.colorsHe
-      : [
-          translations
-            .he
-            .noColor
-        ];
-
+      : [translations.he.noColor];
 
   const colorsEn =
     product.colorsEn.length
       ? product.colorsEn
       : colorsHe;
 
-
   const colorHe =
     colorsHe[selectedIndex] ||
     colorsHe[0] ||
     translations.he.noColor;
 
-
   const colorEn =
     colorsEn[selectedIndex] ||
     colorHe;
 
-
   const existing =
-    cart.find(
-      function(item) {
+    cart.find(function(item) {
 
-        return (
-          item.id ===
-            productId &&
-          item.colorHe ===
-            colorHe
-        );
+      return (
+        item.id === productId &&
+        item.colorHe === colorHe
+      );
 
-      }
-    );
-
+    });
 
   if (existing) {
 
@@ -1225,40 +935,26 @@ function addToCart(productId) {
 
     cart.push({
 
-      id:
-        product.id,
+      id: product.id,
 
-      nameHe:
-        product.nameHe,
+      nameHe: product.nameHe,
+      nameEn: product.nameEn || product.nameHe,
 
-      nameEn:
-        product.nameEn ||
-        product.nameHe,
+      price: product.price,
+      image: product.image,
 
-      price:
-        product.price,
+      colorHe: colorHe,
+      colorEn: colorEn,
 
-      image:
-        product.image,
-
-      colorHe:
-        colorHe,
-
-      colorEn:
-        colorEn,
-
-      quantity:
-        1
+      quantity: 1
 
     });
 
   }
 
-
   renderCart();
 
-  cartOverlay.classList
-    .remove("hidden");
+  cartOverlay.classList.remove("hidden");
 
 }
 
@@ -1279,25 +975,20 @@ function cartItemColor(item) {
 }
 
 
-function changeQuantity(
-  index,
-  amount
-) {
+function changeQuantity(index, amount) {
 
   if (!cart[index]) {
     return;
   }
 
-  cart[index].quantity +=
-    amount;
+  cart[index].quantity += amount;
 
-  if (
-    cart[index].quantity <= 0
-  ) {
+  if (cart[index].quantity <= 0) {
     cart.splice(index, 1);
   }
 
   renderCart();
+
 }
 
 
@@ -1306,6 +997,7 @@ function removeItem(index) {
   cart.splice(index, 1);
 
   renderCart();
+
 }
 
 
@@ -1313,58 +1005,23 @@ function removeItem(index) {
 
 function getDelivery() {
 
-  if (
-    deliveryMethod ===
-    "pickup"
-  ) {
-
-    return {
-      type: "pickup",
-      name: t("pickup"),
-      price: 0,
-      time: ""
-    };
-
+  if (deliveryMethod === "pickup") {
+    return { type: "pickup", name: t("pickup"), price: 0, time: "" };
   }
 
-
-  if (
-    deliveryMethod ===
-    "delivery"
-  ) {
-
-    const city =
-      customerCity
-        .value
-        .trim();
-
+  if (deliveryMethod === "delivery") {
+    const city = customerCity.value.trim();
     if (city) {
-
       return {
         type: "delivery",
         name: city,
-        price:
-          getCityShippingPrice(
-            city
-          ),
-        time:
-          getCityDeliveryTime(
-            city
-          )
+        price: getCityShippingPrice(city),
+        time: getCityDeliveryTime(city)
       };
-
     }
-
   }
 
-
-  return {
-    type: null,
-    name:
-      t("notSelected"),
-    price: 0,
-    time: ""
-  };
+  return { type: null, name: t("notSelected"), price: 0, time: "" };
 
 }
 
@@ -1372,50 +1029,27 @@ function getDelivery() {
 function getExpressPrice() {
 
   if (
-    deliveryMethod ===
-      "delivery" &&
-    shippingSpeed ===
-      "express"
+    deliveryMethod === "delivery" &&
+    shippingSpeed === "express"
   ) {
-
     return EXPRESS_PRICE;
-
   }
 
   return 0;
+
 }
 
 
 function calculateTotals() {
 
-  const subtotal =
-    getCartSubtotal();
+  const subtotal = getCartSubtotal();
+  const delivery = getDelivery();
+  const shipping = delivery.type === "delivery" && hasFreeShipping(subtotal)
+    ? 0
+    : delivery.price;
+  const express = getExpressPrice();
 
-  const delivery =
-    getDelivery();
-
-  const shipping =
-    delivery.type ===
-      "delivery" &&
-    hasFreeShipping(
-      subtotal
-    )
-      ? 0
-      : delivery.price;
-
-  const express =
-    getExpressPrice();
-
-  return {
-    subtotal,
-    shipping,
-    express,
-
-    total:
-      subtotal +
-      shipping +
-      express
-  };
+  return { subtotal, shipping, express, total: subtotal + shipping + express };
 
 }
 
@@ -1426,153 +1060,108 @@ function renderCart() {
 
   const quantity =
     cart.reduce(
-      (
-        total,
-        item
-      ) =>
-        total +
-        item.quantity,
+      (total, item) =>
+        total + item.quantity,
       0
     );
 
+  cartCount.textContent = quantity;
 
-  cartCount.textContent =
-    quantity;
+  cartItems.innerHTML = "";
 
+  emptyCart.classList.toggle(
+    "hidden",
+    cart.length > 0
+  );
 
-  cartItems.innerHTML =
-    "";
+  cart.forEach(function(item, index) {
 
+    const row =
+      document.createElement("div");
 
-  emptyCart.classList
-    .toggle(
-      "hidden",
-      cart.length > 0
-    );
+    row.className = "cart-item";
 
+    row.innerHTML = `
 
-  cart.forEach(
-    function(
-      item,
-      index
-    ) {
+      <img
+        src="${escapeHTML(item.image)}"
+        alt="${escapeHTML(cartItemName(item))}"
+      >
 
-      const row =
-        document.createElement(
-          "div"
-        );
+      <div>
 
-      row.className =
-        "cart-item";
+        <div class="cart-item-name">
+          ${escapeHTML(cartItemName(item))}
+        </div>
 
+        <div class="cart-item-info">
+          ${t("cartColor")}:
+          ${escapeHTML(cartItemColor(item))}
+        </div>
 
-      row.innerHTML = `
+        <div class="cart-item-info">
+          ${money(item.price * item.quantity)}
+        </div>
 
-        <img
-          src="${escapeHTML(item.image)}"
-          alt="${escapeHTML(cartItemName(item))}"
-        >
+        <div class="quantity-controls">
 
-        <div>
+          <button
+            type="button"
+            data-action="minus"
+            data-index="${index}"
+          >
+            −
+          </button>
 
-          <div class="cart-item-name">
-            ${escapeHTML(cartItemName(item))}
-          </div>
+          <strong>
+            ${item.quantity}
+          </strong>
 
-          <div class="cart-item-info">
-            ${t("cartColor")}:
-            ${escapeHTML(cartItemColor(item))}
-          </div>
-
-          <div class="cart-item-info">
-            ${money(
-              item.price *
-              item.quantity
-            )}
-          </div>
-
-          <div class="quantity-controls">
-
-            <button
-              type="button"
-              data-action="minus"
-              data-index="${index}"
-            >
-              −
-            </button>
-
-            <strong>
-              ${item.quantity}
-            </strong>
-
-            <button
-              type="button"
-              data-action="plus"
-              data-index="${index}"
-            >
-              +
-            </button>
-
-          </div>
+          <button
+            type="button"
+            data-action="plus"
+            data-index="${index}"
+          >
+            +
+          </button>
 
         </div>
 
-        <button
-          class="remove-button"
-          type="button"
-          data-action="remove"
-          data-index="${index}"
-        >
-          🗑
-        </button>
-      `;
+      </div>
 
+      <button
+        class="remove-button"
+        type="button"
+        data-action="remove"
+        data-index="${index}"
+      >
+        🗑
+      </button>
+    `;
 
-      cartItems.appendChild(
-        row
-      );
+    cartItems.appendChild(row);
 
-    }
-  );
+  });
 
-
-  const totals =
-    calculateTotals();
-
-  const delivery =
-    getDelivery();
-
+  const totals = calculateTotals();
+  const delivery = getDelivery();
 
   subtotalElement.textContent =
-    money(
-      totals.subtotal
-    );
+    money(totals.subtotal);
 
-
-  if (
-    deliveryMethod ===
-    "pickup"
-  ) {
+  if (deliveryMethod === "pickup") {
 
     shippingElement.textContent =
       t("free");
 
   }
 
-  else if (
-    delivery.type ===
-    "delivery"
-  ) {
+  else if (delivery.type === "delivery") {
 
     shippingElement.textContent =
-      totals.shipping === 0 &&
-      hasFreeShipping(
-        totals.subtotal
-      )
+      totals.shipping === 0 && hasFreeShipping(totals.subtotal)
         ? freeShippingLabel()
-        : money(
-            totals.shipping
-          );
+        : money(totals.shipping);
 
   }
 
@@ -1583,20 +1172,13 @@ function renderCart() {
 
   }
 
-
-  expressSummaryRow
-    .classList
-    .toggle(
-      "hidden",
-      totals.express === 0
-    );
-
+  expressSummaryRow.classList.toggle(
+    "hidden",
+    totals.express === 0
+  );
 
   totalElement.textContent =
-    money(
-      totals.total
-    );
-
+    money(totals.total);
 
   renderCheckoutSummary();
 
@@ -1607,106 +1189,64 @@ function renderCart() {
 
 function renderCheckoutSummary() {
 
-  checkoutItems.innerHTML =
-    "";
+  checkoutItems.innerHTML = "";
 
+  cart.forEach(function(item) {
 
-  cart.forEach(
-    function(item) {
+    const row =
+      document.createElement("div");
 
-      const row =
-        document.createElement(
-          "div"
-        );
+    row.className = "checkout-item";
 
-      row.className =
-        "checkout-item";
+    row.innerHTML = `
 
-
-      row.innerHTML = `
-
-        <div>
-
-          <strong>
-            ${escapeHTML(cartItemName(item))}
-          </strong>
-
-          <br>
-
-          ${escapeHTML(cartItemColor(item))}
-          •
-          ${item.quantity}
-          ${t("units")}
-
-        </div>
+      <div>
 
         <strong>
-          ${money(
-            item.price *
-            item.quantity
-          )}
+          ${escapeHTML(cartItemName(item))}
         </strong>
-      `;
 
+        <br>
 
-      checkoutItems
-        .appendChild(row);
+        ${escapeHTML(cartItemColor(item))}
+        •
+        ${item.quantity} ${t("units")}
 
-    }
-  );
+      </div>
 
+      <strong>
+        ${money(item.price * item.quantity)}
+      </strong>
+    `;
 
-  const totals =
-    calculateTotals();
+    checkoutItems.appendChild(row);
 
-  const delivery =
-    getDelivery();
+  });
 
+  const totals = calculateTotals();
+  const delivery = getDelivery();
 
   checkoutSubtotal.textContent =
-    money(
-      totals.subtotal
-    );
+    money(totals.subtotal);
 
-
-  if (
-    deliveryMethod ===
-    "pickup"
-  ) {
+  if (deliveryMethod === "pickup") {
 
     checkoutShipping.textContent =
       t("pickupSummary");
 
   }
 
-  else if (
-    delivery.type ===
-    "delivery"
-  ) {
+  else if (delivery.type === "delivery") {
 
     checkoutShipping.textContent =
       delivery.name +
       " • " +
-      (
-        totals.shipping === 0 &&
-        hasFreeShipping(
-          totals.subtotal
-        )
-          ? freeShippingLabel()
-          : money(
-              totals.shipping
-            )
-      ) +
+      (totals.shipping === 0 && hasFreeShipping(totals.subtotal)
+        ? freeShippingLabel()
+        : money(totals.shipping)) +
       " • " +
       delivery.time +
-      (
-        isHaifa(
-          delivery.name
-        )
-          ? ""
-          : " • " +
-            postOfficeLabel()
-      );
+      (isHaifa(delivery.name) ? "" : " • " + postOfficeLabel());
 
   }
 
@@ -1717,19 +1257,13 @@ function renderCheckoutSummary() {
 
   }
 
-
-  checkoutExpressRow
-    .classList
-    .toggle(
-      "hidden",
-      totals.express === 0
-    );
-
+  checkoutExpressRow.classList.toggle(
+    "hidden",
+    totals.express === 0
+  );
 
   checkoutTotal.textContent =
-    money(
-      totals.total
-    );
+    money(totals.total);
 
 }
 
@@ -1738,46 +1272,22 @@ function renderCheckoutSummary() {
 
 function selectPickup() {
 
-  deliveryMethod =
-    "pickup";
+  deliveryMethod = "pickup";
+  shippingSpeed = "regular";
 
-  shippingSpeed =
-    "regular";
+  pickupButton.classList.add("active");
+  deliveryButton.classList.remove("active");
 
+  deliveryFields.classList.add("hidden");
 
-  pickupButton
-    .classList
-    .add("active");
+  customerCity.required = false;
+  customerAddress.required = false;
 
-  deliveryButton
-    .classList
-    .remove("active");
-
-
-  deliveryFields
-    .classList
-    .add("hidden");
-
-
-  customerCity.required =
-    false;
-
-  customerAddress.required =
-    false;
-
-
-  regularShippingButton
-    .classList
-    .add("active");
-
-  expressShippingButton
-    .classList
-    .remove("active");
-
+  regularShippingButton.classList.add("active");
+  expressShippingButton.classList.remove("active");
 
   deliveryStatus.textContent =
     t("pickupSelected");
-
 
   renderCart();
 
@@ -1788,30 +1298,15 @@ function selectPickup() {
 
 function selectDelivery() {
 
-  deliveryMethod =
-    "delivery";
+  deliveryMethod = "delivery";
 
+  pickupButton.classList.remove("active");
+  deliveryButton.classList.add("active");
 
-  pickupButton
-    .classList
-    .remove("active");
+  deliveryFields.classList.remove("hidden");
 
-  deliveryButton
-    .classList
-    .add("active");
-
-
-  deliveryFields
-    .classList
-    .remove("hidden");
-
-
-  customerCity.required =
-    true;
-
-  customerAddress.required =
-    true;
-
+  customerCity.required = true;
+  customerAddress.required = true;
 
   updateDeliveryStatus();
 
@@ -1824,23 +1319,13 @@ function selectDelivery() {
 
 function selectRegularShipping() {
 
-  shippingSpeed =
-    "regular";
+  shippingSpeed = "regular";
 
+  regularShippingButton.classList.add("active");
+  expressShippingButton.classList.remove("active");
 
-  regularShippingButton
-    .classList
-    .add("active");
-
-  expressShippingButton
-    .classList
-    .remove("active");
-
-
-  shippingSpeedStatus
-    .textContent =
-      t("regularSelected");
-
+  shippingSpeedStatus.textContent =
+    t("regularSelected");
 
   renderCart();
 
@@ -1849,23 +1334,13 @@ function selectRegularShipping() {
 
 function selectExpressShipping() {
 
-  shippingSpeed =
-    "express";
+  shippingSpeed = "express";
 
+  expressShippingButton.classList.add("active");
+  regularShippingButton.classList.remove("active");
 
-  expressShippingButton
-    .classList
-    .add("active");
-
-  regularShippingButton
-    .classList
-    .remove("active");
-
-
-  shippingSpeedStatus
-    .textContent =
-      t("expressSelected");
-
+  shippingSpeedStatus.textContent =
+    t("expressSelected");
 
   renderCart();
 
@@ -1873,73 +1348,25 @@ function selectExpressShipping() {
 
 
 function updateDeliveryStatus() {
-    const city =
-    customerCity
-      .value
-      .trim();
 
+  const city = customerCity.value.trim();
 
-  if (
-    deliveryMethod ===
-      "delivery" &&
-    city
-  ) {
-
-    const price =
-      hasFreeShipping()
-        ? freeShippingLabel()
-        : money(
-            getCityShippingPrice(
-              city
-            )
-          );
-
-
+  if (deliveryMethod === "delivery" && city) {
+    const price = hasFreeShipping() ? freeShippingLabel() : money(getCityShippingPrice(city));
     deliveryStatus.textContent =
-      "🚚 " +
-      city +
-      " — " +
-      price +
-      " • " +
-      getCityDeliveryTime(
-        city
-      ) +
-      (
-        isHaifa(city)
-          ? ""
-          : " • " +
-            postOfficeLabel()
-      );
-
+      "🚚 " + city + " — " + price + " • " + getCityDeliveryTime(city) +
+      (isHaifa(city) ? "" : " • " + postOfficeLabel());
   }
-
-  else if (
-    deliveryMethod ===
-    "delivery"
-  ) {
-
-    deliveryStatus.textContent =
-      currentLanguage === "he"
-        ? "🚚 הכניסו עיר למשלוח"
-        : "🚚 Enter a delivery city";
-
+  else if (deliveryMethod === "delivery") {
+    deliveryStatus.textContent = currentLanguage === "he"
+      ? "🚚 הכניסו עיר למשלוח"
+      : "🚚 Enter a delivery city";
   }
-
-  else if (
-    deliveryMethod ===
-    "pickup"
-  ) {
-
-    deliveryStatus.textContent =
-      t("pickupSelected");
-
+  else if (deliveryMethod === "pickup") {
+    deliveryStatus.textContent = t("pickupSelected");
   }
-
   else {
-
-    deliveryStatus.textContent =
-      t("noDeliverySelected");
-
+    deliveryStatus.textContent = t("noDeliverySelected");
   }
 
 }
@@ -1952,16 +1379,11 @@ function updateLanguage() {
   const isHebrew =
     currentLanguage === "he";
 
-
   document.documentElement.lang =
     currentLanguage;
 
-
   document.documentElement.dir =
-    isHebrew
-      ? "rtl"
-      : "ltr";
-
+    isHebrew ? "rtl" : "ltr";
 
   document.title =
     isHebrew
@@ -1979,44 +1401,22 @@ function updateLanguage() {
     t("cart")
   );
 
+  setText("heroTitle", t("heroTitle"));
+  setText("heroText", t("heroText"));
 
-  setText(
-    "heroTitle",
-    t("heroTitle")
-  );
-
-  setText(
-    "heroText",
-    t("heroText")
-  );
-
-  setText(
-    "heroPickup",
-    t("heroPickup")
-  );
-
-  setText(
-    "heroDelivery",
-    t("heroDelivery")
-  );
-
-  setText(
-    "heroExpress",
-    t("heroExpress")
-  );
-
+  setText("heroPickup", t("heroPickup"));
+  setText("heroDelivery", t("heroDelivery"));
+  setText("heroExpress", t("heroExpress"));
 
   setText(
     "customBuildButton",
     t("customBuild")
   );
 
-
   setHTML(
     "customBuildIntro",
     t("customIntro")
   );
-
 
   setText(
     "productsTitle",
@@ -2027,7 +1427,6 @@ function updateLanguage() {
     "productsSubtitle",
     t("productsSubtitle")
   );
-
 
   setText(
     "cartTitle",
@@ -2044,7 +1443,6 @@ function updateLanguage() {
     t("emptyCartText")
   );
 
-
   setText(
     "cartProductsLabel",
     t("products")
@@ -2060,12 +1458,10 @@ function updateLanguage() {
     t("total")
   );
 
-
   setText(
     "checkoutButton",
     t("continueOrder")
   );
-
 
   setText(
     "checkoutTitle",
@@ -2076,7 +1472,6 @@ function updateLanguage() {
     "checkoutSubtitle",
     t("checkoutSubtitle")
   );
-
 
   setText(
     "personalTitle",
@@ -2093,10 +1488,8 @@ function updateLanguage() {
     t("phone")
   );
 
-
   customerName.placeholder =
     t("namePlaceholder");
-
 
   setText(
     "deliveryMethodTitle",
@@ -2123,7 +1516,6 @@ function updateLanguage() {
     t("priceByCity")
   );
 
-
   setText(
     "deliveryDetailsTitle",
     t("deliveryDetails")
@@ -2134,12 +1526,10 @@ function updateLanguage() {
     t("city")
   );
 
-
   customerCity.placeholder =
     currentLanguage === "he"
       ? "לדוגמה: חיפה, תל אביב, ירושלים..."
       : "Example: Haifa, Tel Aviv, Jerusalem...";
-
 
   setText(
     "shippingSpeedTitle",
@@ -2156,38 +1546,31 @@ function updateLanguage() {
     t("regularTime")
   );
 
-
   setHTML(
     "expressShippingTime",
     t("expressTime")
   );
-
 
   setText(
     "addressLabel",
     t("address")
   );
 
-
   customerAddress.placeholder =
     t("addressPlaceholder");
-
 
   setText(
     "notesLabel",
     t("notes")
   );
 
-
   customerNotes.placeholder =
     t("optional");
-
 
   setText(
     "orderSummaryTitle",
     t("orderSummary")
   );
-
 
   setText(
     "checkoutProductsLabel",
@@ -2204,12 +1587,10 @@ function updateLanguage() {
     t("total")
   );
 
-
   setText(
     "checkoutSubmitButton",
     t("checkoutWhatsapp")
   );
-
 
   setText(
     "whatsappTitle",
@@ -2241,7 +1622,6 @@ function updateLanguage() {
     t("backCheckout")
   );
 
-
   setText(
     "successTitle",
     t("success")
@@ -2256,7 +1636,6 @@ function updateLanguage() {
     "backToStoreButton",
     t("backStore")
   );
-
 
   setText(
     "customModalTitle",
@@ -2293,16 +1672,10 @@ function updateLanguage() {
     t("customDescription")
   );
 
-
   document
-    .getElementById(
-      "customDescription"
-    )
+    .getElementById("customDescription")
     .placeholder =
-      t(
-        "customDescriptionPlaceholder"
-      );
-
+      t("customDescriptionPlaceholder");
 
   setText(
     "customSubmitButton",
@@ -2317,46 +1690,27 @@ function updateLanguage() {
       ${t("chooseCustomColor")}
     </option>`;
 
+  t("customColors").forEach(function(color) {
 
-  t("customColors")
-    .forEach(
-      function(color) {
+    const option =
+      document.createElement("option");
 
-        const option =
-          document.createElement(
-            "option"
-          );
+    option.value = color;
+    option.textContent = color;
 
-        option.value =
-          color;
+    customColor.appendChild(option);
 
-        option.textContent =
-          color;
-
-        customColor
-          .appendChild(
-            option
-          );
-
-      }
-    );
+  });
 
 
   /* DYNAMIC STATUS */
 
   updateDeliveryStatus();
 
-
-  shippingSpeedStatus
-    .textContent =
-      shippingSpeed ===
-        "express"
-        ? t(
-            "expressSelected"
-          )
-        : t(
-            "regularSelected"
-          );
+  shippingSpeedStatus.textContent =
+    shippingSpeed === "express"
+      ? t("expressSelected")
+      : t("regularSelected");
 
 
   /* DYNAMIC CONTENT */
@@ -2367,99 +1721,70 @@ function updateLanguage() {
 
   if (currentOrder) {
 
-    finalOrderPreview
-      .innerHTML =
-        buildOrderPreview(
-          currentOrder
-        );
+    finalOrderPreview.innerHTML =
+      buildOrderPreview(currentOrder);
 
-    successOrderSummary
-      .innerHTML =
-        buildOrderPreview(
-          currentOrder
-        );
+    successOrderSummary.innerHTML =
+      buildOrderPreview(currentOrder);
 
   }
 
 }
 
 
-languageButton
-  .addEventListener(
-    "click",
-    function() {
+languageButton.addEventListener(
+  "click",
+  function() {
 
-      currentLanguage =
-        currentLanguage ===
-          "he"
-          ? "en"
-          : "he";
+    currentLanguage =
+      currentLanguage === "he"
+        ? "en"
+        : "he";
 
+    localStorage.setItem(
+      "3dms-language",
+      currentLanguage
+    );
 
-      localStorage.setItem(
-        "3dms-language",
-        currentLanguage
-      );
+    updateLanguage();
 
-
-      updateLanguage();
-
-    }
-  );
+  }
+);
 
 
 /* BUILD ORDER */
 
 function buildOrder() {
 
-  const totals =
-    calculateTotals();
-
-  const delivery =
-    getDelivery();
-
+  const totals = calculateTotals();
+  const delivery = getDelivery();
 
   return {
 
     name:
-      customerName
-        .value
-        .trim(),
+      customerName.value.trim(),
 
     phone:
-      customerPhone
-        .value
-        .trim(),
+      customerPhone.value.trim(),
 
     deliveryMethod,
 
     city:
-      customerCity
-        .value
-        .trim(),
+      customerCity.value.trim(),
 
     shippingSpeed:
-      deliveryMethod ===
-        "delivery"
+      deliveryMethod === "delivery"
         ? shippingSpeed
         : null,
 
     address:
-      customerAddress
-        .value
-        .trim(),
+      customerAddress.value.trim(),
 
     notes:
-      customerNotes
-        .value
-        .trim(),
+      customerNotes.value.trim(),
 
     items:
-      cart.map(
-        item => ({
-          ...item
-        })
-      ),
+      cart.map(item => ({...item})),
 
     subtotal:
       totals.subtotal,
@@ -2480,69 +1805,44 @@ function buildOrder() {
 
 /* ORDER PREVIEW */
 
-function buildOrderPreview(
-  order
-) {
+function buildOrderPreview(order) {
 
   let html = "";
 
-
   html +=
     "👤 <strong>" +
-    escapeHTML(
-      order.name
-    ) +
+    escapeHTML(order.name) +
     "</strong><br>";
-
 
   html +=
     "📱 " +
-    escapeHTML(
-      order.phone
-    ) +
+    escapeHTML(order.phone) +
     "<hr>";
 
+  order.items.forEach(function(item) {
 
-  order.items
-    .forEach(
-      function(item) {
+    html +=
+      "🛒 <strong>" +
+      escapeHTML(cartItemName(item)) +
+      "</strong><br>";
 
-        html +=
-          "🛒 <strong>" +
-          escapeHTML(
-            cartItemName(item)
-          ) +
-          "</strong><br>";
+    html +=
+      "🎨 " +
+      escapeHTML(cartItemColor(item)) +
+      " • " +
+      item.quantity +
+      " " +
+      t("units") +
+      "<br>";
 
+    html +=
+      "💰 " +
+      money(item.price * item.quantity) +
+      "<br><br>";
 
-        html +=
-          "🎨 " +
-          escapeHTML(
-            cartItemColor(item)
-          ) +
-          " • " +
-          item.quantity +
-          " " +
-          t("units") +
-          "<br>";
+  });
 
-
-        html +=
-          "💰 " +
-          money(
-            item.price *
-            item.quantity
-          ) +
-          "<br><br>";
-
-      }
-    );
-
-
-  if (
-    order.deliveryMethod ===
-    "pickup"
-  ) {
+  if (order.deliveryMethod === "pickup") {
 
     html +=
       "📦 <strong>" +
@@ -2556,88 +1856,52 @@ function buildOrderPreview(
   else {
 
     html +=
-      "🚚 " +
-      t("delivery") +
-      ": " +
-      escapeHTML(
-        order.city
-      ) +
-      " — " +
-      (
-        order.shipping === 0 &&
-        order.subtotal >=
-          FREE_SHIPPING_THRESHOLD
-          ? freeShippingLabel()
-          : money(
-              order.shipping
-            )
-      );
+      "🚚 " + t("delivery") + ": " + escapeHTML(order.city) + " — " +
+      (order.shipping === 0 && order.subtotal >= FREE_SHIPPING_THRESHOLD
+        ? freeShippingLabel()
+        : money(order.shipping));
 
-
-    if (
-      !isHaifa(
-        order.city
-      )
-    ) {
-
-      html +=
-        "<br>📮 " +
-        postOfficeLabel();
-
+    if (!isHaifa(order.city)) {
+      html += "<br>📮 " + postOfficeLabel();
     }
 
+    html += "<br>⏱️ " + getCityDeliveryTime(order.city);
+    html += "<br>📍 " + escapeHTML(order.address);
 
-    html +=
-      "<br>⏱️ " +
-      getCityDeliveryTime(
-        order.city
-      );
-
-
-    html +=
-      "<br>📍 " +
-      escapeHTML(
-        order.address
-      );
-
-
-    if (
-      order.shippingSpeed ===
-      "express"
-    ) {
+    if (order.shippingSpeed === "express") {
 
       html +=
         "<br>⚡ <strong>EXPRESS — " +
         (
-          currentLanguage ===
-            "he"
+          currentLanguage === "he"
             ? "יום עסקים 1"
             : "1 business day"
         ) +
         "</strong>";
 
-
       html +=
         "<br>➕ " +
-        money(
-          order.express
-        );
+        money(order.express);
+
+    }
+
+    else {
+
+      html +=
+        "<br>🚚 " +
+        t("regularTime");
 
     }
 
   }
 
-
   if (order.notes) {
 
     html +=
       "<br>📝 " +
-      escapeHTML(
-        order.notes
-      );
+      escapeHTML(order.notes);
 
   }
-
 
   html +=
     "<hr>💰 <strong>" +
@@ -2646,7 +1910,6 @@ function buildOrderPreview(
     money(order.total) +
     "</strong>";
 
-
   return html;
 
 }
@@ -2654,73 +1917,51 @@ function buildOrderPreview(
 
 /* WHATSAPP ORDER */
 
-function buildWhatsappMessage(
-  order
-) {
+function buildWhatsappMessage(order) {
 
-  if (
-    currentLanguage ===
-    "en"
-  ) {
+  if (currentLanguage === "en") {
 
     let text =
       "🛍️ *New Order - 3D MS*\n\n";
-
 
     text +=
       "👤 *Name:* " +
       order.name +
       "\n";
 
-
     text +=
       "📱 *Phone:* " +
       order.phone +
       "\n\n";
 
-
     text +=
       "📦 *Products:*\n";
 
+    order.items.forEach(function(item) {
 
-    order.items
-      .forEach(
-        function(item) {
+      text +=
+        "• " +
+        item.nameEn +
+        "\n";
 
-          text +=
-            "• " +
-            item.nameEn +
-            "\n";
+      text +=
+        "🎨 Color: " +
+        item.colorEn +
+        "\n";
 
+      text +=
+        "🔢 Quantity: " +
+        item.quantity +
+        "\n";
 
-          text +=
-            "🎨 Color: " +
-            item.colorEn +
-            "\n";
+      text +=
+        "💰 " +
+        money(item.price * item.quantity) +
+        "\n\n";
 
+    });
 
-          text +=
-            "🔢 Quantity: " +
-            item.quantity +
-            "\n";
-
-
-          text +=
-            "💰 " +
-            money(
-              item.price *
-              item.quantity
-            ) +
-            "\n\n";
-
-        }
-      );
-
-
-    if (
-      order.deliveryMethod ===
-      "pickup"
-    ) {
+    if (order.deliveryMethod === "pickup") {
 
       text +=
         "📦 *Self Pickup — Free*\n";
@@ -2729,71 +1970,38 @@ function buildWhatsappMessage(
 
     else {
 
-      text +=
-        "🚚 *City:* " +
-        order.city +
-        "\n";
-
-
-      if (
-        !isHaifa(
-          order.city
-        )
-      ) {
-
-        text +=
-          "📮 *Delivery:* To post office\n";
-
+      text += "🚚 *City:* " + order.city + "\n";
+      if (!isHaifa(order.city)) {
+        text += "📮 *Delivery:* To post office\n";
       }
-
-
-      text +=
-        "⏱️ *Delivery time:* " +
-        getCityDeliveryTime(
-          order.city
-        ) +
+      text += "⏱️ *Delivery time:* " + getCityDeliveryTime(order.city) + "\n";
+      text += "📍 *Address:* " + order.address + "\n";
+      text += "💵 *Delivery price:* " +
+        (order.shipping === 0 && order.subtotal >= FREE_SHIPPING_THRESHOLD
+          ? "Free (order over ₪150)"
+          : money(order.shipping)) +
         "\n";
 
-
-      text +=
-        "📍 *Address:* " +
-        order.address +
-        "\n";
-
-
-      text +=
-        "💵 *Delivery price:* " +
-        (
-          order.shipping === 0 &&
-          order.subtotal >=
-            FREE_SHIPPING_THRESHOLD
-            ? "Free (order over ₪150)"
-            : money(
-                order.shipping
-              )
-        ) +
-        "\n";
-
-
-      if (
-        order.shippingSpeed ===
-        "express"
-      ) {
+      if (order.shippingSpeed === "express") {
 
         text +=
           "⚡ *EXPRESS — 1 business day*\n";
 
         text +=
           "➕ *EXPRESS:* " +
-          money(
-            order.express
-          ) +
+          money(order.express) +
           "\n";
 
       }
 
-    }
+      else {
 
+        text +=
+          "🚚 *Speed:* Standard delivery — 1–14 business days\n";
+
+      }
+
+    }
 
     if (order.notes) {
 
@@ -2804,50 +2012,31 @@ function buildWhatsappMessage(
 
     }
 
-
     text +=
       "\n🛍️ Products: " +
-      money(
-        order.subtotal
-      ) +
+      money(order.subtotal) +
       "\n";
-
 
     text +=
       "🚚 Delivery: " +
-      (
-        order.shipping === 0 &&
-        order.subtotal >=
-          FREE_SHIPPING_THRESHOLD
-          ? "Free (order over ₪150)"
-          : money(
-              order.shipping
-            )
-      ) +
+      (order.shipping === 0 && order.subtotal >= FREE_SHIPPING_THRESHOLD
+        ? "Free (order over ₪150)"
+        : money(order.shipping)) +
       "\n";
 
-
-    if (
-      order.express > 0
-    ) {
+    if (order.express > 0) {
 
       text +=
         "⚡ EXPRESS: " +
-        money(
-          order.express
-        ) +
+        money(order.express) +
         "\n";
 
     }
 
-
     text +=
       "💰 *Total: " +
-      money(
-        order.total
-      ) +
+      money(order.total) +
       "*";
-
 
     return text;
 
@@ -2859,61 +2048,44 @@ function buildWhatsappMessage(
   let text =
     "🛍️ *הזמנה חדשה - 3D MS*\n\n";
 
-
   text +=
     "👤 *שם:* " +
     order.name +
     "\n";
-
 
   text +=
     "📱 *טלפון:* " +
     order.phone +
     "\n\n";
 
-
   text +=
     "📦 *מוצרים:*\n";
 
+  order.items.forEach(function(item) {
 
-  order.items
-    .forEach(
-      function(item) {
+    text +=
+      "• " +
+      item.nameHe +
+      "\n";
 
-        text +=
-          "• " +
-          item.nameHe +
-          "\n";
+    text +=
+      "🎨 צבע: " +
+      item.colorHe +
+      "\n";
 
+    text +=
+      "🔢 כמות: " +
+      item.quantity +
+      "\n";
 
-        text +=
-          "🎨 צבע: " +
-          item.colorHe +
-          "\n";
+    text +=
+      "💰 " +
+      money(item.price * item.quantity) +
+      "\n\n";
 
+  });
 
-        text +=
-          "🔢 כמות: " +
-          item.quantity +
-          "\n";
-
-
-        text +=
-          "💰 " +
-          money(
-            item.price *
-            item.quantity
-          ) +
-          "\n\n";
-
-      }
-    );
-
-
-  if (
-    order.deliveryMethod ===
-    "pickup"
-  ) {
+  if (order.deliveryMethod === "pickup") {
 
     text +=
       "📦 *איסוף עצמי — חינם*\n";
@@ -2922,71 +2094,38 @@ function buildWhatsappMessage(
 
   else {
 
-    text +=
-      "🚚 *עיר:* " +
-      order.city +
-      "\n";
-
-
-    if (
-      !isHaifa(
-        order.city
-      )
-    ) {
-
-      text +=
-        "📮 *משלוח:* עד הדואר\n";
-
+    text += "🚚 *עיר:* " + order.city + "\n";
+    if (!isHaifa(order.city)) {
+      text += "📮 *משלוח:* עד הדואר\n";
     }
-
-
-    text +=
-      "⏱️ *זמן משלוח:* " +
-      getCityDeliveryTime(
-        order.city
-      ) +
+    text += "⏱️ *זמן משלוח:* " + getCityDeliveryTime(order.city) + "\n";
+    text += "📍 *כתובת:* " + order.address + "\n";
+    text += "💵 *מחיר משלוח:* " +
+      (order.shipping === 0 && order.subtotal >= FREE_SHIPPING_THRESHOLD
+        ? "חינם (קנייה מעל ₪150)"
+        : money(order.shipping)) +
       "\n";
 
-
-    text +=
-      "📍 *כתובת:* " +
-      order.address +
-      "\n";
-
-
-    text +=
-      "💵 *מחיר משלוח:* " +
-      (
-        order.shipping === 0 &&
-        order.subtotal >=
-          FREE_SHIPPING_THRESHOLD
-          ? "חינם (קנייה מעל ₪150)"
-          : money(
-              order.shipping
-            )
-      ) +
-      "\n";
-
-
-    if (
-      order.shippingSpeed ===
-      "express"
-    ) {
+    if (order.shippingSpeed === "express") {
 
       text +=
         "⚡ *EXPRESS — יום עסקים 1*\n";
 
       text +=
         "➕ *תוספת EXPRESS:* " +
-        money(
-          order.express
-        ) +
+        money(order.express) +
         "\n";
 
     }
 
-  }
+    else {
 
+      text +=
+        "🚚 *מהירות:* משלוח רגיל — 1–14 ימי עסקים\n";
+
+    }
+
+  }
 
   if (order.notes) {
 
@@ -2997,54 +2136,37 @@ function buildWhatsappMessage(
 
   }
 
-
   text +=
     "\n🛍️ מוצרים: " +
-    money(
-      order.subtotal
-    ) +
+    money(order.subtotal) +
     "\n";
-
 
   text +=
     "🚚 משלוח: " +
-    (
-      order.shipping === 0 &&
-      order.subtotal >=
-        FREE_SHIPPING_THRESHOLD
-        ? "חינם (קנייה מעל ₪150)"
-        : money(
-            order.shipping
-          )
-    ) +
+    (order.shipping === 0 && order.subtotal >= FREE_SHIPPING_THRESHOLD
+      ? "חינם (קנייה מעל ₪150)"
+      : money(order.shipping)) +
     "\n";
 
-
-  if (
-    order.express > 0
-  ) {
+  if (order.express > 0) {
 
     text +=
       "⚡ EXPRESS: " +
-      money(
-        order.express
-      ) +
+      money(order.express) +
       "\n";
 
   }
 
-
   text +=
     "💰 *סה״כ: " +
-    money(
-      order.total
-    ) +
+    money(order.total) +
     "*";
-
 
   return text;
 
 }
+
+
 /* PRODUCT EVENTS */
 
 productsGrid.addEventListener(
@@ -3061,8 +2183,7 @@ productsGrid.addEventListener(
     }
 
     addToCart(
-      button.dataset
-        .productId
+      button.dataset.productId
     );
 
   }
@@ -3084,46 +2205,19 @@ cartItems.addEventListener(
       return;
     }
 
-
     const index =
-      Number(
-        button.dataset.index
-      );
+      Number(button.dataset.index);
 
-
-    if (
-      button.dataset.action ===
-      "plus"
-    ) {
-
-      changeQuantity(
-        index,
-        1
-      );
-
+    if (button.dataset.action === "plus") {
+      changeQuantity(index, 1);
     }
 
-
-    if (
-      button.dataset.action ===
-      "minus"
-    ) {
-
-      changeQuantity(
-        index,
-        -1
-      );
-
+    if (button.dataset.action === "minus") {
+      changeQuantity(index, -1);
     }
 
-
-    if (
-      button.dataset.action ===
-      "remove"
-    ) {
-
+    if (button.dataset.action === "remove") {
       removeItem(index);
-
     }
 
   }
@@ -3132,93 +2226,56 @@ cartItems.addEventListener(
 
 /* OPEN / CLOSE CART */
 
-cartButton.onclick =
-  function() {
+cartButton.onclick = function() {
+  cartOverlay.classList.remove("hidden");
+};
 
-    cartOverlay
-      .classList
-      .remove("hidden");
-
-  };
-
-
-closeCart.onclick =
-  function() {
-
-    cartOverlay
-      .classList
-      .add("hidden");
-
-  };
+closeCart.onclick = function() {
+  cartOverlay.classList.add("hidden");
+};
 
 
 /* CHECKOUT */
 
-checkoutButton.onclick =
-  function() {
+checkoutButton.onclick = function() {
 
-    if (!cart.length) {
+  if (!cart.length) {
 
-      alert(
-        t("cartEmptyAlert")
-      );
+    alert(t("cartEmptyAlert"));
+    return;
 
-      return;
+  }
 
-    }
+  cartOverlay.classList.add("hidden");
+  checkoutOverlay.classList.remove("hidden");
 
+  renderCheckoutSummary();
 
-    cartOverlay
-      .classList
-      .add("hidden");
+};
 
 
-    checkoutOverlay
-      .classList
-      .remove("hidden");
-
-
-    renderCheckoutSummary();
-
-  };
-
-
-closeCheckout.onclick =
-  function() {
-
-    checkoutOverlay
-      .classList
-      .add("hidden");
-
-  };
+closeCheckout.onclick = function() {
+  checkoutOverlay.classList.add("hidden");
+};
 
 
 /* DELIVERY */
 
-pickupButton.onclick =
-  selectPickup;
-
-
-deliveryButton.onclick =
-  selectDelivery;
-
+pickupButton.onclick = selectPickup;
+deliveryButton.onclick = selectDelivery;
 
 regularShippingButton.onclick =
   selectRegularShipping;
 
-
 expressShippingButton.onclick =
   selectExpressShipping;
 
+customerCity.oninput = function() {
 
-customerCity.oninput =
-  function() {
+  updateDeliveryStatus();
+  renderCart();
 
-    updateDeliveryStatus();
-
-    renderCart();
-
-  };
+};
 
 
 /* CHECKOUT SUBMIT */
@@ -3229,80 +2286,38 @@ checkoutForm.addEventListener(
 
     event.preventDefault();
 
-
     if (!deliveryMethod) {
 
-      alert(
-        t(
-          "chooseMethodAlert"
-        )
-      );
-
+      alert(t("chooseMethodAlert"));
       return;
 
     }
 
+    if (deliveryMethod === "delivery") {
 
-    if (
-      deliveryMethod ===
-      "delivery"
-    ) {
+      if (!customerCity.value) {
 
-      if (
-        !customerCity
-          .value
-          .trim()
-      ) {
-
-        alert(
-          t(
-            "chooseCityAlert"
-          )
-        );
-
+        alert(t("chooseCityAlert"));
         return;
 
       }
 
+      if (!customerAddress.value.trim()) {
 
-      if (
-        !customerAddress
-          .value
-          .trim()
-      ) {
-
-        alert(
-          t(
-            "addressAlert"
-          )
-        );
-
+        alert(t("addressAlert"));
         return;
 
       }
 
     }
 
+    currentOrder = buildOrder();
 
-    currentOrder =
-      buildOrder();
+    finalOrderPreview.innerHTML =
+      buildOrderPreview(currentOrder);
 
-
-    finalOrderPreview
-      .innerHTML =
-        buildOrderPreview(
-          currentOrder
-        );
-
-
-    checkoutOverlay
-      .classList
-      .add("hidden");
-
-
-    whatsappOverlay
-      .classList
-      .remove("hidden");
+    checkoutOverlay.classList.add("hidden");
+    whatsappOverlay.classList.remove("hidden");
 
   }
 );
@@ -3310,350 +2325,793 @@ checkoutForm.addEventListener(
 
 /* OPEN WHATSAPP */
 
-openWhatsappButton.onclick =
-  function() {
+openWhatsappButton.onclick = function() {
 
-    if (!currentOrder) {
-      return;
+  if (!currentOrder) {
+    return;
+  }
+
+  const text =
+    buildWhatsappMessage(currentOrder);
+
+  const url =
+    "https://wa.me/" +
+    STORE_WHATSAPP +
+    "?text=" +
+    encodeURIComponent(text);
+
+  window.open(url, "_blank");
+
+};
+
+
+backToCheckoutButton.onclick = function() {
+
+  whatsappOverlay.classList.add("hidden");
+  checkoutOverlay.classList.remove("hidden");
+
+};
+
+
+/* SUCCESS */
+
+sentWhatsappButton.onclick = function() {
+
+  if (!currentOrder) {
+    return;
+  }
+
+  whatsappOverlay.classList.add("hidden");
+
+  successOrderSummary.innerHTML =
+    buildOrderPreview(currentOrder);
+
+  if (currentOrder.deliveryMethod === "pickup") {
+
+    finalDeliveryTime.textContent =
+      t("successPickup");
+
+  }
+
+  else if (currentOrder.shippingSpeed === "express") {
+
+    finalDeliveryTime.textContent =
+      t("successExpress");
+
+  }
+
+  else {
+
+    finalDeliveryTime.textContent =
+      "🚚 " + getCityDeliveryTime(currentOrder.city) +
+      (isHaifa(currentOrder.city) ? "" : " • " + postOfficeLabel());
+
+  }
+
+  successOverlay.classList.remove("hidden");
+
+};
+
+
+/* CUSTOM BUILD */
+
+customBuildButton.onclick = function() {
+  customBuildOverlay.classList.remove("hidden");
+};
+
+closeCustomBuild.onclick = function() {
+  customBuildOverlay.classList.add("hidden");
+};
+
+
+customBuildForm.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+    const name =
+      document
+        .getElementById("customName")
+        .value
+        .trim();
+
+    const phone =
+      document
+        .getElementById("customPhone")
+        .value
+        .trim();
+
+    const color =
+      document
+        .getElementById("customColor")
+        .value;
+
+    const description =
+      document
+        .getElementById("customDescription")
+        .value
+        .trim();
+
+
+    let text = "";
+
+
+    if (currentLanguage === "en") {
+
+      text =
+        "🛠️ *Custom Build Request - 3D MS*\n\n";
+
+      text +=
+        "👤 *Name:* " +
+        name +
+        "\n";
+
+      text +=
+        "📱 *Phone:* " +
+        phone +
+        "\n";
+
+      text +=
+        "🎨 *Color:* " +
+        color +
+        "\n\n";
+
+      text +=
+        "✏️ *What I would like:*\n" +
+        description +
+        "\n\n";
+
+      text +=
+        "🎁 Custom build has no additional charge.";
+
     }
 
+    else {
 
-    const text =
-      buildWhatsappMessage(
-        currentOrder
-      );
+      text =
+        "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
+
+      text +=
+        "👤 *שם:* " +
+        name +
+        "\n";
+
+      text +=
+        "📱 *טלפון:* " +
+        phone +
+        "\n";
+
+      text +=
+        "🎨 *צבע:* " +
+        color +
+        "\n\n";
+
+      text +=
+        "✏️ *מה אני רוצה:*\n" +
+        description +
+        "\n\n";
+
+      text +=
+        "🎁 בנייה עצמית ללא תוספת תשלום.";
+
+    }
 
 
     const url =
       "https://wa.me/" +
       STORE_WHATSAPP +
       "?text=" +
-      encodeURIComponent(
-        text
-      );
+      encodeURIComponent(text);
 
+    window.open(url, "_blank");
 
-    window.open(
-      url,
-      "_blank"
-    );
-
-  };
-
-
-backToCheckoutButton.onclick =
-  function() {
-
-    whatsappOverlay
-      .classList
-      .add("hidden");
-
-
-    checkoutOverlay
-      .classList
-      .remove("hidden");
-
-  };
-
-
-/* SUCCESS */
-
-sentWhatsappButton.onclick =
-  function() {
-
-    if (!currentOrder) {
-      return;
-    }
-
-
-    whatsappOverlay
-      .classList
-      .add("hidden");
-
-
-    successOrderSummary
-      .innerHTML =
-        buildOrderPreview(
-          currentOrder
-        );
-
-
-    if (
-      currentOrder
-        .deliveryMethod ===
-      "pickup"
-    ) {
-
-      finalDeliveryTime
-        .textContent =
-          t(
-            "successPickup"
-          );
-
-    }
-
-    else if (
-      currentOrder
-        .shippingSpeed ===
-      "express"
-    ) {
-
-      finalDeliveryTime
-        .textContent =
-          t(
-            "successExpress"
-          );
-
-    }
-
-    else {
-
-      finalDeliveryTime
-        .textContent =
-          "🚚 " +
-          getCityDeliveryTime(
-            currentOrder.city
-          ) +
-          (
-            isHaifa(
-              currentOrder.city
-            )
-              ? ""
-              : " • " +
-                postOfficeLabel()
-          );
-
-    }
-
-
-    successOverlay
-      .classList
-      .remove("hidden");
-
-  };
-
-
-/* CUSTOM BUILD */
-
-customBuildButton.onclick =
-  function() {
-
-    customBuildOverlay
-      .classList
-      .remove("hidden");
-
-  };
-
-
-closeCustomBuild.onclick =
-  function() {
-
-    customBuildOverlay
-      .classList
-      .add("hidden");
-
-  };
-
-
-customBuildForm
-  .addEventListener(
-    "submit",
-    function(event) {
-
-      event.preventDefault();
-
-
-      const name =
-        document
-          .getElementById(
-            "customName"
-          )
-          .value
-          .trim();
-
-
-      const phone =
-        document
-          .getElementById(
-            "customPhone"
-          )
-          .value
-          .trim();
-
-
-      const color =
-        document
-          .getElementById(
-            "customColor"
-          )
-          .value;
-
-
-      const description =
-        document
-          .getElementById(
-            "customDescription"
-          )
-          .value
-          .trim();
-
-
-      let text = "";
-
-
-      if (
-        currentLanguage ===
-        "en"
-      ) {
-
-        text =
-          "🛠️ *Custom Build Request - 3D MS*\n\n";
-
-
-        text +=
-          "👤 *Name:* " +
-          name +
-          "\n";
-
-
-        text +=
-          "📱 *Phone:* " +
-          phone +
-          "\n";
-
-
-        text +=
-          "🎨 *Color:* " +
-          color +
-          "\n\n";
-
-
-        text +=
-          "✏️ *What I would like:*\n" +
-          description +
-          "\n\n";
-
-
-        text +=
-          "🎁 Custom build is free.";
-
-      }
-
-      else {
-
-        text =
-          "🛠️ *בקשת בנייה עצמית - 3D MS*\n\n";
-
-
-        text +=
-          "👤 *שם:* " +
-          name +
-          "\n";
-
-
-        text +=
-          "📱 *טלפון:* " +
-          phone +
-          "\n";
-
-
-        text +=
-          "🎨 *צבע:* " +
-          color +
-          "\n\n";
-
-
-        text +=
-          "✏️ *מה אני רוצה:*\n" +
-          description +
-          "\n\n";
-
-
-        text +=
-          "🎁 בנייה עצמית — חינם.";
-
-      }
-
-
-      const url =
-        "https://wa.me/" +
-        STORE_WHATSAPP +
-        "?text=" +
-        encodeURIComponent(
-          text
-        );
-
-
-      window.open(
-        url,
-        "_blank"
-      );
-
-    }
-  );
+  }
+);
 
 
 /* RESET */
 
-backToStoreButton.onclick =
-  function() {
+backToStoreButton.onclick = function() {
 
-    cart = [];
+  cart = [];
 
-    deliveryMethod =
-      null;
+  deliveryMethod = null;
+  shippingSpeed = "regular";
+  currentOrder = null;
 
-    shippingSpeed =
-      "regular";
+  checkoutForm.reset();
 
-    currentOrder =
-      null;
+  pickupButton.classList.remove("active");
+  deliveryButton.classList.remove("active");
 
+  deliveryFields.classList.add("hidden");
 
-    checkoutForm.reset();
+  regularShippingButton.classList.add("active");
+  expressShippingButton.classList.remove("active");
 
+  successOverlay.classList.add("hidden");
 
-    pickupButton
-      .classList
-      .remove("active");
+  updateLanguage();
 
-
-    deliveryButton
-      .classList
-      .remove("active");
-
-
-    deliveryFields
-      .classList
-      .add("hidden");
-
-
-    regularShippingButton
-      .classList
-      .add("active");
-
-
-    expressShippingButton
-      .classList
-      .remove("active");
-
-
-    successOverlay
-      .classList
-      .add("hidden");
-
-
-    updateLanguage();
-
-  };
+};
 
 
 /* START */
 
 updateLanguage();
-
 loadProducts();
 
-console.log(
-  "🛍️ 3D MS READY"
-);
+console.log("🛍️ 3D MS READY");
+
+
+/* =========================================================
+   3D MS TOKEN CATCH GAME
+========================================================= */
+
+const TOKEN_VALUE = 0.05;
+const MAX_TOKEN_DISCOUNT = 10;
+const TOKEN_GAME_SECONDS = 60;
+const TOKEN_BALANCE_KEY = "3dms-token-balance";
+const TOKEN_FREE_GAME_KEY = "3dms-free-game-used";
+const TOKEN_EXTRA_GAMES_KEY = "3dms-extra-games";
+const TOKEN_PERIODIC_GAME_KEY = "3dms-periodic-game-time";
+const TOKEN_TIKTOK_GAME_KEY = "3dms-tiktok-game-claimed";
+const TOKEN_PERIOD_MS = 48 * 60 * 60 * 1000;
+const TIKTOK_PROFILE_URL = "https://www.tiktok.com/@3dmshop0";
+
+let tokenBalanceSaved = Math.max(0, Number(localStorage.getItem(TOKEN_BALANCE_KEY)) || 0);
+let tokenFreeGameUsed = localStorage.getItem(TOKEN_FREE_GAME_KEY) === "true";
+let tokenExtraGames = Math.max(0, Number(localStorage.getItem(TOKEN_EXTRA_GAMES_KEY)) || 0);
+let tokenPeriodicGameTime = Number(localStorage.getItem(TOKEN_PERIODIC_GAME_KEY)) || (Date.now() + TOKEN_PERIOD_MS);
+let tokenTikTokClaimed = localStorage.getItem(TOKEN_TIKTOK_GAME_KEY) === "true";
+let tokenTikTokVisitStarted = false;
+let tokenGameRunning = false;
+let tokenGameScoreValue = 0;
+let tokenGameSecondsLeft = TOKEN_GAME_SECONDS;
+let tokenTimerInterval = null;
+let tokenSpawnInterval = null;
+let useTokensForOrder = false;
+
+const tokenIcons = ["🐉", "⚽", "🦋", "🗡️", "🧩", "🚀", "⭐", "🎮", "🤖", "🦖"];
+
+if (!localStorage.getItem(TOKEN_PERIODIC_GAME_KEY)) {
+  localStorage.setItem(TOKEN_PERIODIC_GAME_KEY, String(tokenPeriodicGameTime));
+}
+
+function saveTokenState() {
+  localStorage.setItem(TOKEN_BALANCE_KEY, String(tokenBalanceSaved));
+  localStorage.setItem(TOKEN_FREE_GAME_KEY, String(tokenFreeGameUsed));
+  localStorage.setItem(TOKEN_EXTRA_GAMES_KEY, String(tokenExtraGames));
+  localStorage.setItem(TOKEN_PERIODIC_GAME_KEY, String(tokenPeriodicGameTime));
+  localStorage.setItem(TOKEN_TIKTOK_GAME_KEY, String(tokenTikTokClaimed));
+}
+
+function periodicTokenGameReady() {
+  return Date.now() >= tokenPeriodicGameTime;
+}
+
+function availableTokenGames() {
+  return (tokenFreeGameUsed ? 0 : 1) + tokenExtraGames + (periodicTokenGameReady() ? 1 : 0);
+}
+
+function periodicTimeText() {
+  const remaining = Math.max(0, tokenPeriodicGameTime - Date.now());
+  const hours = Math.floor(remaining / 3600000);
+  const minutes = Math.ceil((remaining % 3600000) / 60000);
+
+  return hours + ":" + String(minutes).padStart(2, "0");
+}
+
+function tokenDiscountForSubtotal(subtotal) {
+  if (!useTokensForOrder) {
+    return 0;
+  }
+
+  const maximumValue = Math.min(
+    Number(subtotal) || 0,
+    MAX_TOKEN_DISCOUNT,
+    tokenBalanceSaved * TOKEN_VALUE
+  );
+
+  const usableTokens = Math.min(
+    tokenBalanceSaved,
+    Math.floor((maximumValue + 0.0001) / TOKEN_VALUE)
+  );
+
+  return usableTokens * TOKEN_VALUE;
+}
+
+function tokenUsedForSubtotal(subtotal) {
+  return Math.round(tokenDiscountForSubtotal(subtotal) / TOKEN_VALUE);
+}
+
+const calculateTotalsWithoutTokens = calculateTotals;
+calculateTotals = function() {
+  const totals = calculateTotalsWithoutTokens();
+  const discount = tokenDiscountForSubtotal(totals.subtotal);
+  const tokensUsed = tokenUsedForSubtotal(totals.subtotal);
+
+  return {
+    ...totals,
+    tokenDiscount: discount,
+    tokensUsed,
+    total: Math.max(0, totals.total - discount)
+  };
+};
+
+function updateTokenDiscountRows() {
+  ensureTokenUsageControls();
+
+  const totals = calculateTotals();
+  const visible = totals.tokenDiscount > 0 && cart.length > 0;
+
+  tokenDiscountSummaryRow.classList.toggle("hidden", !visible);
+  checkoutTokenDiscountRow.classList.toggle("hidden", !visible);
+
+  tokenDiscountCart.textContent = "-" + money(totals.tokenDiscount);
+  tokenDiscountCheckout.textContent = "-" + money(totals.tokenDiscount);
+
+  tokenDiscountCartLabel.textContent = currentLanguage === "he"
+    ? "🪙 הנחת Tokens"
+    : "🪙 Token discount";
+
+  tokenDiscountCheckoutLabel.textContent = currentLanguage === "he"
+    ? "🪙 הנחת Tokens"
+    : "🪙 Token discount";
+
+  updateTokenUsageControls();
+}
+
+function createTokenUsageControl(id, compact) {
+  const box = document.createElement("label");
+  const checkbox = document.createElement("input");
+  const text = document.createElement("span");
+
+  box.id = id;
+  box.className = "token-usage-control";
+  box.style.display = "flex";
+  box.style.alignItems = "center";
+  box.style.gap = "9px";
+  box.style.margin = compact ? "10px 0" : "8px 5px";
+  box.style.padding = "11px";
+  box.style.border = "1px solid #a7f3d0";
+  box.style.borderRadius = "11px";
+  box.style.background = "#ecfdf5";
+  box.style.color = "#047857";
+  box.style.fontSize = "12px";
+  box.style.fontWeight = "900";
+  box.style.cursor = "pointer";
+
+  checkbox.type = "checkbox";
+  checkbox.className = "token-usage-checkbox";
+  checkbox.style.width = "18px";
+  checkbox.style.height = "18px";
+  checkbox.style.margin = "0";
+
+  checkbox.addEventListener("change", function() {
+    useTokensForOrder = checkbox.checked;
+
+    document.querySelectorAll(".token-usage-checkbox").forEach(function(other) {
+      other.checked = useTokensForOrder;
+    });
+
+    renderCart();
+  });
+
+  text.className = "token-usage-text";
+  box.append(checkbox, text);
+
+  return box;
+}
+
+function ensureTokenUsageControls() {
+  if (!document.getElementById("cartTokenUsageControl")) {
+    tokenDiscountSummaryRow.parentNode.insertBefore(
+      createTokenUsageControl("cartTokenUsageControl", true),
+      tokenDiscountSummaryRow
+    );
+  }
+
+  if (!document.getElementById("checkoutTokenUsageControl")) {
+    checkoutTokenDiscountRow.parentNode.insertBefore(
+      createTokenUsageControl("checkoutTokenUsageControl", false),
+      checkoutTokenDiscountRow
+    );
+  }
+}
+
+function updateTokenUsageControls() {
+  const availableMoney = Math.min(MAX_TOKEN_DISCOUNT, tokenBalanceSaved * TOKEN_VALUE);
+  const he = currentLanguage === "he";
+  const hasTokens = tokenBalanceSaved > 0;
+
+  document.querySelectorAll(".token-usage-control").forEach(function(box) {
+    box.classList.toggle("hidden", !hasTokens || cart.length === 0);
+  });
+
+  document.querySelectorAll(".token-usage-checkbox").forEach(function(checkbox) {
+    checkbox.checked = useTokensForOrder;
+  });
+
+  document.querySelectorAll(".token-usage-text").forEach(function(text) {
+    text.textContent = he
+      ? "השתמשו בטוקנים בהזמנה הזאת — עד " + money(availableMoney) + " (מקסימום ₪10)"
+      : "Use tokens on this order — up to " + money(availableMoney) + " (maximum ₪10)";
+  });
+}
+
+const renderCartWithoutTokens = renderCart;
+renderCart = function() {
+  renderCartWithoutTokens();
+  updateTokenDiscountRows();
+};
+
+const renderCheckoutSummaryWithoutTokens = renderCheckoutSummary;
+renderCheckoutSummary = function() {
+  renderCheckoutSummaryWithoutTokens();
+  updateTokenDiscountRows();
+};
+
+const buildOrderWithoutTokens = buildOrder;
+buildOrder = function() {
+  const order = buildOrderWithoutTokens();
+  const totals = calculateTotals();
+
+  order.tokenDiscount = totals.tokenDiscount;
+  order.tokensUsed = totals.tokensUsed;
+  order.total = totals.total;
+
+  return order;
+};
+
+const buildOrderPreviewWithoutTokens = buildOrderPreview;
+buildOrderPreview = function(order) {
+  let html = buildOrderPreviewWithoutTokens(order);
+
+  if (order.tokenDiscount > 0) {
+    const discountLine = currentLanguage === "he"
+      ? "🪙 הנחת Tokens: <strong>-" + money(order.tokenDiscount) + "</strong><br>"
+      : "🪙 Token discount: <strong>-" + money(order.tokenDiscount) + "</strong><br>";
+
+    html = html.replace("<hr>💰", "<hr>" + discountLine + "💰");
+  }
+
+  return html;
+};
+
+const buildWhatsappMessageWithoutTokens = buildWhatsappMessage;
+buildWhatsappMessage = function(order) {
+  let text = buildWhatsappMessageWithoutTokens(order);
+
+  if (order.tokenDiscount > 0) {
+    const discountLine = currentLanguage === "he"
+      ? "🪙 הנחת Tokens: -" + money(order.tokenDiscount) + "\n"
+      : "🪙 Token discount: -" + money(order.tokenDiscount) + "\n";
+
+    text = text.replace(/💰 \*(סה״כ|Total):/, discountLine + "💰 *$1:");
+  }
+
+  return text;
+};
+
+function updateTokenLanguage() {
+  const he = currentLanguage === "he";
+
+  ensureTikTokGameButton();
+
+  tokenGameButtonText.textContent = he ? "משחק Tokens" : "Token Game";
+  tokenGameSubtitle.textContent = he ? "תפסו כמה שיותר מוצרים!" : "Catch as many products as possible!";
+  tokenWalletLabel.textContent = he ? "הטוקנים שלכם" : "Your tokens";
+  tokenFirstGameTitle.textContent = he ? "🎁 משחק ראשון חינם" : "🎁 First game is free";
+  tokenGameLength.textContent = he ? "60 שניות" : "60 seconds";
+  tokenCatchTitle.textContent = he ? "🎯 כל תפיסה" : "🎯 Every catch";
+  tokenValueTitle.textContent = he ? "💰 שווי Token" : "💰 Token value";
+  tokenValueTitle.nextElementSibling.textContent = he ? "₪0.05 הנחה" : "₪0.05 discount";
+  tokenGameHelp.textContent = he ? "לחצו על המוצרים לפני שהם נעלמים!" : "Tap the products before they disappear!";
+  tokenResultTitle.textContent = he ? "המשחק נגמר!" : "Game over!";
+  tokenCaughtLabel.textContent = he ? "תפסתם" : "You caught";
+  tokenProductsCaughtLabel.textContent = he ? "מוצרים" : "products";
+  tokenReceivedLabel.textContent = he ? "קיבלתם" : "You received";
+  tokenBenefitLabel.textContent = he ? "שווי ההטבה:" : "Discount value:";
+  tokenResultBalanceLabel.textContent = he ? "יתרת Tokens:" : "Token balance:";
+  tokenResultClose.textContent = he ? "חזרה לחנות" : "Back to store";
+
+  updateTikTokGameButton();
+
+  updateTokenDisplay();
+  updateTokenAvailability();
+  updateTokenDiscountRows();
+}
+
+function ensureTikTokGameButton() {
+  if (document.getElementById("tokenTikTokGameButton")) {
+    return;
+  }
+
+  const button = document.createElement("button");
+  button.id = "tokenTikTokGameButton";
+  button.type = "button";
+  button.style.width = "100%";
+  button.style.margin = "0 0 12px";
+  button.style.padding = "13px";
+  button.style.border = "1px solid rgba(255,255,255,.25)";
+  button.style.borderRadius = "13px";
+  button.style.background = "linear-gradient(135deg,#111,#ec4899)";
+  button.style.color = "white";
+  button.style.fontWeight = "900";
+
+  button.addEventListener("click", function() {
+    if (tokenTikTokClaimed) {
+      return;
+    }
+
+    if (!tokenTikTokVisitStarted) {
+      tokenTikTokVisitStarted = true;
+      window.open(TIKTOK_PROFILE_URL, "_blank");
+      updateTikTokGameButton();
+      return;
+    }
+
+    tokenTikTokClaimed = true;
+    tokenExtraGames += 1;
+    saveTokenState();
+    updateTikTokGameButton();
+    updateTokenAvailability();
+  });
+
+  tokenGameAvailability.parentNode.insertBefore(button, tokenGameAvailability);
+}
+
+function updateTikTokGameButton() {
+  const button = document.getElementById("tokenTikTokGameButton");
+
+  if (!button) {
+    return;
+  }
+
+  const he = currentLanguage === "he";
+  button.disabled = tokenTikTokClaimed;
+  button.style.opacity = tokenTikTokClaimed ? ".55" : "1";
+
+  if (tokenTikTokClaimed) {
+    button.textContent = he
+      ? "✓ משחק TikTok כבר התקבל"
+      : "✓ TikTok game already claimed";
+  }
+  else if (tokenTikTokVisitStarted) {
+    button.textContent = he
+      ? "✓ עקבתי — קבלת משחק חינם"
+      : "✓ I followed — claim free game";
+  }
+  else {
+    button.textContent = he
+      ? "🎵 עקבו אחרי @3dmshop0 וקבלו משחק חינם"
+      : "🎵 Follow @3dmshop0 and get a free game";
+  }
+}
+
+function updateTokenDisplay() {
+  tokenBalance.textContent = tokenBalanceSaved;
+  tokenBalanceMini.textContent = "🪙 " + tokenBalanceSaved;
+  tokenResultBalance.textContent = tokenBalanceSaved;
+}
+
+function updateTokenAvailability() {
+  if (tokenGameRunning) {
+    return;
+  }
+
+  const he = currentLanguage === "he";
+  const games = availableTokenGames();
+
+  tokenGameAvailability.classList.toggle("locked", games === 0);
+  startTokenGame.disabled = games === 0;
+
+  if (!tokenFreeGameUsed) {
+    tokenGameAvailability.textContent = he
+      ? "המשחק החינמי שלכם מוכן! 🎉"
+      : "Your free game is ready! 🎉";
+
+    startTokenGame.textContent = he ? "🎮 התחלת משחק" : "🎮 Start game";
+    return;
+  }
+
+  if (tokenExtraGames > 0) {
+    tokenGameAvailability.textContent = he
+      ? "יש לכם " + tokenExtraGames + " משחקים זמינים 🎮"
+      : "You have " + tokenExtraGames + " games available 🎮";
+
+    startTokenGame.textContent = he ? "🎮 התחלת משחק" : "🎮 Start game";
+    return;
+  }
+
+  if (periodicTokenGameReady()) {
+    tokenGameAvailability.textContent = he
+      ? "המשחק שמתחדש כל 48 שעות מוכן! 🎉"
+      : "Your 48-hour game is ready! 🎉";
+
+    startTokenGame.textContent = he ? "🎮 התחלת משחק" : "🎮 Start game";
+    return;
+  }
+
+  tokenGameAvailability.textContent = he
+    ? "משחק חדש בעוד " + periodicTimeText() + " שעות • או הזמינו מוצר 🔒"
+    : "New game in " + periodicTimeText() + " hours • or place an order 🔒";
+
+  startTokenGame.textContent = he ? "🔒 המשחק נעול" : "🔒 Game locked";
+}
+
+function openTokenGamePanel() {
+  tokenGameIntro.classList.remove("hidden");
+  tokenGameActive.classList.add("hidden");
+  tokenGameResult.classList.add("hidden");
+  tokenGameOverlay.classList.remove("hidden");
+  updateTokenDisplay();
+  updateTokenAvailability();
+}
+
+function closeTokenGamePanel() {
+  if (tokenGameRunning) {
+    return;
+  }
+
+  tokenGameOverlay.classList.add("hidden");
+}
+
+function consumeTokenGame() {
+  if (!tokenFreeGameUsed) {
+    tokenFreeGameUsed = true;
+  }
+  else if (tokenExtraGames > 0) {
+    tokenExtraGames -= 1;
+  }
+  else if (periodicTokenGameReady()) {
+    tokenPeriodicGameTime = Date.now() + TOKEN_PERIOD_MS;
+  }
+
+  saveTokenState();
+}
+
+function createTokenGameItem() {
+  if (!tokenGameRunning) {
+    return;
+  }
+
+  const item = document.createElement("button");
+  const size = window.innerWidth <= 600 ? 52 : 58;
+  const maxX = Math.max(0, tokenGameArena.clientWidth - size - 8);
+  const maxY = Math.max(0, tokenGameArena.clientHeight - size - 55);
+
+  item.type = "button";
+  item.className = "token-game-item";
+  item.textContent = tokenIcons[Math.floor(Math.random() * tokenIcons.length)];
+  item.style.left = Math.floor(Math.random() * maxX) + "px";
+  item.style.top = Math.floor(Math.random() * maxY) + "px";
+
+  item.addEventListener("click", function() {
+    if (!tokenGameRunning || item.classList.contains("caught")) {
+      return;
+    }
+
+    item.classList.add("caught");
+    tokenGameScoreValue += 1;
+    tokenGameScore.textContent = tokenGameScoreValue;
+    tokenGameLiveTokens.textContent = tokenGameScoreValue;
+
+    window.setTimeout(function() {
+      item.remove();
+    }, 240);
+  });
+
+  tokenGameArena.appendChild(item);
+
+  window.setTimeout(function() {
+    if (item.isConnected) {
+      item.remove();
+    }
+  }, 1500);
+}
+
+function startTokenCatchGame() {
+  if (tokenGameRunning || availableTokenGames() <= 0) {
+    return;
+  }
+
+  consumeTokenGame();
+
+  tokenGameRunning = true;
+  tokenGameScoreValue = 0;
+  tokenGameSecondsLeft = TOKEN_GAME_SECONDS;
+
+  tokenGameIntro.classList.add("hidden");
+  tokenGameResult.classList.add("hidden");
+  tokenGameActive.classList.remove("hidden");
+
+  tokenGameScore.textContent = "0";
+  tokenGameLiveTokens.textContent = "0";
+  tokenGameTimer.textContent = String(TOKEN_GAME_SECONDS);
+
+  tokenGameArena.querySelectorAll(".token-game-item").forEach(function(item) {
+    item.remove();
+  });
+
+  createTokenGameItem();
+
+  tokenSpawnInterval = window.setInterval(createTokenGameItem, 700);
+
+  tokenTimerInterval = window.setInterval(function() {
+    tokenGameSecondsLeft -= 1;
+    tokenGameTimer.textContent = tokenGameSecondsLeft;
+
+    if (tokenGameSecondsLeft <= 0) {
+      finishTokenCatchGame();
+    }
+  }, 1000);
+}
+
+function finishTokenCatchGame() {
+  if (!tokenGameRunning) {
+    return;
+  }
+
+  tokenGameRunning = false;
+
+  window.clearInterval(tokenTimerInterval);
+  window.clearInterval(tokenSpawnInterval);
+
+  tokenGameArena.querySelectorAll(".token-game-item").forEach(function(item) {
+    item.remove();
+  });
+
+  tokenBalanceSaved += tokenGameScoreValue;
+  saveTokenState();
+
+  tokenResultCaught.textContent = tokenGameScoreValue;
+  tokenResultTokens.textContent = tokenGameScoreValue;
+  tokenResultMoney.textContent = money(tokenGameScoreValue * TOKEN_VALUE);
+
+  tokenGameActive.classList.add("hidden");
+  tokenGameResult.classList.remove("hidden");
+
+  updateTokenDisplay();
+  renderCart();
+}
+
+tokenGameButton.addEventListener("click", openTokenGamePanel);
+closeTokenGame.addEventListener("click", closeTokenGamePanel);
+tokenResultClose.addEventListener("click", function() {
+  tokenGameOverlay.classList.add("hidden");
+});
+startTokenGame.addEventListener("click", startTokenCatchGame);
+
+languageButton.addEventListener("click", function() {
+  window.setTimeout(updateTokenLanguage, 0);
+});
+
+sentWhatsappButton.addEventListener("click", function() {
+  if (!currentOrder || currentOrder.tokenProcessed) {
+    return;
+  }
+
+  currentOrder.tokenProcessed = true;
+
+  if (currentOrder.tokensUsed > 0) {
+    tokenBalanceSaved = Math.max(0, tokenBalanceSaved - currentOrder.tokensUsed);
+  }
+
+  tokenExtraGames += 1;
+  useTokensForOrder = false;
+  saveTokenState();
+  updateTokenDisplay();
+  updateTokenAvailability();
+});
+
+updateTokenLanguage();
+renderCart();
+
+window.setInterval(function() {
+  if (!tokenGameRunning) {
+    updateTokenAvailability();
+  }
+}, 60000);
