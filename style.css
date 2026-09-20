@@ -220,8 +220,8 @@ button {
 
   border-radius: 10px;
 
-  background: #fff7ed;
-  color: #9a3412;
+  background: #ecfdf5;
+  color: #047857;
 
   font-weight: 900;
 }
@@ -344,7 +344,7 @@ button {
 
   padding: 15px;
 
-  background: rgba(17,24,39,.72);
+  background: rgba(17, 24, 39, .72);
 }
 
 .panel {
@@ -499,6 +499,11 @@ button {
 
   font-size: 20px;
   font-weight: 1000;
+}
+
+.token-discount-row {
+  color: #047857;
+  font-weight: 900;
 }
 
 
@@ -769,6 +774,572 @@ button {
 }
 
 
+/* TOKEN GAME FLOATING BUTTON */
+
+.token-game-floating {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 500;
+
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  min-height: 54px;
+  padding: 9px 13px;
+
+  border: 0;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #6d28d9,
+      #4f46e5
+    );
+
+  color: white;
+
+  box-shadow:
+    0 12px 30px rgba(79, 70, 229, .38);
+
+  font-size: 12px;
+  font-weight: 1000;
+
+  animation:
+    tokenButtonFloat 2.5s ease-in-out infinite;
+}
+
+html[dir="ltr"] .token-game-floating {
+  right: auto;
+  left: 18px;
+}
+
+.token-game-floating:hover {
+  transform: translateY(-3px);
+}
+
+.token-game-button-icon {
+  font-size: 23px;
+}
+
+#tokenBalanceMini {
+  padding: 5px 8px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, .18);
+
+  white-space: nowrap;
+}
+
+@keyframes tokenButtonFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+
+/* TOKEN GAME PANEL */
+
+.token-game-panel {
+  width: min(680px, 100%);
+  max-height: 94vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding: 20px;
+
+  border:
+    1px solid rgba(255, 255, 255, .2);
+
+  border-radius: 24px;
+
+  background:
+    linear-gradient(
+      160deg,
+      #111827 0%,
+      #1e1b4b 48%,
+      #312e81 100%
+    );
+
+  color: white;
+
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, .38);
+}
+
+.token-game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 15px;
+
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, .13);
+}
+
+.token-game-header .close-button {
+  flex-shrink: 0;
+
+  background: rgba(255, 255, 255, .12);
+  color: white;
+}
+
+.token-game-title {
+  font-size: 23px;
+  font-weight: 1000;
+}
+
+.token-game-subtitle {
+  margin-top: 4px;
+
+  color: #c7d2fe;
+
+  font-size: 12px;
+}
+
+
+/* TOKEN WALLET */
+
+.token-wallet {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  width: min(330px, 100%);
+
+  margin: 5px auto 20px;
+  padding: 17px;
+
+  border:
+    1px solid rgba(250, 204, 21, .35);
+
+  border-radius: 18px;
+
+  background: rgba(250, 204, 21, .12);
+
+  text-align: start;
+}
+
+.token-wallet-icon {
+  font-size: 42px;
+}
+
+.token-wallet small {
+  display: block;
+
+  color: #fde68a;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.token-wallet strong {
+  display: block;
+
+  margin-top: 2px;
+
+  color: #facc15;
+
+  font-size: 30px;
+}
+
+
+/* TOKEN GAME INFORMATION */
+
+.token-game-info {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 10px;
+
+  margin: 18px 0;
+}
+
+.token-game-info > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  min-height: 105px;
+  padding: 13px;
+
+  border:
+    1px solid rgba(255, 255, 255, .12);
+
+  border-radius: 15px;
+
+  background: rgba(255, 255, 255, .07);
+
+  text-align: center;
+}
+
+.token-game-info strong {
+  font-size: 12px;
+}
+
+.token-game-info span {
+  display: block;
+
+  margin-top: 7px;
+
+  color: #c7d2fe;
+
+  font-size: 11px;
+}
+
+.token-game-availability {
+  margin: 15px 0;
+  padding: 13px;
+
+  border-radius: 13px;
+
+  background: rgba(34, 197, 94, .14);
+  color: #bbf7d0;
+
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.token-game-availability.locked {
+  background: rgba(239, 68, 68, .14);
+  color: #fecaca;
+}
+
+.token-start-button {
+  width: 100%;
+
+  padding: 16px;
+
+  border: 0;
+  border-radius: 14px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #facc15,
+      #f59e0b
+    );
+
+  color: #422006;
+
+  box-shadow:
+    0 9px 25px rgba(245, 158, 11, .25);
+
+  font-size: 16px;
+  font-weight: 1000;
+}
+
+.token-start-button:disabled {
+  cursor: not-allowed;
+
+  background: #4b5563;
+  color: #d1d5db;
+
+  box-shadow: none;
+}
+
+
+/* ACTIVE TOKEN GAME */
+
+.token-game-stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 8px;
+
+  margin-bottom: 12px;
+}
+
+.token-game-stats > div {
+  padding: 10px;
+
+  border:
+    1px solid rgba(255, 255, 255, .12);
+
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, .08);
+
+  text-align: center;
+
+  font-size: 14px;
+}
+
+.token-game-stats strong {
+  margin-inline-start: 4px;
+
+  font-size: 18px;
+}
+
+.token-game-arena {
+  position: relative;
+
+  width: 100%;
+  height: min(58vh, 430px);
+  min-height: 330px;
+
+  overflow: hidden;
+
+  border:
+    2px solid rgba(255, 255, 255, .16);
+
+  border-radius: 18px;
+
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(99, 102, 241, .42),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(168, 85, 247, .35),
+      transparent 30%
+    ),
+    linear-gradient(
+      160deg,
+      #111827,
+      #1e1b4b
+    );
+
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.token-game-arena::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  opacity: .18;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, .12) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, .12) 1px,
+      transparent 1px
+    );
+
+  background-size: 35px 35px;
+
+  pointer-events: none;
+}
+
+.token-catcher {
+  position: absolute;
+  left: 50%;
+  bottom: 8px;
+
+  z-index: 1;
+
+  transform: translateX(-50%);
+
+  opacity: .7;
+
+  font-size: 38px;
+
+  pointer-events: none;
+}
+
+.token-game-item {
+  position: absolute;
+  z-index: 5;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 58px;
+  height: 58px;
+
+  padding: 0;
+
+  border:
+    2px solid rgba(255, 255, 255, .45);
+
+  border-radius: 50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff,
+      #e0e7ff
+    );
+
+  box-shadow:
+    0 9px 24px rgba(0, 0, 0, .3);
+
+  font-size: 29px;
+
+  cursor: pointer;
+
+  animation:
+    tokenItemAppear .18s ease-out;
+}
+
+.token-game-item:hover {
+  transform: scale(1.08);
+}
+
+.token-game-item.caught {
+  pointer-events: none;
+
+  animation:
+    tokenItemCaught .25s ease forwards;
+}
+
+@keyframes tokenItemAppear {
+  from {
+    opacity: 0;
+    transform: scale(.3) rotate(-30deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes tokenItemCaught {
+  to {
+    opacity: 0;
+    transform: scale(1.8) rotate(25deg);
+  }
+}
+
+.token-game-help {
+  margin-top: 10px;
+
+  color: #c7d2fe;
+
+  text-align: center;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+
+/* TOKEN GAME RESULT */
+
+.token-result-icon {
+  text-align: center;
+
+  font-size: 62px;
+
+  animation:
+    tokenResultBounce .7s ease;
+}
+
+#tokenGameResult h2 {
+  text-align: center;
+}
+
+@keyframes tokenResultBounce {
+  0% {
+    transform: scale(.2);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.token-result-card {
+  margin-top: 17px;
+  padding: 18px;
+
+  border:
+    1px solid rgba(255, 255, 255, .14);
+
+  border-radius: 17px;
+
+  background: rgba(255, 255, 255, .08);
+}
+
+.token-result-card > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 9px 0;
+
+  border-bottom:
+    1px solid rgba(255, 255, 255, .1);
+}
+
+.token-result-card > div:last-child {
+  border-bottom: 0;
+}
+
+.token-result-card strong {
+  color: #facc15;
+
+  font-size: 20px;
+}
+
+.token-result-money {
+  color: #bbf7d0;
+}
+
+.token-result-wallet {
+  margin-top: 14px;
+  padding: 13px;
+
+  border-radius: 13px;
+
+  background: rgba(250, 204, 21, .12);
+  color: #fde68a;
+
+  text-align: center;
+
+  font-weight: 900;
+}
+
+.token-result-wallet strong {
+  color: #facc15;
+
+  font-size: 20px;
+}
+
+#tokenGameResult .main-button {
+  background: white;
+  color: #111827;
+}
+
+
 /* FOOTER */
 
 footer {
@@ -776,7 +1347,7 @@ footer {
   flex-direction: column;
   align-items: center;
 
-  padding: 30px;
+  padding: 30px 30px 100px;
 
   border-top: 1px solid #e5e7eb;
 
@@ -832,6 +1403,59 @@ footer span {
 
   .panel {
     padding: 16px;
+  }
+
+  .token-game-floating {
+    right: 10px;
+    bottom: 10px;
+
+    max-width: calc(100% - 20px);
+
+    min-height: 49px;
+    padding: 8px 10px;
+
+    border-radius: 15px;
+
+    font-size: 10px;
+  }
+
+  html[dir="ltr"] .token-game-floating {
+    right: auto;
+    left: 10px;
+  }
+
+  .token-game-button-icon {
+    font-size: 20px;
+  }
+
+  .token-game-panel {
+    padding: 15px;
+
+    border-radius: 19px;
+  }
+
+  .token-game-title {
+    font-size: 18px;
+  }
+
+  .token-game-info {
+    grid-template-columns: 1fr;
+  }
+
+  .token-game-info > div {
+    min-height: auto;
+  }
+
+  .token-game-arena {
+    height: 52vh;
+    min-height: 310px;
+  }
+
+  .token-game-item {
+    width: 52px;
+    height: 52px;
+
+    font-size: 26px;
   }
 
 }
